@@ -14,8 +14,8 @@ public class Reader {
         Scanner scanner = new Scanner(System.in);
         list = new ArrayList<>();
         System.out.println("Enter number size:");   //set a limit for user input
-        int size = Integer.parseInt(scanner.nextLine());   //read the user input
-        System.out.println("Enter data:");
+        int size = Integer.parseInt(scanner.nextLine());   //read the user input also handle some unexpected input
+        System.out.println("Enter data: (Please enter one data each line and hit enter)");
         int count = 0;
         while (count < size) {
             list.add(Double.parseDouble(scanner.nextLine()));

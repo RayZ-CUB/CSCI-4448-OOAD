@@ -1,0 +1,22 @@
+The data you entered is:
+[3.0, 4.0, 5.0, 6.0]
+The median is 4.5
+The mean is 4.5
+There is No mode in this data set.
+The variance is 1.6666666666666667
+The Standard deviation is 1.2909944487358056
+The Minimum value is 3.0
+The Maximum value is 6.0
+There is no maximum occurrences value for this data set.
+
+
+The data you entered is:
+[4.5, 4.5, 7.0, 90.0, 4.0, 4.5]
+The median is 4.5
+The mean is 19.083333333333332
+The mode is 4.5
+The variance is 1208.1416666666669
+The Standard deviation is 34.75833233437224
+The Minimum value is 4.0
+The Maximum value is 90.0
+The maximum occurrences value is 4.5 and the occurrence is 3

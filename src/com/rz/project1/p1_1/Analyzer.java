@@ -11,7 +11,7 @@ public class Analyzer {
     //    public ArrayList<Double> getData() throws IOException{
     public static void analyze(ArrayList<Double> list) {
 //        System.out.println(list);
-        Collections.sort(list);
+        Collections.sort(list);  //sorted the list by alpha order
 //        System.out.println(list);
         double median = calculateMedian(list);
         System.out.println("The median is " + median);
@@ -19,8 +19,10 @@ public class Analyzer {
         double mean = calculateMean(list);
         System.out.println("The mean is " + mean);
 
-        double mode = calculateMode(list);
-        System.out.println("The mode is " + mode);
+        //double mode = calculateMode(list);
+        Map<Double, Integer> calculateMode = calculateMode(list);
+        calculateMode.forEach((k, v) -> System.out.println("The mode is " + k ));
+        //System.out.println("The mode is " + calculateMode);
 
         double variance = calculateVariance(list);
         System.out.println("The variance is " + variance);
@@ -34,11 +36,11 @@ public class Analyzer {
         double maxmumValue = Max(list);
         System.out.println("The Maximum value is " + maxmumValue);
 
+        //use hashmap to store a key with its value
         Map<Double, Integer> maxOccur = MaxOccur(list);
         maxOccur.forEach((k, v) -> System.out.println("The maximum occurrences value is " + k + " and the occurrence is " + v));
-//        System.out.println("The maximum occurrences value is" + maxOccur.);
-
-    }
+        //System.out.println("The maximum occurrences value is" + maxOccur.);
+}
 
     private static double calculateMedian(ArrayList<Double> list) {
         double median;
@@ -65,10 +67,10 @@ public class Analyzer {
         return mean;
     }
 
-    public static double calculateMode(ArrayList<Double> list) {
-        int size = list.size();
+    public static HashMap<Double, Integer> calculateMode(ArrayList<Double> list) { //use hashmap store each number and its count
         double max_value = 0.0;
         int max_count = 0;
+        HashMap<Double, Integer> map = new HashMap<>();
 
         for (Double aDouble : list) {
             int count = 0;
@@ -81,9 +83,14 @@ public class Analyzer {
                 max_value = aDouble;
             }
         }
-        return max_value;
+        if (max_count == 1) {
+            System.out.println("There is No mode in this data set.");
+        }  else
+            map.put(max_value,max_count);
+        return map;
     }
 
+    //https://www.anycodings.com/1questions/2564756/calculating-standard-deviation-variance-in-java
     private static double calculateVariance(ArrayList<Double> list) {
         double mean;
         int size = list.size();
@@ -132,6 +139,7 @@ public class Analyzer {
         return max;
     }
 
+    //https://www.geeksforgeeks.org/frequent-element-array/
     private static Map<Double, Integer> MaxOccur(ArrayList<Double> list) {
         int size = list.size();
         int max_count = 0;
@@ -150,8 +158,11 @@ public class Analyzer {
                 max_value = list.get(i);
             }
         }
-
-        map.put(max_value, max_count);
+        if (max_count == 1){
+            System.out.println("There is no maximum occurrences value for this data set.");
+        }else {
+            map.put(max_value,max_count);
+        }
         return map;
     }
 }

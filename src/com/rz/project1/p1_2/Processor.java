@@ -13,14 +13,14 @@ public class Processor {
         }
         return input;
     }
-
+//    https://www.geeksforgeeks.org/how-to-remove-all-white-spaces-from-a-string-in-java/
     public static String clean(String input) {
-        String upperCasedInput = input.toUpperCase();
-        return upperCasedInput.replaceAll("\\s+", "");
+        String upperCasedInput = input.toUpperCase();  //change to all Uppercase
+        return upperCasedInput.replaceAll("\\s+", "");  //remove all spaces
     }
 
     public static String sort(String input) {
-        char[] chars = input.toCharArray();
+        char[] chars = input.toCharArray();   //change the string to characters,because we cannot sort strings
         Arrays.sort(chars);
         return new String(chars);
     }
