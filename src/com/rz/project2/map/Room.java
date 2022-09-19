@@ -1,10 +1,17 @@
 package com.rz.project2.map;
 
+import com.rz.project2.adventurer.Adventurer;
+import com.rz.project2.creature.Creature;
+
+import java.util.HashMap;
+
 public class Room {
 
     private int z;  //level
     private int y;
     private int x;
+    private HashMap<String, Adventurer> adventurers = new HashMap<>();
+    private HashMap<String, Creature> creatures = new HashMap<>();
 
     public Room(int z, int y, int x) {  // constructor
         this.z = z;
@@ -43,6 +50,22 @@ public class Room {
             System.out.println("Invalid level index");
         }
         this.z = z;
+    }
+
+    public HashMap<String, Adventurer> getAdventurers() {
+        return adventurers;
+    }
+
+    public void setAdventurers(HashMap<String, Adventurer> adventurers) {
+        this.adventurers = adventurers;
+    }
+
+    public HashMap<String, Creature> getCreatures() {
+        return creatures;
+    }
+
+    public void setCreatures(HashMap<String, Creature> creatures) {
+        this.creatures = creatures;
     }
 
     @Override

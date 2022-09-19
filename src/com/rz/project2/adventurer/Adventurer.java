@@ -3,20 +3,21 @@ package com.rz.project2.adventurer;
 import com.rz.project2.map.Room;
 
 public class Adventurer {
-    private int HP = 3;
+    private String name;
+    private int damage = 0;
     private int treasureCount;
     private Room room = new Room(0,1,1);
 
 
-    public int getHP() {
-        return HP;
+    public int getDamage() {
+        return damage;
     }
 
-    public void setHP(int HP) {
-        if (HP < 0 || HP > 3) {
-            throw new RuntimeException("Invalid HP");
+    public void setDamage(int damage) {
+        if (damage < 0 || damage > 3) {
+            throw new RuntimeException("Invalid damage");
         }
-        this.HP = HP;
+        this.damage = damage;
     }
 
     public int getTreasureCount() {
@@ -36,5 +37,13 @@ public class Adventurer {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
