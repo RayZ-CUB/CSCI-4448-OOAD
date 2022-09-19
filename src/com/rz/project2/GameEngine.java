@@ -15,6 +15,12 @@ public class GameEngine {
         HashMap<String, Creature> creatures = initializeCreature();
         GameMap gameMap = initializeGameMap(adventurers, creatures);
         System.out.println(gameMap);
+        gameMap.moveAdventurers();
+        System.out.println(gameMap);
+        gameMap.moveAdventurers();
+        System.out.println(gameMap);
+        gameMap.moveAdventurers();
+        System.out.println(gameMap);
     }
 
     private static HashMap<String, Adventurer> initializeAdventurers() {

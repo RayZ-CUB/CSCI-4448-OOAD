@@ -71,6 +71,25 @@ public class GameMap {
         this.turnCount = turnCount;
     }
 
+    public void moveAdventurers() {
+        rooms.get(brawler.getRoom().toString()).getAdventurers().remove(brawler.getName());
+        rooms.get(runner.getRoom().toString()).getAdventurers().remove(runner.getName());
+        rooms.get(sneaker.getRoom().toString()).getAdventurers().remove(sneaker.getName());
+        rooms.get(thief.getRoom().toString()).getAdventurers().remove(thief.getName());
+
+        // Move all adventurers in a turn
+        brawler.move();
+        runner.move();
+        sneaker.move();
+        thief.move();
+
+        // Update game map room information of adventurers
+        rooms.get(brawler.getRoom().toString()).getAdventurers().put(brawler.getName(), brawler);
+        rooms.get(runner.getRoom().toString()).getAdventurers().put(runner.getName(), runner);
+        rooms.get(sneaker.getRoom().toString()).getAdventurers().put(sneaker.getName(), sneaker);
+        rooms.get(thief.getRoom().toString()).getAdventurers().put(thief.getName(), thief);
+    }
+
     /***
      * Concatenating adventurers' names
      */
@@ -96,7 +115,7 @@ public class GameMap {
             output.append("-");
         }
 
-        output.append("\t");
+        output.append("\t\t\t");
     }
 
     @Override
