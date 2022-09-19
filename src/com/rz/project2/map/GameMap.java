@@ -65,13 +65,19 @@ public class GameMap {
     }
 
     public void setTurnCount(int turnCount) {
-        if (turnCount < 1) {
+        if (turnCount < 0) {
             throw new RuntimeException("Invalid turn count");
         }
         this.turnCount = turnCount;
     }
 
+    public void finishCurrentTurn() {
+        moveAdventurers();
+        turnCount++;
+    }
+
     public void moveAdventurers() {
+        // Delete adventurer information of original rooms
         rooms.get(brawler.getRoom().toString()).getAdventurers().remove(brawler.getName());
         rooms.get(runner.getRoom().toString()).getAdventurers().remove(runner.getName());
         rooms.get(sneaker.getRoom().toString()).getAdventurers().remove(sneaker.getName());
@@ -83,7 +89,7 @@ public class GameMap {
         sneaker.move();
         thief.move();
 
-        // Update game map room information of adventurers
+        // Add adventurer information of new rooms
         rooms.get(brawler.getRoom().toString()).getAdventurers().put(brawler.getName(), brawler);
         rooms.get(runner.getRoom().toString()).getAdventurers().put(runner.getName(), runner);
         rooms.get(sneaker.getRoom().toString()).getAdventurers().put(sneaker.getName(), sneaker);

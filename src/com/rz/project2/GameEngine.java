@@ -15,11 +15,11 @@ public class GameEngine {
         HashMap<String, Creature> creatures = initializeCreature();
         GameMap gameMap = initializeGameMap(adventurers, creatures);
         System.out.println(gameMap);
-        gameMap.moveAdventurers();
+        gameMap.finishCurrentTurn();
         System.out.println(gameMap);
-        gameMap.moveAdventurers();
+        gameMap.finishCurrentTurn();
         System.out.println(gameMap);
-        gameMap.moveAdventurers();
+        gameMap.finishCurrentTurn();
         System.out.println(gameMap);
     }
 
@@ -30,10 +30,10 @@ public class GameEngine {
         Sneaker sneaker = new Sneaker();
         Runner runner = new Runner();
 
-        adventurers.put("B", brawler);
-        adventurers.put("T", thief);
-        adventurers.put("S", sneaker);
-        adventurers.put("R", runner);
+        adventurers.put(brawler.getName(), brawler);
+        adventurers.put(thief.getName(), thief);
+        adventurers.put(sneaker.getName(), sneaker);
+        adventurers.put(runner.getName(), runner);
 
         return adventurers;
     }
@@ -41,9 +41,12 @@ public class GameEngine {
     private static HashMap<String, Creature> initializeCreature() {
         HashMap<String, Creature> creatures = new HashMap<>();
         for (int i = 0; i < 4; i++) {
-            creatures.put("B" + i, new Blinker());
-            creatures.put("O" + i, new Orbiter());
-            creatures.put("S" + i, new Seeker());
+            Blinker blinker = new Blinker();
+            Orbiter orbiter = new Orbiter();
+            Seeker seeker = new Seeker();
+            creatures.put(blinker.getName() + i, blinker);
+            creatures.put(orbiter.getName() + i, orbiter);
+            creatures.put(seeker.getName() + i, seeker);
         }
 
         return creatures;
@@ -63,7 +66,7 @@ public class GameEngine {
         gameMap.setOrbiterCount(4);
         gameMap.setSeekerCount(4);
 
-        gameMap.setTurnCount(1);
+        gameMap.setTurnCount(0);
 
         // Put adventurers into entrance room
         gameMap.rooms.get("0-1-1").setAdventurers(adventurers);
