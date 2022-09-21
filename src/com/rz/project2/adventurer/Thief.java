@@ -7,6 +7,9 @@ public class Thief extends Adventurer{
 
     @Override
     public int attack() {
-        return rollDices() + 1;
+        return attack() + 1;
+    }
+    public int search() {
+        return search() + 1;
     }
 }
