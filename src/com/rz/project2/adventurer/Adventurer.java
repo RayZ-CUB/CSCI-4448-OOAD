@@ -525,12 +525,14 @@ public class Adventurer {
 //        }
 //    }
 
-    public int attack() {
-        return rollDices();
-    }
-
     public int rollDices() {
         Random random = new Random();
         return random.nextInt(6) + 1 + random.nextInt(6) + 1;
+    }
+    public int attack() {
+        return rollDices();
+    }
+    public int search() {
+        return rollDices();
     }
 }
