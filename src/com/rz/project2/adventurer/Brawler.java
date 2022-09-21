@@ -6,6 +6,6 @@ public class Brawler extends Adventurer {
     }
     @Override
     public int attack() {
-        return rollDices() + 2;
+        return attack() + 2;
     }
 }
