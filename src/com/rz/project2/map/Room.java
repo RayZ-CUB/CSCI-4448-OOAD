@@ -3,6 +3,7 @@ package com.rz.project2.map;
 import com.rz.project2.adventurer.Adventurer;
 import com.rz.project2.creature.Creature;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Room {
@@ -10,13 +11,18 @@ public class Room {
     private int z;  //level
     private int y;
     private int x;
-    private HashMap<String, Adventurer> adventurers = new HashMap<>();
-    private HashMap<String, Creature> creatures = new HashMap<>();
+    private HashMap<String, Adventurer> adventurers;
+    private HashMap<String, Creature> creatures;
+    private ArrayList<Room> adjacentRooms;
+
 
     public Room(int z, int y, int x) {  // constructor
         this.z = z;
         this.y = y;
         this.x = x;
+        this.adventurers = new HashMap<>();
+        this.creatures = new HashMap<>();
+        this.adjacentRooms = new ArrayList<>();
     }
 
     public int getX() {
@@ -66,6 +72,14 @@ public class Room {
 
     public void setCreatures(HashMap<String, Creature> creatures) {
         this.creatures = creatures;
+    }
+
+    public ArrayList<Room> getAdjacentRooms() {
+        return adjacentRooms;
+    }
+
+    public void setAdjacentRooms(ArrayList<Room> adjacentRooms) {
+        this.adjacentRooms = adjacentRooms;
     }
 
     @Override

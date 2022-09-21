@@ -15,4 +15,9 @@ public class Blinker extends Creature{
         int x = random.nextInt(3);
         this.setRoom(new Room(z, y, x));
     }
+
+    @Override
+    public void move() {
+
+    }
 }

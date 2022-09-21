@@ -1,5 +1,6 @@
 package com.rz.project2.map;
 
+import com.rz.project2.Constants;
 import com.rz.project2.adventurer.*;
 import com.rz.project2.creature.Creature;
 
@@ -11,13 +12,14 @@ public class GameMap {
     public Runner runner;
     public Sneaker sneaker;
     public Thief thief;
+    public HashMap<String, Creature> creatures;
     private int blinkerCount;
     private int orbiterCount;
     private int seekerCount;
     private int turnCount;
 
     public GameMap() {
-        rooms.put("0-1-1", new Room(0, 1, 1));   //
+        rooms.put(Constants.ENTRANCE_ROOM, new Room(0, 1, 1));   //
         for (int z = 1; z < 5; z++) {
             for (int y = 0; y < 3; y++) {
                 for (int x = 0; x < 3; x++) {
@@ -71,30 +73,47 @@ public class GameMap {
         this.turnCount = turnCount;
     }
 
-    public void finishCurrentTurn() {
-        moveAdventurers();
-        turnCount++;
-    }
+//    public void finishCurrentTurn() {
+//        moveAdventurers();
+//        moveCreatures();
+//        turnCount++;
+//    }
 
-    public void moveAdventurers() {
-        // Delete adventurer information of original rooms
-        rooms.get(brawler.getRoom().toString()).getAdventurers().remove(brawler.getName());
-        rooms.get(runner.getRoom().toString()).getAdventurers().remove(runner.getName());
-        rooms.get(sneaker.getRoom().toString()).getAdventurers().remove(sneaker.getName());
-        rooms.get(thief.getRoom().toString()).getAdventurers().remove(thief.getName());
+//    public void moveAdventurers() {
+//        // Delete adventurer information of original rooms
+//        rooms.get(brawler.getRoom().toString()).getAdventurers().remove(brawler.getName());
+//        rooms.get(runner.getRoom().toString()).getAdventurers().remove(runner.getName());
+//        rooms.get(sneaker.getRoom().toString()).getAdventurers().remove(sneaker.getName());
+//        rooms.get(thief.getRoom().toString()).getAdventurers().remove(thief.getName());
+//
+//        // Move all adventurers in a turn
+//        brawler.move();
+//        runner.move();
+//        sneaker.move();
+//        thief.move();
+//
+//        // Add adventurer information of new rooms
+//        rooms.get(brawler.getRoom().toString()).getAdventurers().put(brawler.getName(), brawler);
+//        rooms.get(runner.getRoom().toString()).getAdventurers().put(runner.getName(), runner);
+//        rooms.get(sneaker.getRoom().toString()).getAdventurers().put(sneaker.getName(), sneaker);
+//        rooms.get(thief.getRoom().toString()).getAdventurers().put(thief.getName(), thief);
+//    }
 
-        // Move all adventurers in a turn
-        brawler.move();
-        runner.move();
-        sneaker.move();
-        thief.move();
-
-        // Add adventurer information of new rooms
-        rooms.get(brawler.getRoom().toString()).getAdventurers().put(brawler.getName(), brawler);
-        rooms.get(runner.getRoom().toString()).getAdventurers().put(runner.getName(), runner);
-        rooms.get(sneaker.getRoom().toString()).getAdventurers().put(sneaker.getName(), sneaker);
-        rooms.get(thief.getRoom().toString()).getAdventurers().put(thief.getName(), thief);
-    }
+//    public void moveCreatures() {
+//        for (int i = 0; i < 4; i++) {
+//            // Move orbiters
+//            String key = Constants.ORBITER_NAME + i;
+//            if (!(creatures.get(key) instanceof Orbiter)) {
+//                throw new RuntimeException("Orbiter initialization failure.");
+//            }
+//            Orbiter orbiter = (Orbiter) creatures.get(key);
+//            rooms.get(orbiter.getRoom().toString()).getCreatures().remove(orbiter.getName() + i);
+//            creatures.get(key).move();
+//            rooms.get(creatures.get(key).getRoom().toString()).getCreatures().put(key, creatures.get(key));
+//
+//            // Move seekers
+//        }
+//    }
 
     /***
      * Concatenating adventurers' names
