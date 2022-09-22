@@ -4,6 +4,7 @@ import com.rz.project2.Constants;
 import com.rz.project2.adventurer.*;
 import com.rz.project2.creature.Creature;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GameMap {
@@ -19,7 +20,7 @@ public class GameMap {
     private int turnCount;
 
     public GameMap() {
-        rooms.put(Constants.ENTRANCE_ROOM, new Room(0, 1, 1));   //
+        rooms.put(Constants.ENTRANCE_ROOM, new Room(0, 1, 1));
         for (int z = 1; z < 5; z++) {
             for (int y = 0; y < 3; y++) {
                 for (int x = 0; x < 3; x++) {
@@ -27,6 +28,7 @@ public class GameMap {
                 }
             }
         }
+        initAdjacentRooms();
     }
 
     public int getBlinkerCount() {
@@ -101,6 +103,78 @@ public class GameMap {
         }
 
         output.append("\t\t\t");
+    }
+
+    private void initAdjacentRooms() {
+        int i;
+
+        // Set up or down adjacent rooms for center rooms
+        rooms.get("1-1-1").getAdjacentRooms().add(rooms.get("2-1-1"));
+        rooms.get("2-1-1").getAdjacentRooms().add(rooms.get("1-1-1"));
+        rooms.get("2-1-1").getAdjacentRooms().add(rooms.get("3-1-1"));
+        rooms.get("3-1-1").getAdjacentRooms().add(rooms.get("2-1-1"));
+        rooms.get("3-1-1").getAdjacentRooms().add(rooms.get("4-1-1"));
+        rooms.get("4-1-1").getAdjacentRooms().add(rooms.get("3-1-1"));
+
+        // Set adjacent rooms vertically
+        for (int z = 1; z < 5; z++) {
+            for (int y = 0; y < 3; y++) {
+                if (y == 0) {
+                    for (int x = 0; x < 3; x++) {
+                        String roomNumber = z + "-" + y + "-" + x;
+                        ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
+                        i = y + 1;
+                        adjacentRooms.add(rooms.get(z + "-" + i + "-" + x));
+                    }
+                } else if (y == 1) {
+                    for (int x = 0; x < 3; x++) {
+                        String roomNumber = z + "-" + y + "-" + x;
+                        ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
+                        i = y + 1;
+                        adjacentRooms.add(rooms.get(z + "-" + i + "-" + x));
+                        i = y - 1;
+                        adjacentRooms.add(rooms.get(z + "-" + i + "-" + x));
+                    }
+                } else {
+                    for (int x = 0; x < 3; x++) {
+                        String roomNumber = z + "-" + y + "-" + x;
+                        ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
+                        i = y - 1;
+                        adjacentRooms.add(rooms.get(z + "-" + i + "-" + x));
+                    }
+                }
+            }
+        }
+
+        // Set adjacent rooms horizontally
+        for (int z = 1; z < 5; z++) {
+            for (int x = 0; x < 3; x++) {
+                if (x == 0) {
+                    for (int y = 0; y < 3; y++) {
+                        String roomNumber = z + "-" + y + "-" + x;
+                        ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
+                        i = x + 1;
+                        adjacentRooms.add(rooms.get(z + "-" + y + "-" + i));
+                    }
+                } else if (x == 1) {
+                    for (int y = 0; y < 3; y++) {
+                        String roomNumber = z + "-" + y + "-" + x;
+                        ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
+                        i = x + 1;
+                        adjacentRooms.add(rooms.get(z + "-" + y + "-" + i));
+                        i = x - 1;
+                        adjacentRooms.add(rooms.get(z + "-" + y + "-" + i));
+                    }
+                } else {
+                    for (int y = 0; y < 3; y++) {
+                        String roomNumber = z + "-" + y + "-" + x;
+                        ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
+                        i = x - 1;
+                        adjacentRooms.add(rooms.get(z + "-" + y + "-" + i));
+                    }
+                }
+            }
+        }
     }
 
     @Override
