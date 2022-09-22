@@ -144,10 +144,9 @@ public class GameEngine {
             // Move orbiters
             String orbiterKey = Constants.ORBITER_NAME + i;
             Creature creature = gameMap.creatures.get(orbiterKey);
-            if (!(creature instanceof Orbiter)) {
+            if (!(creature instanceof Orbiter orbiter)) {
                 throw new RuntimeException("Orbiter initialization failure.");
             }
-            Orbiter orbiter = (Orbiter) creature;
             Room oldRoom = orbiter.getRoom();
             oldRoom.getCreatures().remove(orbiterKey);
             orbiter.move();
@@ -158,10 +157,9 @@ public class GameEngine {
             // Move blinkers
             String blinkerKey = Constants.BLINKER_NAME + i;
             creature = gameMap.creatures.get(blinkerKey);
-            if (!(creature instanceof Blinker)) {
-                throw new RuntimeException("blinker initialization failure.");
+            if (!(creature instanceof Blinker blinker)) {
+                throw new RuntimeException("Blinker initialization failure.");
             }
-            Blinker blinker = (Blinker) creature;
             oldRoom = blinker.getRoom();
             oldRoom.getCreatures().remove(blinkerKey);
             blinker.move();
@@ -170,6 +168,17 @@ public class GameEngine {
             newRoom.getCreatures().put(blinkerKey, blinker);
 
             // Move seekers
+            String seekerKey = Constants.SEEKER_NAME + i;
+            creature = gameMap.creatures.get(seekerKey);
+            if (!(creature instanceof Seeker seeker)) {
+                throw new RuntimeException("Seeker initialization failure.");
+            }
+            oldRoom = seeker.getRoom();
+            oldRoom.getCreatures().remove(seekerKey);
+            seeker.move();
+            newRoom = gameMap.rooms.get(seeker.currentRoomNumber());
+            seeker.setRoom(newRoom);
+            newRoom.getCreatures().put(seekerKey, seeker);
         }
     }
 }
