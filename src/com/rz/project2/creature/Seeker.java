@@ -1,7 +1,6 @@
 package com.rz.project2.creature;
 
 import com.rz.project2.Constants;
-import com.rz.project2.map.Room;
 
 import java.util.Random;
 
@@ -13,7 +12,9 @@ public class Seeker extends Creature{
         int z = random.nextInt(4) + 1;
         int y = random.nextInt(3);
         int x = random.nextInt(3);
-        this.setRoom(new Room(z, y, x));
+        getCoordinate()[0] = z;
+        getCoordinate()[1] = y;
+        getCoordinate()[2] = x;
     }
 
     @Override

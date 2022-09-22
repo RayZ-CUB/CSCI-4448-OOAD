@@ -7,6 +7,8 @@ import java.util.Random;
 public abstract class Creature {
     private String name;
     private Room room;
+    // z-y-x
+    private final int[] coordinate = new int[3];
 
 
     public String getName() {
@@ -25,10 +27,18 @@ public abstract class Creature {
         this.room = room;
     }
 
+    public int[] getCoordinate() {
+        return coordinate;
+    }
+
     public abstract void move();
 
     public int rollDices() {
         Random random = new Random();
         return random.nextInt(6) + 1 + random.nextInt(6) + 1;
+    }
+
+    public String currentRoomNumber() {
+        return coordinate[0] + "-" + coordinate[1] + "-" + coordinate[2];
     }
 }

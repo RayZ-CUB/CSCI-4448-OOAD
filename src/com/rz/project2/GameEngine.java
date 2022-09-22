@@ -13,9 +13,9 @@ import java.util.HashMap;
 
 public class GameEngine {
     public static void main(String[] args) {
-        HashMap<String, Adventurer> adventurers = initializeAdventurers();
-        HashMap<String, Creature> creatures = initializeCreature();
-        GameMap gameMap = initializeGameMap(adventurers, creatures);
+        HashMap<String, Adventurer> adventurers = initAdventurers();
+        HashMap<String, Creature> creatures = initCreature();
+        GameMap gameMap = initGameMap(adventurers, creatures);
         System.out.println(gameMap);
         finishCurrentTurn(gameMap);
         System.out.println(gameMap);
@@ -33,7 +33,7 @@ public class GameEngine {
         System.out.println(gameMap);
     }
 
-    private static HashMap<String, Adventurer> initializeAdventurers() {
+    private static HashMap<String, Adventurer> initAdventurers() {
         HashMap<String, Adventurer> adventurers = new HashMap<>();
         Brawler brawler = new Brawler();
         Thief thief = new Thief();
@@ -48,7 +48,7 @@ public class GameEngine {
         return adventurers;
     }
 
-    private static HashMap<String, Creature> initializeCreature() {
+    private static HashMap<String, Creature> initCreature() {
         HashMap<String, Creature> creatures = new HashMap<>();
         for (int i = 0; i < 4; i++) {
             Blinker blinker = new Blinker();
@@ -62,7 +62,7 @@ public class GameEngine {
         return creatures;
     }
 
-    private static GameMap initializeGameMap(HashMap<String, Adventurer> adventurers, HashMap<String, Creature> creatures) {
+    private static GameMap initGameMap(HashMap<String, Adventurer> adventurers, HashMap<String, Creature> creatures) {
         GameMap gameMap = new GameMap();
 
         // Put adventurers into entrance room
@@ -94,8 +94,9 @@ public class GameEngine {
         // Put creatures into corresponding rooms
         for (String key : creatures.keySet()) {
             Creature creature = creatures.get(key);
-            String roomNumber = creature.getRoom().toString();
-            gameMap.rooms.get(roomNumber).getCreatures().put(key, creature);
+            Room startingRoom = gameMap.rooms.get(creature.currentRoomNumber());
+            startingRoom.getCreatures().put(key, creature);
+            creature.setRoom(startingRoom);
         }
 
         initializeAdjacentRooms(gameMap);
@@ -111,10 +112,10 @@ public class GameEngine {
 
     private static void moveAdventurers(GameMap gameMap) {
         // Delete adventurer information of original rooms
-        gameMap.rooms.get(gameMap.brawler.getRoom().toString()).getAdventurers().remove(Constants.BRAWLER_NAME);
-        gameMap.rooms.get(gameMap.runner.getRoom().toString()).getAdventurers().remove(Constants.RUNNER_NAME);
-        gameMap.rooms.get(gameMap.sneaker.getRoom().toString()).getAdventurers().remove(Constants.SNEAKER_NAME);
-        gameMap.rooms.get(gameMap.thief.getRoom().toString()).getAdventurers().remove(Constants.THIEF_NAME);
+        gameMap.brawler.getRoom().getAdventurers().remove(Constants.BRAWLER_NAME);
+        gameMap.runner.getRoom().getAdventurers().remove(Constants.RUNNER_NAME);
+        gameMap.sneaker.getRoom().getAdventurers().remove(Constants.SNEAKER_NAME);
+        gameMap.thief.getRoom().getAdventurers().remove(Constants.THIEF_NAME);
 
         // Move all adventurers in a turn
         gameMap.brawler.move();
@@ -123,34 +124,53 @@ public class GameEngine {
         gameMap.thief.move();
 
         // Add adventurer information of new rooms
-        String brawlerKey = gameMap.brawler.getZ() + "-" + gameMap.brawler.getY() + "-" + gameMap.brawler.getX();
-        gameMap.rooms.get(brawlerKey).getAdventurers().put(Constants.BRAWLER_NAME, gameMap.brawler);
-        gameMap.brawler.setRoom(gameMap.rooms.get(brawlerKey));
+        Room newRoom = gameMap.rooms.get(gameMap.brawler.currentRoomNumber());
+        newRoom.getAdventurers().put(Constants.BRAWLER_NAME, gameMap.brawler);
+        gameMap.brawler.setRoom(newRoom);
 
-        String runnerKey = gameMap.runner.getZ() + "-" + gameMap.runner.getY() + "-" + gameMap.runner.getX();
-        gameMap.rooms.get(runnerKey).getAdventurers().put(Constants.RUNNER_NAME, gameMap.runner);
-        gameMap.runner.setRoom(gameMap.rooms.get(runnerKey));
+        newRoom = gameMap.rooms.get(gameMap.runner.currentRoomNumber());
+        newRoom .getAdventurers().put(Constants.RUNNER_NAME, gameMap.runner);
+        gameMap.runner.setRoom(newRoom);
 
-        String sneakerKey = gameMap.sneaker.getZ() + "-" + gameMap.sneaker.getY() + "-" + gameMap.sneaker.getX();
-        gameMap.rooms.get(sneakerKey).getAdventurers().put(Constants.SNEAKER_NAME, gameMap.sneaker);
-        gameMap.sneaker.setRoom(gameMap.rooms.get(sneakerKey));
+        newRoom = gameMap.rooms.get(gameMap.sneaker.currentRoomNumber());
+        newRoom.getAdventurers().put(Constants.SNEAKER_NAME, gameMap.sneaker);
+        gameMap.sneaker.setRoom(newRoom);
 
-        String thiefKey = gameMap.thief.getZ() + "-" + gameMap.thief.getY() + "-" + gameMap.thief.getX();
-        gameMap.rooms.get(thiefKey).getAdventurers().put(Constants.THIEF_NAME, gameMap.thief);
-        gameMap.thief.setRoom(gameMap.rooms.get(thiefKey));
+        newRoom = gameMap.rooms.get(gameMap.thief.currentRoomNumber());
+        newRoom.getAdventurers().put(Constants.THIEF_NAME, gameMap.thief);
+        gameMap.thief.setRoom(newRoom);
     }
 
     private static void moveCreatures(GameMap gameMap) {
+        // TODO: Helper
         for (int i = 0; i < 4; i++) {
             // Move orbiters
-            String key = Constants.ORBITER_NAME + i;
-            if (!(gameMap.creatures.get(key) instanceof Orbiter)) {
+            String orbiterKey = Constants.ORBITER_NAME + i;
+            Creature creature = gameMap.creatures.get(orbiterKey);
+            if (!(creature instanceof Orbiter)) {
                 throw new RuntimeException("Orbiter initialization failure.");
             }
-            Orbiter orbiter = (Orbiter) gameMap.creatures.get(key);
-            gameMap.rooms.get(orbiter.getRoom().toString()).getCreatures().remove(orbiter.getName() + i);
-            gameMap.creatures.get(key).move();
-            gameMap.rooms.get(gameMap.creatures.get(key).getRoom().toString()).getCreatures().put(key, gameMap.creatures.get(key));
+            Orbiter orbiter = (Orbiter) creature;
+            Room oldRoom = orbiter.getRoom();
+            oldRoom.getCreatures().remove(orbiterKey);
+            orbiter.move();
+            Room newRoom = gameMap.rooms.get(orbiter.currentRoomNumber());
+            orbiter.setRoom(newRoom);
+            newRoom.getCreatures().put(orbiterKey, orbiter);
+
+            // Move blinkers
+            String blinkerKey = Constants.BLINKER_NAME + i;
+            creature = gameMap.creatures.get(blinkerKey);
+            if (!(creature instanceof Blinker)) {
+                throw new RuntimeException("blinker initialization failure.");
+            }
+            Blinker blinker = (Blinker) creature;
+            oldRoom = blinker.getRoom();
+            oldRoom.getCreatures().remove(blinkerKey);
+            blinker.move();
+            newRoom = gameMap.rooms.get(blinker.currentRoomNumber());
+            blinker.setRoom(newRoom);
+            newRoom.getCreatures().put(blinkerKey, blinker);
 
             // Move seekers
         }
@@ -158,7 +178,6 @@ public class GameEngine {
 
     private static void initializeAdjacentRooms(GameMap gameMap) {
         HashMap<String, Room> rooms = gameMap.rooms;
-        Room room = gameMap.rooms.get("1-1-1");
         int i;
 
         // Set up or down adjacent rooms for center rooms

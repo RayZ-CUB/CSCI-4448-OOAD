@@ -5,8 +5,9 @@ import com.rz.project2.map.Room;
 
 import java.util.Random;
 
-public class Orbiter extends Creature{
-    private String direction;
+public class Orbiter extends Creature {
+    private final String direction;
+
     public Orbiter() {
         // Set up name
         this.setName(Constants.ORBITER_NAME);
@@ -20,7 +21,9 @@ public class Orbiter extends Creature{
             y = random.nextInt(3);
             x = random.nextInt(3);
         }
-        this.setRoom(new Room(z, y, x));
+        getCoordinate()[0] = z;
+        getCoordinate()[1] = y;
+        getCoordinate()[2] = x;
 
         // Set up movement direction
         if (random.nextBoolean()) {
@@ -35,24 +38,49 @@ public class Orbiter extends Creature{
         Room room = getRoom();
         if (direction.equals(Constants.CLOCKWISE)) {
             if (room.getY() == 0 && room.getX() < 2) {
-                room.setX(room.getX() + 1);
+                getCoordinate()[2] = room.getX() + 1;
             } else if (room.getY() < 2 && room.getX() == 2) {
-                room.setY(room.getY() + 1);
+                getCoordinate()[1] = room.getY() + 1;
             } else if (room.getY() == 2 && room.getX() > 0) {
-                room.setX(room.getX() - 1);
+                getCoordinate()[2] = room.getX() - 1;
             } else {
-                room.setY(room.getY() - 1);
+                getCoordinate()[1] = room.getY() - 1;
             }
         } else {
             if (room.getY() == 0 && room.getX() > 0) {
-                room.setX(room.getX() -1);
+                getCoordinate()[2] = room.getX() - 1;
             } else if (room.getY() < 2 && room.getX() == 0) {
-                room.setY(room.getY() + 1);
+                getCoordinate()[1] = room.getY() + 1;
             } else if (room.getY() == 2 && room.getX() < 2) {
-                room.setX(room.getX() + 1);
+                getCoordinate()[2] = room.getX() + 1;
             } else {
-                room.setY(room.getY() - 1);
+                getCoordinate()[1] = room.getY() - 1;
             }
         }
     }
+//    @Override
+//    public void move() {
+//        Room room = getRoom();
+//        if (direction.equals(Constants.CLOCKWISE)) {
+//            if (room.getY() == 0 && room.getX() < 2) {
+//                room.setX(room.getX() + 1);
+//            } else if (room.getY() < 2 && room.getX() == 2) {
+//                room.setY(room.getY() + 1);
+//            } else if (room.getY() == 2 && room.getX() > 0) {
+//                room.setX(room.getX() - 1);
+//            } else {
+//                room.setY(room.getY() - 1);
+//            }
+//        } else {
+//            if (room.getY() == 0 && room.getX() > 0) {
+//                room.setX(room.getX() -1);
+//            } else if (room.getY() < 2 && room.getX() == 0) {
+//                room.setY(room.getY() + 1);
+//            } else if (room.getY() == 2 && room.getX() < 2) {
+//                room.setX(room.getX() + 1);
+//            } else {
+//                room.setY(room.getY() - 1);
+//            }
+//        }
+//    }
 }

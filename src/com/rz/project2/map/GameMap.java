@@ -73,55 +73,14 @@ public class GameMap {
         this.turnCount = turnCount;
     }
 
-//    public void finishCurrentTurn() {
-//        moveAdventurers();
-//        moveCreatures();
-//        turnCount++;
-//    }
-
-//    public void moveAdventurers() {
-//        // Delete adventurer information of original rooms
-//        rooms.get(brawler.getRoom().toString()).getAdventurers().remove(brawler.getName());
-//        rooms.get(runner.getRoom().toString()).getAdventurers().remove(runner.getName());
-//        rooms.get(sneaker.getRoom().toString()).getAdventurers().remove(sneaker.getName());
-//        rooms.get(thief.getRoom().toString()).getAdventurers().remove(thief.getName());
-//
-//        // Move all adventurers in a turn
-//        brawler.move();
-//        runner.move();
-//        sneaker.move();
-//        thief.move();
-//
-//        // Add adventurer information of new rooms
-//        rooms.get(brawler.getRoom().toString()).getAdventurers().put(brawler.getName(), brawler);
-//        rooms.get(runner.getRoom().toString()).getAdventurers().put(runner.getName(), runner);
-//        rooms.get(sneaker.getRoom().toString()).getAdventurers().put(sneaker.getName(), sneaker);
-//        rooms.get(thief.getRoom().toString()).getAdventurers().put(thief.getName(), thief);
-//    }
-
-//    public void moveCreatures() {
-//        for (int i = 0; i < 4; i++) {
-//            // Move orbiters
-//            String key = Constants.ORBITER_NAME + i;
-//            if (!(creatures.get(key) instanceof Orbiter)) {
-//                throw new RuntimeException("Orbiter initialization failure.");
-//            }
-//            Orbiter orbiter = (Orbiter) creatures.get(key);
-//            rooms.get(orbiter.getRoom().toString()).getCreatures().remove(orbiter.getName() + i);
-//            creatures.get(key).move();
-//            rooms.get(creatures.get(key).getRoom().toString()).getCreatures().put(key, creatures.get(key));
-//
-//            // Move seekers
-//        }
-//    }
-
     /***
      * Concatenating adventurers' names
      */
     private void concatNames(HashMap<String, Room> rooms, String roomNumber, StringBuilder output) {
         Room room = rooms.get(roomNumber);
         output.append(room).append(": ");
-        if (!room.getAdventurers().isEmpty()) {   // If there is an adventurer, then print out
+        // If there is an adventurer, then print out
+        if (!room.getAdventurers().isEmpty()) {
             HashMap<String, Adventurer> adventurers = room.getAdventurers();
             for (String key : adventurers.keySet()) {
                 output.append(adventurers.get(key).getName());
@@ -131,7 +90,8 @@ public class GameMap {
         }
         output.append(" : ");
 
-        if (!room.getCreatures().isEmpty()) {   // If there is a creature, then print out
+        // If there is a creature, then print out
+        if (!room.getCreatures().isEmpty()) {
             HashMap<String, Creature> creatures = room.getCreatures();
             for (String key : creatures.keySet()) {
                 output.append(creatures.get(key).getName());
@@ -148,7 +108,7 @@ public class GameMap {
         StringBuilder output = new StringBuilder();
 
         // Print out turn count
-        output.append("RotLA Turn " + turnCount + ":\n");
+        output.append("RotLA Turn ").append(turnCount).append(":\n");
 
         // Print out entrance room
         concatNames(rooms, "0-1-1", output);
@@ -168,15 +128,15 @@ public class GameMap {
         output.append("\n");
 
         // Print out adventurers' information
-        output.append("Brawler - " + brawler.getTreasureCount() + " Treasure(s) - " + brawler.getDamage() + " Damage\n");
-        output.append("Sneaker - " + sneaker.getTreasureCount() + " Treasure(s) - " + sneaker.getDamage() + " Damage\n");
-        output.append("Runner - " + runner.getTreasureCount() + " Treasure(s) - " + runner.getDamage() + " Damage\n");
-        output.append("Thief - " + thief.getTreasureCount() + " Treasure(s) - " + thief.getDamage() + " Damage\n\n");
+        output.append("Brawler - ").append(brawler.getTreasureCount()).append(" Treasure(s) - ").append(brawler.getDamage()).append(" Damage\n");
+        output.append("Sneaker - ").append(sneaker.getTreasureCount()).append(" Treasure(s) - ").append(sneaker.getDamage()).append(" Damage\n");
+        output.append("Runner - ").append(runner.getTreasureCount()).append(" Treasure(s) - ").append(runner.getDamage()).append(" Damage\n");
+        output.append("Thief - ").append(thief.getTreasureCount()).append(" Treasure(s) - ").append(thief.getDamage()).append(" Damage\n\n");
 
         // Print out creatures' count
-        output.append("Orbiters - " + orbiterCount + " Remaining\n");
-        output.append("Seekers - " + seekerCount + " Remaining\n");
-        output.append("Blinkers - " + blinkerCount + " Remaining\n");
+        output.append("Orbiters - ").append(orbiterCount).append(" Remaining\n");
+        output.append("Seekers - ").append(seekerCount).append(" Remaining\n");
+        output.append("Blinkers - ").append(blinkerCount).append(" Remaining\n");
 
         return output.toString();
     }
