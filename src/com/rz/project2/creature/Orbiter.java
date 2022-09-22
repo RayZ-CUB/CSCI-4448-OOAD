@@ -35,52 +35,32 @@ public class Orbiter extends Creature {
 
     @Override
     public void move() {
-        Room room = getRoom();
+        Room currentRoom = getRoom();
+        // At least one adventurer in current room
+        if (!currentRoom.getAdventurers().isEmpty()) {
+            return;
+        }
+        
         if (direction.equals(Constants.CLOCKWISE)) {
-            if (room.getY() == 0 && room.getX() < 2) {
-                getCoordinate()[2] = room.getX() + 1;
-            } else if (room.getY() < 2 && room.getX() == 2) {
-                getCoordinate()[1] = room.getY() + 1;
-            } else if (room.getY() == 2 && room.getX() > 0) {
-                getCoordinate()[2] = room.getX() - 1;
+            if (getCoordinate()[1] == 0 && getCoordinate()[2] < 2) {
+                getCoordinate()[2] = getCoordinate()[2] + 1;
+            } else if (getCoordinate()[1] < 2 && getCoordinate()[2] == 2) {
+                getCoordinate()[1] = getCoordinate()[1] + 1;
+            } else if (getCoordinate()[1] == 2 && getCoordinate()[2] > 0) {
+                getCoordinate()[2] = getCoordinate()[2] - 1;
             } else {
-                getCoordinate()[1] = room.getY() - 1;
+                getCoordinate()[1] = getCoordinate()[1] - 1;
             }
         } else {
-            if (room.getY() == 0 && room.getX() > 0) {
-                getCoordinate()[2] = room.getX() - 1;
-            } else if (room.getY() < 2 && room.getX() == 0) {
-                getCoordinate()[1] = room.getY() + 1;
-            } else if (room.getY() == 2 && room.getX() < 2) {
-                getCoordinate()[2] = room.getX() + 1;
+            if (getCoordinate()[1] == 0 && getCoordinate()[2] > 0) {
+                getCoordinate()[2] = getCoordinate()[2] - 1;
+            } else if (getCoordinate()[1] < 2 && getCoordinate()[2] == 0) {
+                getCoordinate()[1] = getCoordinate()[1] + 1;
+            } else if (getCoordinate()[1] == 2 && getCoordinate()[2] < 2) {
+                getCoordinate()[2] = getCoordinate()[2] + 1;
             } else {
-                getCoordinate()[1] = room.getY() - 1;
+                getCoordinate()[1] = getCoordinate()[1] - 1;
             }
         }
     }
-//    @Override
-//    public void move() {
-//        Room room = getRoom();
-//        if (direction.equals(Constants.CLOCKWISE)) {
-//            if (room.getY() == 0 && room.getX() < 2) {
-//                room.setX(room.getX() + 1);
-//            } else if (room.getY() < 2 && room.getX() == 2) {
-//                room.setY(room.getY() + 1);
-//            } else if (room.getY() == 2 && room.getX() > 0) {
-//                room.setX(room.getX() - 1);
-//            } else {
-//                room.setY(room.getY() - 1);
-//            }
-//        } else {
-//            if (room.getY() == 0 && room.getX() > 0) {
-//                room.setX(room.getX() -1);
-//            } else if (room.getY() < 2 && room.getX() == 0) {
-//                room.setY(room.getY() + 1);
-//            } else if (room.getY() == 2 && room.getX() < 2) {
-//                room.setX(room.getX() + 1);
-//            } else {
-//                room.setY(room.getY() - 1);
-//            }
-//        }
-//    }
 }

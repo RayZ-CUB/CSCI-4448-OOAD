@@ -1,5 +1,7 @@
 package com.rz.project2.creature;
 
+import com.rz.project2.map.Room;
+
 import java.util.Random;
 
 public class Blinker extends Creature{
@@ -18,6 +20,12 @@ public class Blinker extends Creature{
 
     @Override
     public void move() {
+        Room currentRoom = getRoom();
+        // At least one adventurer in current room
+        if (!currentRoom.getAdventurers().isEmpty()) {
+            return;
+        }
+
         Random random = new Random();
         getCoordinate()[0] = random.nextInt(4)+1;
         getCoordinate()[1] = random.nextInt(3);

@@ -21,14 +21,13 @@ public class Seeker extends Creature{
 
     @Override
     public void move() {
-        ArrayList<Room> adjacentRooms = getRoom().getAdjacentRooms();
         Room currentRoom = getRoom();
-
         // At least one adventurer in current room
         if (!currentRoom.getAdventurers().isEmpty()) {
             return;
         }
 
+        ArrayList<Room> adjacentRooms = getRoom().getAdjacentRooms();
         // Search for adventures in adjacent rooms
         for (Room adjacentRoom : adjacentRooms) {
             if (!adjacentRoom.getAdventurers().isEmpty()) {
