@@ -33,7 +33,11 @@ public abstract class Creature {
 
     public abstract void move();
 
-    public int rollDices() {
+    public int attack() {
+        return rollDices();
+    }
+
+    private int rollDices() {
         Random random = new Random();
         return random.nextInt(6) + 1 + random.nextInt(6) + 1;
     }

@@ -19,7 +19,6 @@ public class Adventurer {
         this.x = 1;
     }
 
-
     public int getDamage() {
         return damage;
     }
@@ -280,6 +279,12 @@ public class Adventurer {
 
     public int attack() {
         return rollDices();
+    }
+
+    public void searchTreasure() {
+        if (rollDices() >= 10) {
+            treasureCount++;
+        }
     }
 
     public int rollDices() {

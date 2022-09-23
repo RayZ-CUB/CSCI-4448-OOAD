@@ -18,6 +18,7 @@ public class GameMap {
     private int orbiterCount;
     private int seekerCount;
     private int turnCount;
+    private int totalTreasureCount;
 
     public GameMap() {
         rooms.put(Constants.ENTRANCE_ROOM, new Room(0, 1, 1));
@@ -73,6 +74,14 @@ public class GameMap {
             throw new RuntimeException("Invalid turn count");
         }
         this.turnCount = turnCount;
+    }
+
+    public int getTotalTreasureCount() {
+        return totalTreasureCount;
+    }
+
+    public void setTotalTreasureCount(int totalTreasureCount) {
+        this.totalTreasureCount = totalTreasureCount;
     }
 
     /***

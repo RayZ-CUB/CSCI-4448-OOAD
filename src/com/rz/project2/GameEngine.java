@@ -16,19 +16,19 @@ public class GameEngine {
         HashMap<String, Creature> creatures = initCreature();
         GameMap gameMap = initGameMap(adventurers, creatures);
         System.out.println(gameMap);
-        finishCurrentTurn(gameMap);
+        play(gameMap);
         System.out.println(gameMap);
-        finishCurrentTurn(gameMap);
+        play(gameMap);
         System.out.println(gameMap);
-        finishCurrentTurn(gameMap);
+        play(gameMap);
         System.out.println(gameMap);
-        finishCurrentTurn(gameMap);
+        play(gameMap);
         System.out.println(gameMap);
-        finishCurrentTurn(gameMap);
+        play(gameMap);
         System.out.println(gameMap);
-        finishCurrentTurn(gameMap);
+        play(gameMap);
         System.out.println(gameMap);
-        finishCurrentTurn(gameMap);
+        play(gameMap);
         System.out.println(gameMap);
     }
 
@@ -101,39 +101,55 @@ public class GameEngine {
         return gameMap;
     }
 
-    private static void finishCurrentTurn(GameMap gameMap) {
+    private static void play(GameMap gameMap) {
         moveAdventurers(gameMap);
+        fightAndSearchA(gameMap);
+        moveRunner(gameMap);
+        fightAndSearch(gameMap, gameMap.runner);
         moveCreatures(gameMap);
+        fightAndSearchC(gameMap);
         gameMap.setTurnCount(gameMap.getTurnCount() + 1);
+        checkWinner(gameMap);
     }
 
     private static void moveAdventurers(GameMap gameMap) {
-        // Delete adventurer information of original rooms
+        moveBrawler(gameMap);
+        moveRunner(gameMap);
+        moveSneaker(gameMap);
+        moveThief(gameMap);
+    }
+
+    private static void moveBrawler(GameMap gameMap) {
+        // Delete brawler in original room
         gameMap.brawler.getRoom().getAdventurers().remove(Constants.BRAWLER_NAME);
-        gameMap.runner.getRoom().getAdventurers().remove(Constants.RUNNER_NAME);
-        gameMap.sneaker.getRoom().getAdventurers().remove(Constants.SNEAKER_NAME);
-        gameMap.thief.getRoom().getAdventurers().remove(Constants.THIEF_NAME);
-
-        // Move all adventurers in a turn
+        // Move brawler in a turn
         gameMap.brawler.move();
-        gameMap.runner.move();
-        gameMap.sneaker.move();
-        gameMap.thief.move();
-
-        // Add adventurer information of new rooms
+        // Add brawler into new room
         Room newRoom = gameMap.rooms.get(gameMap.brawler.currentRoomNumber());
         newRoom.getAdventurers().put(Constants.BRAWLER_NAME, gameMap.brawler);
         gameMap.brawler.setRoom(newRoom);
+    }
 
-        newRoom = gameMap.rooms.get(gameMap.runner.currentRoomNumber());
-        newRoom .getAdventurers().put(Constants.RUNNER_NAME, gameMap.runner);
+    private static void moveRunner(GameMap gameMap) {
+        gameMap.runner.getRoom().getAdventurers().remove(Constants.RUNNER_NAME);
+        gameMap.runner.move();
+        Room newRoom = gameMap.rooms.get(gameMap.runner.currentRoomNumber());
+        newRoom.getAdventurers().put(Constants.RUNNER_NAME, gameMap.runner);
         gameMap.runner.setRoom(newRoom);
+    }
 
-        newRoom = gameMap.rooms.get(gameMap.sneaker.currentRoomNumber());
+    private static void moveSneaker(GameMap gameMap) {
+        gameMap.sneaker.getRoom().getAdventurers().remove(Constants.SNEAKER_NAME);
+        gameMap.sneaker.move();
+        Room newRoom = gameMap.rooms.get(gameMap.sneaker.currentRoomNumber());
         newRoom.getAdventurers().put(Constants.SNEAKER_NAME, gameMap.sneaker);
         gameMap.sneaker.setRoom(newRoom);
+    }
 
-        newRoom = gameMap.rooms.get(gameMap.thief.currentRoomNumber());
+    private static void moveThief(GameMap gameMap) {
+        gameMap.thief.getRoom().getAdventurers().remove(Constants.THIEF_NAME);
+        gameMap.thief.move();
+        Room newRoom = gameMap.rooms.get(gameMap.thief.currentRoomNumber());
         newRoom.getAdventurers().put(Constants.THIEF_NAME, gameMap.thief);
         gameMap.thief.setRoom(newRoom);
     }
@@ -180,5 +196,98 @@ public class GameEngine {
             seeker.setRoom(newRoom);
             newRoom.getCreatures().put(seekerKey, seeker);
         }
+    }
+
+    private static void fightAndSearchA(GameMap gameMap) {
+        fightAndSearch(gameMap, gameMap.brawler);
+        fightAndSearch(gameMap, gameMap.runner);
+        fightAndSearch(gameMap, gameMap.sneaker);
+        fightAndSearch(gameMap, gameMap.thief);
+    }
+
+    private static void fightAndSearchC(GameMap gameMap) {
+        for (String creatureKey : gameMap.creatures.keySet()) {
+            Creature creature = gameMap.creatures.get(creatureKey);
+            Room currentRoom = creature.getRoom();
+            HashMap<String, Adventurer> adventurersInRoom = currentRoom.getAdventurers();
+            if (adventurersInRoom.isEmpty()) {
+                return;
+            }
+
+            for (String adventurerKey : adventurersInRoom.keySet()) {
+                Adventurer adventurer = adventurersInRoom.get(adventurerKey);
+                int adventurerAttack = adventurer.attack();
+                int creatureAttack = creature.attack();
+
+                if (adventurerAttack > creatureAttack) {
+                    currentRoom.getCreatures().remove(creatureKey);
+                    gameMap.creatures.remove(creatureKey);
+                    updateCreatureCount(gameMap, creature);
+                } else if (adventurerAttack < creatureAttack) {
+                    adventurer.setDamage(adventurer.getDamage() + 1);
+                } else {
+                }
+
+                checkAdventurersDamage(adventurer, currentRoom, gameMap);
+            }
+        }
+    }
+
+    private static void fightAndSearch(GameMap gameMap, Adventurer adventurer) {
+        Room currentRoom = adventurer.getRoom();
+        HashMap<String, Creature> creaturesInRoom = currentRoom.getCreatures();
+        if (creaturesInRoom.isEmpty()) {
+            adventurer.searchTreasure();
+        } else {
+            for (String key : creaturesInRoom.keySet()) {
+                Creature creature = creaturesInRoom.get(key);
+                int adventurerAttack = adventurer.attack();
+                int creatureAttack = creature.attack();
+
+                if (adventurerAttack > creatureAttack) {
+                    creaturesInRoom.remove(key);
+                    gameMap.creatures.remove(key);
+                    updateCreatureCount(gameMap, creature);
+                } else if (adventurerAttack < creatureAttack) {
+                    adventurer.setDamage(adventurer.getDamage() + 1);
+                } else {
+                }
+
+                checkAdventurersDamage(adventurer, currentRoom, gameMap);
+            }
+        }
+    }
+
+    private static void checkAdventurersDamage(Adventurer adventurer, Room currentRoom, GameMap gameMap) {
+        if (adventurer.getDamage() == 3) {
+            currentRoom.getAdventurers().remove(adventurer.getName());
+            if (adventurer instanceof Brawler) {
+                gameMap.brawler = null;
+            } else if (adventurer instanceof Runner) {
+                gameMap.runner = null;
+            } else if (adventurer instanceof Sneaker) {
+                gameMap.sneaker = null;
+            } else {
+                gameMap.thief = null;
+            }
+        }
+    }
+
+    private static void updateCreatureCount(GameMap gameMap, Creature creature) {
+        if (creature instanceof Blinker) {
+            gameMap.setBlinkerCount(gameMap.getBlinkerCount() - 1);
+        } else if (creature instanceof Orbiter) {
+            gameMap.setOrbiterCount(gameMap.getOrbiterCount() - 1);
+        } else {
+            gameMap.setSeekerCount(gameMap.getSeekerCount() - 1);
+        }
+    }
+
+    private static void checkWinner(GameMap gameMap) {
+        if (gameMap.getTotalTreasureCount() >= 10 || gameMap.creatures.size() == 0) {
+            System.out.println("Adventurers win!");
+        } else if (gameMap.brawler == null && gameMap.runner == null && gameMap.sneaker == null && gameMap.thief == null){
+            System.out.println("Creatures win!");
+        } else {}
     }
 }
