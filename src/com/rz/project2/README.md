@@ -38,18 +38,18 @@ Room.java
 ```
 > adventurers
 ```
-> > * Adventurer.java
-> > * Brawler.java
-> > * Runner.java
-> > * Sneaker.java
-> > * Thief.java
+Adventurer.java
+Brawler.java
+Runner.java
+Sneaker.java
+Thief.java
 ```
 > creatures
 ```
-> > * Creature.java
-> > * Blinker.java
-> > * Orbiter.java
-> > * Seeker.java
+Creature.java
+Blinker.java
+Orbiter.java
+Seeker.java
 ```
 
 ## instructions
