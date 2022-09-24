@@ -55,6 +55,9 @@ Seeker.java
 ## instructions
 + Only click run
 
+## UML update
++ We have subdivided UML in more detail, and defined subclasses and superclasses, private and public, as well as various returns and outputs contained in each class in more detail. For the overall changes, we have written sub classes for each Adventurer and each Creature. We include the methods of map printing, victory conditions, and creations count, adventurers count, and treatment count, fight, and search in the same file GameEngine.java.
+
 ### Author：
 + Rui Zhang
 + Congke Zhao
