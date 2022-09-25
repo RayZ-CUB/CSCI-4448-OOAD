@@ -281,10 +281,12 @@ public class Adventurer {
         return rollDices();
     }
 
-    public void searchTreasure() {
+    public boolean searchTreasure() {
         if (rollDices() >= 10) {
             treasureCount++;
+            return true;
         }
+        return false;
     }
 
     public int rollDices() {

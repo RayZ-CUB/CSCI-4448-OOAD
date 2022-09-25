@@ -9,27 +9,27 @@ import com.rz.project2.map.GameMap;
 import com.rz.project2.map.Room;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class GameEngine {
     public static void main(String[] args) {
         HashMap<String, Adventurer> adventurers = initAdventurers();
         HashMap<String, Creature> creatures = initCreature();
         GameMap gameMap = initGameMap(adventurers, creatures);
-        System.out.println(gameMap);
-        play(gameMap);
-        System.out.println(gameMap);
-        play(gameMap);
-        System.out.println(gameMap);
-        play(gameMap);
-        System.out.println(gameMap);
-        play(gameMap);
-        System.out.println(gameMap);
-        play(gameMap);
-        System.out.println(gameMap);
-        play(gameMap);
-        System.out.println(gameMap);
-        play(gameMap);
-        System.out.println(gameMap);
+        boolean flag = true;
+        while (flag) {
+            play(gameMap);
+            System.out.println(gameMap);
+            if (checkIfAdventurersWin(gameMap).equals(Constants.ADVENTURER_WIN)) {
+                System.out.println("Adventurers win!");
+                flag = false;
+            } else if (checkIfAdventurersWin(gameMap).equals(Constants.CREATURE_WIN)) {
+                System.out.println("Creatures win!");
+                flag = false;
+            } else {
+            }
+        }
     }
 
     private static HashMap<String, Adventurer> initAdventurers() {
@@ -105,11 +105,12 @@ public class GameEngine {
         moveAdventurers(gameMap);
         fightAndSearchA(gameMap);
         moveRunner(gameMap);
-        fightAndSearch(gameMap, gameMap.runner);
+        if (gameMap.runner != null) {
+            fightAndSearch(gameMap, gameMap.runner);
+        }
         moveCreatures(gameMap);
         fightAndSearchC(gameMap);
         gameMap.setTurnCount(gameMap.getTurnCount() + 1);
-        checkWinner(gameMap);
     }
 
     private static void moveAdventurers(GameMap gameMap) {
@@ -120,6 +121,9 @@ public class GameEngine {
     }
 
     private static void moveBrawler(GameMap gameMap) {
+        if (gameMap.brawler == null) {
+            return;
+        }
         // Delete brawler in original room
         gameMap.brawler.getRoom().getAdventurers().remove(Constants.BRAWLER_NAME);
         // Move brawler in a turn
@@ -131,6 +135,9 @@ public class GameEngine {
     }
 
     private static void moveRunner(GameMap gameMap) {
+        if (gameMap.runner == null) {
+            return;
+        }
         gameMap.runner.getRoom().getAdventurers().remove(Constants.RUNNER_NAME);
         gameMap.runner.move();
         Room newRoom = gameMap.rooms.get(gameMap.runner.currentRoomNumber());
@@ -139,6 +146,9 @@ public class GameEngine {
     }
 
     private static void moveSneaker(GameMap gameMap) {
+        if (gameMap.sneaker == null) {
+            return;
+        }
         gameMap.sneaker.getRoom().getAdventurers().remove(Constants.SNEAKER_NAME);
         gameMap.sneaker.move();
         Room newRoom = gameMap.rooms.get(gameMap.sneaker.currentRoomNumber());
@@ -147,6 +157,9 @@ public class GameEngine {
     }
 
     private static void moveThief(GameMap gameMap) {
+        if (gameMap.thief == null) {
+            return;
+        }
         gameMap.thief.getRoom().getAdventurers().remove(Constants.THIEF_NAME);
         gameMap.thief.move();
         Room newRoom = gameMap.rooms.get(gameMap.thief.currentRoomNumber());
@@ -155,74 +168,88 @@ public class GameEngine {
     }
 
     private static void moveCreatures(GameMap gameMap) {
-        // TODO: Helper
-        for (int i = 0; i < 4; i++) {
-            // Move orbiters
-            String orbiterKey = Constants.ORBITER_NAME + i;
-            Creature creature = gameMap.creatures.get(orbiterKey);
-            if (!(creature instanceof Orbiter orbiter)) {
-                throw new RuntimeException("Orbiter initialization failure.");
+        for (String key : gameMap.creatures.keySet()) {
+            if (key.contains("O")) {
+                Creature creature = gameMap.creatures.get(key);
+                if (!(creature instanceof Orbiter orbiter)) {
+                    throw new RuntimeException("Orbiter initialization failure.");
+                }
+                Room oldRoom = orbiter.getRoom();
+                oldRoom.getCreatures().remove(key);
+                orbiter.move();
+                Room newRoom = gameMap.rooms.get(orbiter.currentRoomNumber());
+                orbiter.setRoom(newRoom);
+                newRoom.getCreatures().put(key, orbiter);
+            } else if (key.contains("B")) {
+                // Move blinkers
+                Creature creature = gameMap.creatures.get(key);
+                if (!(creature instanceof Blinker blinker)) {
+                    throw new RuntimeException("Blinker initialization failure.");
+                }
+                Room oldRoom = blinker.getRoom();
+                oldRoom.getCreatures().remove(key);
+                blinker.move();
+                Room newRoom = gameMap.rooms.get(blinker.currentRoomNumber());
+                blinker.setRoom(newRoom);
+                newRoom.getCreatures().put(key, blinker);
+            } else {
+                // Move seekers
+                Creature creature = gameMap.creatures.get(key);
+                if (!(creature instanceof Seeker seeker)) {
+                    throw new RuntimeException("Seeker initialization failure.");
+                }
+                Room oldRoom = seeker.getRoom();
+                oldRoom.getCreatures().remove(key);
+                seeker.move();
+                Room newRoom = gameMap.rooms.get(seeker.currentRoomNumber());
+                seeker.setRoom(newRoom);
+                newRoom.getCreatures().put(key, seeker);
             }
-            Room oldRoom = orbiter.getRoom();
-            oldRoom.getCreatures().remove(orbiterKey);
-            orbiter.move();
-            Room newRoom = gameMap.rooms.get(orbiter.currentRoomNumber());
-            orbiter.setRoom(newRoom);
-            newRoom.getCreatures().put(orbiterKey, orbiter);
-
-            // Move blinkers
-            String blinkerKey = Constants.BLINKER_NAME + i;
-            creature = gameMap.creatures.get(blinkerKey);
-            if (!(creature instanceof Blinker blinker)) {
-                throw new RuntimeException("Blinker initialization failure.");
-            }
-            oldRoom = blinker.getRoom();
-            oldRoom.getCreatures().remove(blinkerKey);
-            blinker.move();
-            newRoom = gameMap.rooms.get(blinker.currentRoomNumber());
-            blinker.setRoom(newRoom);
-            newRoom.getCreatures().put(blinkerKey, blinker);
-
-            // Move seekers
-            String seekerKey = Constants.SEEKER_NAME + i;
-            creature = gameMap.creatures.get(seekerKey);
-            if (!(creature instanceof Seeker seeker)) {
-                throw new RuntimeException("Seeker initialization failure.");
-            }
-            oldRoom = seeker.getRoom();
-            oldRoom.getCreatures().remove(seekerKey);
-            seeker.move();
-            newRoom = gameMap.rooms.get(seeker.currentRoomNumber());
-            seeker.setRoom(newRoom);
-            newRoom.getCreatures().put(seekerKey, seeker);
         }
     }
 
     private static void fightAndSearchA(GameMap gameMap) {
-        fightAndSearch(gameMap, gameMap.brawler);
-        fightAndSearch(gameMap, gameMap.runner);
-        fightAndSearch(gameMap, gameMap.sneaker);
-        fightAndSearch(gameMap, gameMap.thief);
+        if (gameMap.brawler != null) {
+            fightAndSearch(gameMap, gameMap.brawler);
+        }
+
+        if (gameMap.runner != null) {
+            fightAndSearch(gameMap, gameMap.runner);
+        }
+
+        if (gameMap.sneaker != null) {
+            fightAndSearch(gameMap, gameMap.sneaker);
+        }
+
+
+        if (gameMap.thief != null) {
+            fightAndSearch(gameMap, gameMap.thief);
+        }
     }
 
     private static void fightAndSearchC(GameMap gameMap) {
-        for (String creatureKey : gameMap.creatures.keySet()) {
-            Creature creature = gameMap.creatures.get(creatureKey);
+        // https://www.baeldung.com/java-concurrentmodificationexception
+        for (Iterator<Map.Entry<String, Creature>> iterator = gameMap.creatures.entrySet().iterator(); iterator.hasNext(); ) {
+            Map.Entry<String, Creature> next = iterator.next();
+            String key = next.getKey();
+            Creature creature = next.getValue();
             Room currentRoom = creature.getRoom();
             HashMap<String, Adventurer> adventurersInRoom = currentRoom.getAdventurers();
             if (adventurersInRoom.isEmpty()) {
                 return;
             }
 
+            // Let each Adventurer in this room fight with this creature
             for (String adventurerKey : adventurersInRoom.keySet()) {
                 Adventurer adventurer = adventurersInRoom.get(adventurerKey);
                 int adventurerAttack = adventurer.attack();
                 int creatureAttack = creature.attack();
 
                 if (adventurerAttack > creatureAttack) {
-                    currentRoom.getCreatures().remove(creatureKey);
-                    gameMap.creatures.remove(creatureKey);
+                    currentRoom.getCreatures().remove(key);
+                    iterator.remove();
                     updateCreatureCount(gameMap, creature);
+                    break;
                 } else if (adventurerAttack < creatureAttack) {
                     adventurer.setDamage(adventurer.getDamage() + 1);
                 } else {
@@ -237,19 +264,26 @@ public class GameEngine {
         Room currentRoom = adventurer.getRoom();
         HashMap<String, Creature> creaturesInRoom = currentRoom.getCreatures();
         if (creaturesInRoom.isEmpty()) {
-            adventurer.searchTreasure();
+            if (adventurer.searchTreasure()) {
+                gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
+            }
         } else {
-            for (String key : creaturesInRoom.keySet()) {
-                Creature creature = creaturesInRoom.get(key);
+            for (Iterator<Map.Entry<String, Creature>> iterator = creaturesInRoom.entrySet().iterator(); iterator.hasNext(); ) {
+                Map.Entry<String, Creature> next = iterator.next();
+                String key = next.getKey();
+                Creature creature = next.getValue();
+
                 int adventurerAttack = adventurer.attack();
                 int creatureAttack = creature.attack();
 
                 if (adventurerAttack > creatureAttack) {
-                    creaturesInRoom.remove(key);
+                    iterator.remove();
                     gameMap.creatures.remove(key);
                     updateCreatureCount(gameMap, creature);
                 } else if (adventurerAttack < creatureAttack) {
-                    adventurer.setDamage(adventurer.getDamage() + 1);
+                    if (adventurer.getDamage() < 3) {
+                        adventurer.setDamage(adventurer.getDamage() + 1);
+                    }
                 } else {
                 }
 
@@ -283,11 +317,14 @@ public class GameEngine {
         }
     }
 
-    private static void checkWinner(GameMap gameMap) {
+    private static String checkIfAdventurersWin(GameMap gameMap) {
         if (gameMap.getTotalTreasureCount() >= 10 || gameMap.creatures.size() == 0) {
-            System.out.println("Adventurers win!");
-        } else if (gameMap.brawler == null && gameMap.runner == null && gameMap.sneaker == null && gameMap.thief == null){
-            System.out.println("Creatures win!");
-        } else {}
+            return Constants.ADVENTURER_WIN;
+        } else if (gameMap.brawler == null && gameMap.runner == null && gameMap.sneaker == null && gameMap.thief == null) {
+            return Constants.CREATURE_WIN;
+        } else {
+            // No winner
+            return Constants.NO_WINNER;
+        }
     }
 }

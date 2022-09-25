@@ -11,9 +11,11 @@ public class Thief extends Adventurer {
     }
 
     @Override
-    public void searchTreasure() {
+    public boolean searchTreasure() {
         if ((rollDices() + 1) >= 10) {
             setTreasureCount(getTreasureCount() + 1);
+            return true;
         }
+        return false;
     }
 }
