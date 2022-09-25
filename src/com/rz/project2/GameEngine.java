@@ -11,6 +11,7 @@ import com.rz.project2.map.Room;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Random;
 
 public class GameEngine {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class GameEngine {
         HashMap<String, Creature> creatures = initCreature();
         GameMap gameMap = initGameMap(adventurers, creatures);
         boolean flag = true;
+        System.out.println(gameMap);
         while (flag) {
             play(gameMap);
             System.out.println(gameMap);
@@ -268,6 +270,14 @@ public class GameEngine {
                 gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
             }
         } else {
+            // Sneaker has a 50% chance not to have to fight Creatures found in their Room.
+            if(adventurer.getName() == Constants.SNEAKER_NAME){
+                Random random = new Random();
+                if (random.nextBoolean()) {
+                    return;
+                }
+            }
+
             for (Iterator<Map.Entry<String, Creature>> iterator = creaturesInRoom.entrySet().iterator(); iterator.hasNext(); ) {
                 Map.Entry<String, Creature> next = iterator.next();
                 String key = next.getKey();
