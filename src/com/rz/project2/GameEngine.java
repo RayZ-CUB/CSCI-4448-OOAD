@@ -8,30 +8,116 @@ import com.rz.project2.creature.Seeker;
 import com.rz.project2.map.GameMap;
 import com.rz.project2.map.Room;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
 
 public class GameEngine {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        // SingleGameRun
+        File singleGameRun = new File("SingleGameRun.txt");
+        FileOutputStream singleOS = new FileOutputStream(singleGameRun);
+        BufferedWriter singleWriter = new BufferedWriter(new OutputStreamWriter(singleOS));
+
         HashMap<String, Adventurer> adventurers = initAdventurers();
         HashMap<String, Creature> creatures = initCreature();
         GameMap gameMap = initGameMap(adventurers, creatures);
         boolean flag = true;
+
         System.out.println(gameMap);
+        singleWriter.write(gameMap.toString());
+        singleWriter.newLine();
         while (flag) {
             play(gameMap);
             System.out.println(gameMap);
+            singleWriter.write(gameMap.toString());
+            singleWriter.newLine();
+            singleWriter.write("-------------------------------------------------------------------------------------------\n\n");
             if (checkIfAdventurersWin(gameMap).equals(Constants.ADVENTURER_WIN)) {
-                System.out.println("Adventurers win!");
+                System.out.println(gameMap.winner);
+                singleWriter.write(gameMap.winner);
                 flag = false;
             } else if (checkIfAdventurersWin(gameMap).equals(Constants.CREATURE_WIN)) {
-                System.out.println("Creatures win!");
+                System.out.println(gameMap.winner);
+                singleWriter.write(gameMap.winner);
                 flag = false;
-            } else {
             }
         }
+
+        singleWriter.close();
+
+        // MultipleGameRun
+        File multipleGameRun = new File("MultipleGameRun.txt");
+        FileOutputStream multipleOS = new FileOutputStream(multipleGameRun);
+        BufferedWriter multipleWriter = new BufferedWriter(new OutputStreamWriter(multipleOS));
+
+        for (int i = 1; i <= 30; i++) {
+            adventurers = initAdventurers();
+            creatures = initCreature();
+            gameMap = initGameMap(adventurers, creatures);
+            flag = true;
+
+            while (flag) {
+                play(gameMap);
+                if (checkIfAdventurersWin(gameMap).equals(Constants.ADVENTURER_WIN)) {
+                    flag = false;
+                    printToMultiple(gameMap, i, multipleWriter);
+
+                } else if (checkIfAdventurersWin(gameMap).equals(Constants.CREATURE_WIN)) {
+                    flag = false;
+                    printToMultiple(gameMap, i, multipleWriter);
+                }
+            }
+        }
+
+        multipleWriter.close();
+    }
+
+    private static void printToMultiple(GameMap gameMap, int gameCount, BufferedWriter writer) throws IOException {
+        // https://www.programcreek.com/2011/03/java-write-to-a-file-code-example/
+
+        StringBuilder output = new StringBuilder();
+
+        // Print out game count
+        output.append("Game: ").append(gameCount).append("\n\n");
+
+        // Print out turn count
+        output.append("RotLA Turn ").append(gameMap.getTurnCount()).append(":\n\n");
+        // Print out adventurers' information
+        if (gameMap.brawler != null) {
+            output.append("Brawler - ").append(gameMap.brawler.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.brawler.getDamage()).append(" Damage\n");
+        } else {
+            output.append("Brawler died. \n");
+        }
+
+        if (gameMap.sneaker != null) {
+            output.append("Sneaker - ").append(gameMap.sneaker.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.sneaker.getDamage()).append(" Damage\n");
+        } else {
+            output.append("Sneaker died. \n");
+        }
+
+        if (gameMap.runner != null) {
+            output.append("Runner - ").append(gameMap.runner.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.runner.getDamage()).append(" Damage\n");
+        } else {
+            output.append("Runner died. \n");
+        }
+
+        if (gameMap.thief != null) {
+            output.append("Thief - ").append(gameMap.thief.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.thief.getDamage()).append(" Damage\n\n");
+        } else {
+            output.append("Thief died. \n\n");
+        }
+
+        // Print out creatures' count
+        output.append("Orbiters - ").append(gameMap.getOrbiterCount()).append(" Remaining\n");
+        output.append("Seekers - ").append(gameMap.getSeekerCount()).append(" Remaining\n");
+        output.append("Blinkers - ").append(gameMap.getBlinkerCount()).append(" Remaining\n\n");
+        output.append(gameMap.winner).append("\n\n");
+        output.append("-------------------------------------------------------------------------------------------\n\n");
+
+        writer.write(output.toString());
     }
 
     private static HashMap<String, Adventurer> initAdventurers() {
@@ -254,7 +340,6 @@ public class GameEngine {
                     break;
                 } else if (adventurerAttack < creatureAttack) {
                     adventurer.setDamage(adventurer.getDamage() + 1);
-                } else {
                 }
 
                 checkAdventurersDamage(adventurer, currentRoom, gameMap);
@@ -271,7 +356,7 @@ public class GameEngine {
             }
         } else {
             // Sneaker has a 50% chance not to have to fight Creatures found in their Room.
-            if(adventurer.getName() == Constants.SNEAKER_NAME){
+            if (adventurer.getName().equals(Constants.SNEAKER_NAME)) {
                 Random random = new Random();
                 if (random.nextBoolean()) {
                     return;
@@ -294,7 +379,6 @@ public class GameEngine {
                     if (adventurer.getDamage() < 3) {
                         adventurer.setDamage(adventurer.getDamage() + 1);
                     }
-                } else {
                 }
 
                 checkAdventurersDamage(adventurer, currentRoom, gameMap);
@@ -329,8 +413,10 @@ public class GameEngine {
 
     private static String checkIfAdventurersWin(GameMap gameMap) {
         if (gameMap.getTotalTreasureCount() >= 10 || gameMap.creatures.size() == 0) {
+            gameMap.winner = Constants.ADVENTURER_WIN;
             return Constants.ADVENTURER_WIN;
         } else if (gameMap.brawler == null && gameMap.runner == null && gameMap.sneaker == null && gameMap.thief == null) {
+            gameMap.winner = Constants.CREATURE_WIN;
             return Constants.CREATURE_WIN;
         } else {
             // No winner

@@ -19,6 +19,7 @@ public class GameMap {
     private int seekerCount;
     private int turnCount;
     private int totalTreasureCount;
+    public String winner;
 
     public GameMap() {
         rooms.put(Constants.ENTRANCE_ROOM, new Room(0, 1, 1));
@@ -141,7 +142,7 @@ public class GameMap {
                         ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
                         i = y + 1;
                         adjacentRooms.add(rooms.get(z + "-" + i + "-" + x));
-                        i = y - 1;
+                        i = 0;
                         adjacentRooms.add(rooms.get(z + "-" + i + "-" + x));
                     }
                 } else {
@@ -171,7 +172,7 @@ public class GameMap {
                         ArrayList<Room> adjacentRooms = rooms.get(roomNumber).getAdjacentRooms();
                         i = x + 1;
                         adjacentRooms.add(rooms.get(z + "-" + y + "-" + i));
-                        i = x - 1;
+                        i = 0;
                         adjacentRooms.add(rooms.get(z + "-" + y + "-" + i));
                     }
                 } else {
@@ -191,7 +192,7 @@ public class GameMap {
         StringBuilder output = new StringBuilder();
 
         // Print out turn count
-        output.append("RotLA Turn ").append(turnCount).append(":\n");
+        output.append("RotLA Turn ").append(turnCount).append(":\n\n");
 
         // Print out entrance room
         concatNames(rooms, "0-1-1", output);

@@ -1,0 +1,510 @@
+Game: 1
+
+RotLA Turn 20:
+
+Brawler - 3 Treasure(s) - 0 Damage
+Sneaker - 0 Treasure(s) - 0 Damage
+Runner - 4 Treasure(s) - 2 Damage
+Thief - 3 Treasure(s) - 1 Damage
+
+Orbiters - 4 Remaining
+Seekers - 3 Remaining
+Blinkers - 0 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 2
+
+RotLA Turn 11:
+
+Brawler - 0 Treasure(s) - 0 Damage
+Sneaker - 3 Treasure(s) - 0 Damage
+Runner - 2 Treasure(s) - 2 Damage
+Thief - 5 Treasure(s) - 0 Damage
+
+Orbiters - 2 Remaining
+Seekers - 4 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 3
+
+RotLA Turn 13:
+
+Brawler - 1 Treasure(s) - 0 Damage
+Sneaker - 2 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 4 Treasure(s) - 0 Damage
+
+Orbiters - 2 Remaining
+Seekers - 4 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 4
+
+RotLA Turn 14:
+
+Brawler - 5 Treasure(s) - 1 Damage
+Sneaker - 1 Treasure(s) - 1 Damage
+Runner died. 
+Thief - 2 Treasure(s) - 0 Damage
+
+Orbiters - 2 Remaining
+Seekers - 2 Remaining
+Blinkers - 0 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 5
+
+RotLA Turn 12:
+
+Brawler - 1 Treasure(s) - 1 Damage
+Sneaker - 4 Treasure(s) - 0 Damage
+Runner - 3 Treasure(s) - 2 Damage
+Thief - 3 Treasure(s) - 1 Damage
+
+Orbiters - 3 Remaining
+Seekers - 2 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 6
+
+RotLA Turn 12:
+
+Brawler - 3 Treasure(s) - 1 Damage
+Sneaker - 3 Treasure(s) - 0 Damage
+Runner - 1 Treasure(s) - 2 Damage
+Thief - 5 Treasure(s) - 1 Damage
+
+Orbiters - 4 Remaining
+Seekers - 2 Remaining
+Blinkers - 3 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 7
+
+RotLA Turn 15:
+
+Brawler - 2 Treasure(s) - 0 Damage
+Sneaker - 4 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 4 Treasure(s) - 0 Damage
+
+Orbiters - 1 Remaining
+Seekers - 1 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 8
+
+RotLA Turn 20:
+
+Brawler - 3 Treasure(s) - 0 Damage
+Sneaker - 2 Treasure(s) - 1 Damage
+Runner died. 
+Thief - 4 Treasure(s) - 1 Damage
+
+Orbiters - 1 Remaining
+Seekers - 3 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 9
+
+RotLA Turn 15:
+
+Brawler - 2 Treasure(s) - 1 Damage
+Sneaker - 3 Treasure(s) - 1 Damage
+Runner died. 
+Thief - 2 Treasure(s) - 2 Damage
+
+Orbiters - 3 Remaining
+Seekers - 2 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 10
+
+RotLA Turn 14:
+
+Brawler - 4 Treasure(s) - 0 Damage
+Sneaker - 1 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 1 Treasure(s) - 1 Damage
+
+Orbiters - 2 Remaining
+Seekers - 1 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 11
+
+RotLA Turn 15:
+
+Brawler - 1 Treasure(s) - 0 Damage
+Sneaker - 1 Treasure(s) - 2 Damage
+Runner - 5 Treasure(s) - 2 Damage
+Thief - 3 Treasure(s) - 2 Damage
+
+Orbiters - 4 Remaining
+Seekers - 3 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 12
+
+RotLA Turn 18:
+
+Brawler - 1 Treasure(s) - 1 Damage
+Sneaker - 5 Treasure(s) - 1 Damage
+Runner died. 
+Thief - 3 Treasure(s) - 1 Damage
+
+Orbiters - 3 Remaining
+Seekers - 4 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 13
+
+RotLA Turn 12:
+
+Brawler - 1 Treasure(s) - 0 Damage
+Sneaker - 3 Treasure(s) - 0 Damage
+Runner - 4 Treasure(s) - 0 Damage
+Thief - 2 Treasure(s) - 0 Damage
+
+Orbiters - 3 Remaining
+Seekers - 4 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 14
+
+RotLA Turn 10:
+
+Brawler - 1 Treasure(s) - 1 Damage
+Sneaker - 3 Treasure(s) - 0 Damage
+Runner - 3 Treasure(s) - 0 Damage
+Thief - 3 Treasure(s) - 1 Damage
+
+Orbiters - 3 Remaining
+Seekers - 2 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 15
+
+RotLA Turn 12:
+
+Brawler - 1 Treasure(s) - 2 Damage
+Sneaker - 0 Treasure(s) - 0 Damage
+Runner - 6 Treasure(s) - 1 Damage
+Thief - 3 Treasure(s) - 2 Damage
+
+Orbiters - 3 Remaining
+Seekers - 3 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 16
+
+RotLA Turn 18:
+
+Brawler - 3 Treasure(s) - 0 Damage
+Sneaker - 4 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 3 Treasure(s) - 2 Damage
+
+Orbiters - 4 Remaining
+Seekers - 3 Remaining
+Blinkers - 3 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 17
+
+RotLA Turn 11:
+
+Brawler - 2 Treasure(s) - 0 Damage
+Sneaker - 1 Treasure(s) - 2 Damage
+Runner - 6 Treasure(s) - 1 Damage
+Thief - 1 Treasure(s) - 0 Damage
+
+Orbiters - 4 Remaining
+Seekers - 3 Remaining
+Blinkers - 3 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 18
+
+RotLA Turn 17:
+
+Brawler - 3 Treasure(s) - 0 Damage
+Sneaker - 1 Treasure(s) - 0 Damage
+Runner - 2 Treasure(s) - 2 Damage
+Thief - 4 Treasure(s) - 2 Damage
+
+Orbiters - 3 Remaining
+Seekers - 1 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 19
+
+RotLA Turn 14:
+
+Brawler - 7 Treasure(s) - 0 Damage
+Sneaker - 0 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 3 Treasure(s) - 0 Damage
+
+Orbiters - 3 Remaining
+Seekers - 3 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 20
+
+RotLA Turn 12:
+
+Brawler - 3 Treasure(s) - 1 Damage
+Sneaker - 4 Treasure(s) - 2 Damage
+Runner died. 
+Thief - 1 Treasure(s) - 2 Damage
+
+Orbiters - 4 Remaining
+Seekers - 1 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 21
+
+RotLA Turn 13:
+
+Brawler - 1 Treasure(s) - 0 Damage
+Sneaker - 3 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 1 Treasure(s) - 0 Damage
+
+Orbiters - 3 Remaining
+Seekers - 3 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 22
+
+RotLA Turn 20:
+
+Brawler - 3 Treasure(s) - 2 Damage
+Sneaker died. 
+Runner died. 
+Thief - 4 Treasure(s) - 2 Damage
+
+Orbiters - 4 Remaining
+Seekers - 1 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 23
+
+RotLA Turn 8:
+
+Brawler - 3 Treasure(s) - 0 Damage
+Sneaker - 2 Treasure(s) - 0 Damage
+Runner - 3 Treasure(s) - 0 Damage
+Thief - 4 Treasure(s) - 1 Damage
+
+Orbiters - 2 Remaining
+Seekers - 2 Remaining
+Blinkers - 3 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 24
+
+RotLA Turn 19:
+
+Brawler - 5 Treasure(s) - 0 Damage
+Sneaker - 1 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 1 Treasure(s) - 0 Damage
+
+Orbiters - 2 Remaining
+Seekers - 1 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 25
+
+RotLA Turn 8:
+
+Brawler - 1 Treasure(s) - 1 Damage
+Sneaker - 2 Treasure(s) - 2 Damage
+Runner - 3 Treasure(s) - 0 Damage
+Thief - 4 Treasure(s) - 0 Damage
+
+Orbiters - 4 Remaining
+Seekers - 3 Remaining
+Blinkers - 4 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 26
+
+RotLA Turn 21:
+
+Brawler - 4 Treasure(s) - 0 Damage
+Sneaker - 2 Treasure(s) - 1 Damage
+Runner died. 
+Thief - 4 Treasure(s) - 0 Damage
+
+Orbiters - 0 Remaining
+Seekers - 0 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 27
+
+RotLA Turn 16:
+
+Brawler - 3 Treasure(s) - 0 Damage
+Sneaker - 3 Treasure(s) - 0 Damage
+Runner died. 
+Thief - 3 Treasure(s) - 1 Damage
+
+Orbiters - 2 Remaining
+Seekers - 3 Remaining
+Blinkers - 1 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 28
+
+RotLA Turn 7:
+
+Brawler - 0 Treasure(s) - 0 Damage
+Sneaker - 1 Treasure(s) - 0 Damage
+Runner - 5 Treasure(s) - 1 Damage
+Thief - 4 Treasure(s) - 0 Damage
+
+Orbiters - 3 Remaining
+Seekers - 3 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 29
+
+RotLA Turn 11:
+
+Brawler - 1 Treasure(s) - 0 Damage
+Sneaker - 1 Treasure(s) - 1 Damage
+Runner - 5 Treasure(s) - 0 Damage
+Thief - 4 Treasure(s) - 0 Damage
+
+Orbiters - 4 Remaining
+Seekers - 1 Remaining
+Blinkers - 0 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
+Game: 30
+
+RotLA Turn 10:
+
+Brawler - 4 Treasure(s) - 1 Damage
+Sneaker - 3 Treasure(s) - 1 Damage
+Runner - 0 Treasure(s) - 2 Damage
+Thief - 3 Treasure(s) - 1 Damage
+
+Orbiters - 2 Remaining
+Seekers - 3 Remaining
+Blinkers - 2 Remaining
+
+Adventurers win!
+
+-------------------------------------------------------------------------------------------
+
