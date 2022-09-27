@@ -4,6 +4,8 @@ import com.rz.project2.map.Room;
 
 import java.util.Random;
 
+
+//In creature abstract class, using abstraction to abstract all attribute that creatures have.
 public abstract class Creature {
     private String name;
     private Room room;

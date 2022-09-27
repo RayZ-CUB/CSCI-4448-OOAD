@@ -7,6 +7,8 @@ import com.rz.project2.creature.Creature;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+//THis is high cohesion class dealing with all details like Adventurers' position and also Creatures' position. Update them after necessary implementation.
 public class GameMap {
     public HashMap<String, Room> rooms = new HashMap<>();
     public Brawler brawler;

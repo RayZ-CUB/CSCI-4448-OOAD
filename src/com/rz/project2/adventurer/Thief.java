@@ -1,5 +1,7 @@
 package com.rz.project2.adventurer;
 
+
+//Using Inheritance, ass a child class inheriting adventurer class
 public class Thief extends Adventurer {
     public Thief() {
         this.setName("T");
@@ -11,6 +13,7 @@ public class Thief extends Adventurer {
     }
 
     @Override
+    //Using polymorphism in here, methods overriding
     public boolean searchTreasure() {
         if ((rollDices() + 1) >= 10) {
             setTreasureCount(getTreasureCount() + 1);

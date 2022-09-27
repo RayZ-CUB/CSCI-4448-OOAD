@@ -4,11 +4,16 @@ import com.rz.project2.map.Room;
 
 import java.util.Random;
 
+
+//Use encapsulation in Adventurer class, accessibility of the features in adventurer class. Some methods set to private, and need to use setter and getter to access the value of that variable.
+
+//Also use inheritance, Brawler, Runner, Sneaker and Thief use this adventurer class as a super class.
+
 public class Adventurer {
     private String name;
     private int damage = 0;
     private int treasureCount;
-    private Room room;
+    private Room room;  //adventurers, creatures and gameMap share same room. So, the adventures' room can have same identity(memory address) as creatures' and gameMap's
     private int z;
     private int y;
     private int x;
