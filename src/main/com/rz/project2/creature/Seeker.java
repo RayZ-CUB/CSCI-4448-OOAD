@@ -1,7 +1,7 @@
 package com.rz.project2.creature;
 
-import com.rz.project2.Constants;
 import com.rz.project2.map.Room;
+import com.rz.project2.Constants;
 
 import java.util.ArrayList;
 import java.util.Random;
