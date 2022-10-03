@@ -86,6 +86,9 @@ public class GameMap {
     }
 
     public void setTotalTreasureCount(int totalTreasureCount) {
+        if (totalTreasureCount > 24) {
+            throw new RuntimeException("Invalid total treasure count!");
+        }
         this.totalTreasureCount = totalTreasureCount;
     }
 
