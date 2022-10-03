@@ -1,5 +1,7 @@
 package com.rz.project3.skill.search;
 
+import com.rz.project3.util.GameUtil;
+
 import java.util.Random;
 
 public class CarelessSearch implements Search {
@@ -7,15 +9,10 @@ public class CarelessSearch implements Search {
     public boolean search() {
         Random random = new Random();
         int result = random.nextInt(3);
-        if (result == 0 || rollDices() <= 9) {
+        if (result == 0 || GameUtil.rollDices() <= 9) {
             return false;
         }
 
         return true;
-    }
-
-    private int rollDices() {
-        Random random = new Random();
-        return random.nextInt(6) + 1 + random.nextInt(6) + 1;
     }
 }

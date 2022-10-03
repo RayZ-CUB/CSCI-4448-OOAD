@@ -1,18 +1,13 @@
 package com.rz.project3.skill.search;
 
-import java.util.Random;
+import com.rz.project3.util.GameUtil;
 
 public class QuickSearch implements Search{
     @Override
     public boolean search() {
-        if (rollDices() > 10) {
+        if (GameUtil.rollDices() > 10) {
             return true;
         }
         return false;
-    }
-
-    private int rollDices() {
-        Random random = new Random();
-        return random.nextInt(6) + 1 + random.nextInt(6) + 1;
     }
 }

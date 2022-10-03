@@ -35,7 +35,7 @@ public abstract class Creature {
 
     public abstract void move();
 
-    public int attack() {
+    public int combat() {
         return rollDices();
     }
 

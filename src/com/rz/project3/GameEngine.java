@@ -224,13 +224,13 @@ public class GameEngine {
 
     private static void play(GameMap gameMap) {
         moveAdventurers(gameMap);
-        fightAndSearchA(gameMap);
+        combatAndSearchA(gameMap);
         moveRunner(gameMap);
         if (gameMap.runner != null) {
-            fightAndSearch(gameMap, gameMap.runner);
+            combatAndSearch(gameMap, gameMap.runner);
         }
         moveCreatures(gameMap);
-        fightAndSearchC(gameMap);
+        combatAndSearchC(gameMap);
         gameMap.setTurnCount(gameMap.getTurnCount() + 1);
     }
 
@@ -329,26 +329,26 @@ public class GameEngine {
         }
     }
 
-    private static void fightAndSearchA(GameMap gameMap) {
+    private static void combatAndSearchA(GameMap gameMap) {
         if (gameMap.brawler != null) {
-            fightAndSearch(gameMap, gameMap.brawler);
+            combatAndSearch(gameMap, gameMap.brawler);
         }
 
         if (gameMap.runner != null) {
-            fightAndSearch(gameMap, gameMap.runner);
+            combatAndSearch(gameMap, gameMap.runner);
         }
 
         if (gameMap.sneaker != null) {
-            fightAndSearch(gameMap, gameMap.sneaker);
+            combatAndSearch(gameMap, gameMap.sneaker);
         }
 
 
         if (gameMap.thief != null) {
-            fightAndSearch(gameMap, gameMap.thief);
+            combatAndSearch(gameMap, gameMap.thief);
         }
     }
 
-    private static void fightAndSearchC(GameMap gameMap) {
+    private static void combatAndSearchC(GameMap gameMap) {
         // https://www.baeldung.com/java-concurrentmodificationexception
         for (Iterator<Map.Entry<String, Creature>> iterator = gameMap.creatures.entrySet().iterator(); iterator.hasNext(); ) {
             Map.Entry<String, Creature> next = iterator.next();
@@ -360,32 +360,40 @@ public class GameEngine {
                 return;
             }
 
-            // Let each Adventurer in this room fight with this creature
-//            for (String adventurerKey : adventurersInRoom.keySet()) {
-//                Adventurer adventurer = adventurersInRoom.get(adventurerKey);
-//                int adventurerAttack = adventurer.combat.combat();
-//                int creatureAttack = creature.attack();
-//
-//                if (adventurerAttack > creatureAttack) {
-//                    currentRoom.getCreatures().remove(key);
-//                    iterator.remove();
-//                    updateCreatureCount(gameMap, creature);
-//                    break;
-//                } else if (adventurerAttack < creatureAttack) {
-//                    adventurer.setDamage(adventurer.getDamage() + 1);
-//                }
-//
-//                checkAdventurersDamage(adventurer, currentRoom, gameMap);
-//            }
+//             Let each Adventurer in this room fight with this creature
+            for (String adventurerKey : adventurersInRoom.keySet()) {
+                Adventurer adventurer = adventurersInRoom.get(adventurerKey);
+                // StealthCombat check
+                if (adventurer.combat instanceof StealthCombat) {
+                    Random random = new Random();
+                    if (random.nextBoolean()) {
+                        return;
+                    }
+                }
+                int adventurerAttack = adventurer.combat.combat();
+                int creatureAttack = creature.combat();
+
+                if (adventurerAttack > creatureAttack) {
+                    currentRoom.getCreatures().remove(key);
+                    iterator.remove();
+                    updateCreatureCount(gameMap, creature);
+                    break;
+                } else if (adventurerAttack < creatureAttack) {
+                    adventurer.setDamage(adventurer.getDamage() + 1);
+                }
+
+                checkAdventurersDamage(adventurer, currentRoom, gameMap);
+            }
         }
     }
 
-    private static void fightAndSearch(GameMap gameMap, Adventurer adventurer) {
+    private static void combatAndSearch(GameMap gameMap, Adventurer adventurer) {
         Room currentRoom = adventurer.getRoom();
         HashMap<String, Creature> creaturesInRoom = currentRoom.getCreatures();
         HashMap<String, Treasure> treasuresInRoom = currentRoom.getTreasures();
         Random random = new Random();
 
+        // Search
         if (creaturesInRoom.isEmpty() && !treasuresInRoom.isEmpty()) {
             if (adventurer.search.search()) {
                 for (String key : treasuresInRoom.keySet()) {
@@ -428,40 +436,41 @@ public class GameEngine {
                     }
                 }
             }
+            // Combat
         } else {
-            // Sneaker has a 50% chance not to have to fight Creatures found in their Room.
-            if (adventurer.getName().equals(Constants.SNEAKER_NAME)) {
+            // Sneaker and StealthCombat have a 50% chance not to have to combat Creatures found in current Room.
+            if (adventurer.getName().equals(Constants.SNEAKER_NAME) || adventurer.combat instanceof StealthCombat) {
                 if (random.nextBoolean()) {
                     return;
                 }
             }
 
-//            for (Iterator<Map.Entry<String, Creature>> iterator = creaturesInRoom.entrySet().iterator(); iterator.hasNext(); ) {
-//                Map.Entry<String, Creature> next = iterator.next();
-//                String key = next.getKey();
-//                Creature creature = next.getValue();
-//
-//                int adventurerAttack = adventurer.combat.combat();
-//                int creatureAttack = creature.attack();
-//
-//                if (adventurerAttack > creatureAttack) {
-//                    iterator.remove();
-//                    gameMap.creatures.remove(key);
-//                    updateCreatureCount(gameMap, creature);
-//                } else if (adventurerAttack < creatureAttack) {
-//                    if (adventurer.getDamage() < 3) {
-//                        adventurer.setDamage(adventurer.getDamage() + 1);
-//                    }
-//                }
-//
-//                checkAdventurersDamage(adventurer, currentRoom, gameMap);
-//            }
+            for (Iterator<Map.Entry<String, Creature>> iterator = creaturesInRoom.entrySet().iterator(); iterator.hasNext(); ) {
+                Map.Entry<String, Creature> next = iterator.next();
+                String key = next.getKey();
+                Creature creature = next.getValue();
+
+                int adventurerAttack = adventurer.combat.combat();
+                int creatureAttack = creature.combat();
+
+                if (adventurerAttack > creatureAttack) {
+                    iterator.remove();
+                    gameMap.creatures.remove(key);
+                    updateCreatureCount(gameMap, creature);
+                } else if (adventurerAttack < creatureAttack) {
+                    if (adventurer.getDamage() < 3) {
+                        adventurer.setDamage(adventurer.getDamage() + 1);
+                    }
+                }
+
+                checkAdventurersDamage(adventurer, currentRoom, gameMap);
+            }
         }
     }
 
 
     private static void checkAdventurersDamage(Adventurer adventurer, Room currentRoom, GameMap gameMap) {
-        if (adventurer.getDamage() == 3) {
+        if (adventurer.getDamage() >= 3) {
             currentRoom.getAdventurers().remove(adventurer.getName());
             if (adventurer instanceof Brawler) {
                 gameMap.brawler = null;

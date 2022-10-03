@@ -42,7 +42,7 @@ public class Adventurer {
     }
 
     public void setDamage(int damage) {
-        if (damage < 0 || damage > 3) {
+        if (damage < 0) {
             throw new RuntimeException("Invalid damage");
         }
         this.damage = damage;
