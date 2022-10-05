@@ -1,10 +1,14 @@
 package com.rz.project3.skill.combat;
 
-import com.rz.project3.util.GameUtil;
+import com.rz.project3.treasure.Armor;
+import com.rz.project3.treasure.Gem;
+import com.rz.project3.treasure.Sword;
 
-public class StealthCombat implements Combat{
+import static com.rz.project3.skill.combat.UntrainedCombat.defaultCombat;
+
+public class StealthCombat extends Combat{
     @Override
-    public int combat() {
-        return GameUtil.rollDices();
+    public int combat(Armor armor, Gem gem, Sword sword, StringBuilder builder) {
+        return defaultCombat(armor, gem, sword);
     }
 }

@@ -7,10 +7,8 @@ import com.rz.project3.creature.Orbiter;
 import com.rz.project3.creature.Seeker;
 import com.rz.project3.map.GameMap;
 import com.rz.project3.map.Room;
-import com.rz.project3.skill.combat.ExpertCombat;
-import com.rz.project3.skill.combat.StealthCombat;
-import com.rz.project3.skill.combat.TrainedCombat;
-import com.rz.project3.skill.combat.UntrainedCombat;
+import com.rz.project3.skill.celebration.*;
+import com.rz.project3.skill.combat.*;
 import com.rz.project3.skill.search.CarefulSearch;
 import com.rz.project3.skill.search.CarelessSearch;
 import com.rz.project3.skill.search.QuickSearch;
@@ -23,6 +21,8 @@ import java.util.Map;
 import java.util.Random;
 
 public class GameEngine {
+    private static StringBuilder builder;
+
     public static void main(String[] args) throws IOException {
         // SingleGameRun
         File singleGameRun = new File("SingleGameRun.txt");
@@ -58,36 +58,36 @@ public class GameEngine {
         singleWriter.close();
 
         // MultipleGameRun
-        File multipleGameRun = new File("MultipleGameRun.txt");
-        FileOutputStream multipleOS = new FileOutputStream(multipleGameRun);
-        BufferedWriter multipleWriter = new BufferedWriter(new OutputStreamWriter(multipleOS));
-
-        for (int i = 1; i <= 30; i++) {
-            adventurers = initAdventurers();
-            creatures = initCreature();
-            gameMap = initGameMap(adventurers, creatures, treasures);
-            flag = true;
-
-            while (flag) {
-                play(gameMap);
-                if (checkIfAdventurersWin(gameMap).equals(Constants.ADVENTURER_WIN)) {
-                    flag = false;
-                    printToMultiple(gameMap, i, multipleWriter);
-
-                } else if (checkIfAdventurersWin(gameMap).equals(Constants.CREATURE_WIN)) {
-                    flag = false;
-                    printToMultiple(gameMap, i, multipleWriter);
-                }
-            }
-        }
-
-        multipleWriter.close();
+//        File multipleGameRun = new File("MultipleGameRun.txt");
+//        FileOutputStream multipleOS = new FileOutputStream(multipleGameRun);
+//        BufferedWriter multipleWriter = new BufferedWriter(new OutputStreamWriter(multipleOS));
+//
+//        for (int i = 1; i <= 30; i++) {
+//            adventurers = initAdventurers();
+//            creatures = initCreature();
+//            gameMap = initGameMap(adventurers, creatures, treasures);
+//            flag = true;
+//
+//            while (flag) {
+//                play(gameMap);
+//                if (checkIfAdventurersWin(gameMap).equals(Constants.ADVENTURER_WIN)) {
+//                    flag = false;
+//                    printToMultiple(gameMap, i, multipleWriter);
+//
+//                } else if (checkIfAdventurersWin(gameMap).equals(Constants.CREATURE_WIN)) {
+//                    flag = false;
+//                    printToMultiple(gameMap, i, multipleWriter);
+//                }
+//            }
+//        }
+//
+//        multipleWriter.close();
     }
 
     private static void printToMultiple(GameMap gameMap, int gameCount, BufferedWriter writer) throws IOException {
         // https://www.programcreek.com/2011/03/java-write-to-a-file-code-example/
 
-        StringBuilder output = new StringBuilder();
+//        StringBuilder output = new StringBuilder();
 
 //        // Print out game count
 //        output.append("Game: ").append(gameCount).append("\n\n");
@@ -126,15 +126,15 @@ public class GameEngine {
 //        output.append(gameMap.winner).append("\n\n");
 //        output.append("-------------------------------------------------------------------------------------------\n\n");
 
-        writer.write(output.toString());
+//        writer.write(output.toString());
     }
 
     private static HashMap<String, Adventurer> initAdventurers() {
         HashMap<String, Adventurer> adventurers = new HashMap<>();
-        Brawler brawler = new Brawler(Constants.BRAWLER_NAME, new ExpertCombat(), new CarelessSearch());
-        Thief thief = new Thief(Constants.THIEF_NAME, new TrainedCombat(), new CarefulSearch());
-        Sneaker sneaker = new Sneaker(Constants.SNEAKER_NAME, new StealthCombat(), new QuickSearch());
-        Runner runner = new Runner(Constants.RUNNER_NAME, new UntrainedCombat(), new QuickSearch());
+        Brawler brawler = new Brawler(Constants.BRAWLER_NAME, Constants.BRAWLER_FULL_NAME, new ExpertCombat(), new CarelessSearch());
+        Thief thief = new Thief(Constants.THIEF_NAME, Constants.THIEF_FULL_NAME, new TrainedCombat(), new CarefulSearch());
+        Sneaker sneaker = new Sneaker(Constants.SNEAKER_NAME, Constants.SNEAKER_FULL_NAME, new StealthCombat(), new QuickSearch());
+        Runner runner = new Runner(Constants.RUNNER_NAME, Constants.RUNNER_FULL_NAME, new UntrainedCombat(), new QuickSearch());
 
         adventurers.put(brawler.getName(), brawler);
         adventurers.put(thief.getName(), thief);
@@ -216,7 +216,6 @@ public class GameEngine {
             Treasure treasure = treasures.get(key);
             Room startingRoom = gameMap.rooms.get(treasure.currentRoomNumber());
             startingRoom.getTreasures().put(key, treasure);
-//            treasure.setRoom(startingRoom);
         }
 
         return gameMap;
@@ -349,6 +348,7 @@ public class GameEngine {
     }
 
     private static void combatAndSearchC(GameMap gameMap) {
+        Random random = new Random();
         // https://www.baeldung.com/java-concurrentmodificationexception
         for (Iterator<Map.Entry<String, Creature>> iterator = gameMap.creatures.entrySet().iterator(); iterator.hasNext(); ) {
             Map.Entry<String, Creature> next = iterator.next();
@@ -365,21 +365,66 @@ public class GameEngine {
                 Adventurer adventurer = adventurersInRoom.get(adventurerKey);
                 // StealthCombat check
                 if (adventurer.combat instanceof StealthCombat) {
-                    Random random = new Random();
                     if (random.nextBoolean()) {
                         return;
                     }
                 }
-                int adventurerAttack = adventurer.combat.combat();
-                int creatureAttack = creature.combat();
 
-                if (adventurerAttack > creatureAttack) {
+                Combat combat = adventurer.combat;
+
+                int shoutResult = random.nextInt(3);
+
+                // Shout
+                if (shoutResult == 1) {
+                    combat = new Shout(combat);
+                } else if (shoutResult == 2) {
+                    combat = new Shout(combat);
+                    combat = new Shout(combat);
+                }
+
+                int danceResult = random.nextInt(3);
+                // Dance
+                if (danceResult == 1) {
+                    combat = new Dance(combat);
+                } else if (danceResult == 2) {
+                    combat = new Dance(combat);
+                    combat = new Dance(combat);
+                }
+
+                int jumpResult = random.nextInt(3);
+                //Jump
+                if (jumpResult == 1) {
+                    combat = new Jump(combat);
+                } else if (jumpResult == 2) {
+                    combat = new Jump(combat);
+                    combat = new Jump(combat);
+                }
+
+                int spinResult = random.nextInt(3);
+                // Spin
+                if (spinResult == 1) {
+                    combat = new Spin(combat);
+                } else if (spinResult == 2) {
+                    combat = new Spin(combat);
+                    combat = new Spin(combat);
+                }
+
+                StringBuilder builder = new StringBuilder();
+                builder.append(adventurer.fullName).append(" celebrates: ");
+
+                if (combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 0) {
                     currentRoom.getCreatures().remove(key);
                     iterator.remove();
                     updateCreatureCount(gameMap, creature);
+                    if (combat instanceof Celebrate) {
+                        builder.replace(builder.length()-2, builder.length()-1, ".");
+                        System.out.println(builder);
+                    }
                     break;
-                } else if (adventurerAttack < creatureAttack) {
-                    adventurer.setDamage(adventurer.getDamage() + 1);
+                } else if (adventurer.combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 1) {
+                    if (adventurer.getDamage() < 3) {
+                        adventurer.setDamage(adventurer.getDamage() + 1);
+                    }
                 }
 
                 checkAdventurersDamage(adventurer, currentRoom, gameMap);
@@ -406,27 +451,34 @@ public class GameEngine {
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         break;
-                    } else if (adventurer.armor == null && treasure instanceof Armor){
+                    } else if (adventurer.armor == null && treasure instanceof Armor) {
                         adventurer.armor = (Armor) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         break;
-                    } else if (adventurer.gem == null && treasure instanceof Gem){
+                    } else if (adventurer.gem == null && treasure instanceof Gem) {
                         adventurer.gem = (Gem) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         break;
-                    } else if (adventurer.portal == null && treasure instanceof Portal){
-                        adventurer.portal = (Portal) treasure;
+                    } else if (treasure.name.equals(Constants.PORTAL_NAME)) {
+                        // Delete adventurer in original room
+                        adventurer.getRoom().getAdventurers().remove(adventurer.getName());
+                        // Move adventurer into a random room
+                        adventurer.portalMove();
+                        // Add adventurer into new room
+                        Room newRoom = gameMap.rooms.get(adventurer.currentRoomNumber());
+                        newRoom.getAdventurers().put(adventurer.getName(), adventurer);
+                        adventurer.setRoom(newRoom);
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         break;
-                    } else if (adventurer.potion == null && treasure instanceof Potion){
+                    } else if (adventurer.potion == null && treasure instanceof Potion) {
                         adventurer.potion = (Potion) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         break;
-                    } else if (adventurer.sword == null && treasure instanceof Sword){
+                    } else if (adventurer.sword == null && treasure instanceof Sword) {
                         adventurer.sword = (Sword) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
@@ -444,20 +496,63 @@ public class GameEngine {
                     return;
                 }
             }
-
+            
             for (Iterator<Map.Entry<String, Creature>> iterator = creaturesInRoom.entrySet().iterator(); iterator.hasNext(); ) {
                 Map.Entry<String, Creature> next = iterator.next();
                 String key = next.getKey();
                 Creature creature = next.getValue();
 
-                int adventurerAttack = adventurer.combat.combat();
-                int creatureAttack = creature.combat();
+                Combat combat = adventurer.combat;
 
-                if (adventurerAttack > creatureAttack) {
+                int shoutResult = random.nextInt(3);
+
+                // Shout
+                if (shoutResult == 1) {
+                    combat = new Shout(combat);
+                } else if (shoutResult == 2) {
+                    combat = new Shout(combat);
+                    combat = new Shout(combat);
+                }
+
+                int danceResult = random.nextInt(3);
+                // Dance
+                if (danceResult == 1) {
+                    combat = new Dance(combat);
+                } else if (danceResult == 2) {
+                    combat = new Dance(combat);
+                    combat = new Dance(combat);
+                }
+
+                int jumpResult = random.nextInt(3);
+                //Jump
+                if (jumpResult == 1) {
+                    combat = new Jump(combat);
+                } else if (jumpResult == 2) {
+                    combat = new Jump(combat);
+                    combat = new Jump(combat);
+                }
+
+                int spinResult = random.nextInt(3);
+                //spin
+                if (spinResult == 1) {
+                    combat = new Spin(combat);
+                } else if (spinResult == 2) {
+                    combat = new Spin(combat);
+                    combat = new Spin(combat);
+                }
+
+                StringBuilder builder = new StringBuilder();
+                builder.append(adventurer.fullName).append(" celebrates: ");
+
+                if (combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 0) {
                     iterator.remove();
                     gameMap.creatures.remove(key);
                     updateCreatureCount(gameMap, creature);
-                } else if (adventurerAttack < creatureAttack) {
+                    if (combat instanceof Celebrate) {
+                        builder.replace(builder.length()-2, builder.length()-1, ".");
+                        System.out.println(builder);
+                    }
+                } else if (adventurer.combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 1) {
                     if (adventurer.getDamage() < 3) {
                         adventurer.setDamage(adventurer.getDamage() + 1);
                     }
@@ -471,6 +566,11 @@ public class GameEngine {
 
     private static void checkAdventurersDamage(Adventurer adventurer, Room currentRoom, GameMap gameMap) {
         if (adventurer.getDamage() >= 3) {
+            if (adventurer.potion != null && adventurer.getDamage() - 1 < 3) {
+                adventurer.potion = null;
+                adventurer.setDamage(adventurer.getDamage() - 1);
+                return;
+            }
             currentRoom.getAdventurers().remove(adventurer.getName());
             if (adventurer instanceof Brawler) {
                 gameMap.brawler = null;

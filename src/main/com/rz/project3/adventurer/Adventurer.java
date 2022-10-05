@@ -15,10 +15,10 @@ import java.util.Random;
 
 public class Adventurer {
     private String name;
+    public final String fullName;
     private int damage = 0;
     public Armor armor;
     public Gem gem;
-    public Portal portal;
     public Potion potion;
     public Sword sword;
     public final Combat combat;
@@ -28,11 +28,12 @@ public class Adventurer {
     private int y;
     private int x;
 
-    public Adventurer(String name, Combat combat, Search search) {
+    public Adventurer(String name, String fullName, Combat combat, Search search) {
         this.z = 0;
         this.y = 1;
         this.x = 1;
         this.name = name;
+        this.fullName = fullName;
         this.combat = combat;
         this.search = search;
     }
@@ -250,40 +251,12 @@ public class Adventurer {
         }
     }
 
-//    public int combat() {
-//        int result = combat.combat();
-//        if (treasure != null) {
-//            result = activateTreasure(result);
-//        }
-//        return result;
-//    }
-
-//    private int activateTreasure(int result) {
-//        switch (treasure.name) {
-//            case Constants.ARMOR_NAME -> {
-//            }
-//            case Constants.GEM_NAME -> {}
-//            case Constants.PORTAL_NAME -> {}
-//            case Constants.POTION_NAME -> {}
-//            case Constants.SWORD_NAME -> {
-//                return result+1;
-//            }
-//            case Constants.TRAP_NAME -> {}
-//        }
-//    }
-
-//    public boolean search() {
-//        if (rollDices() >= 10) {
-//            treasureCount++;
-//            return true;
-//        }
-//        return false;
-//    }
-
-//    public int rollDices() {
-//        Random random = new Random();
-//        return random.nextInt(6) + 1 + random.nextInt(6) + 1;
-//    }
+    public void portalMove() {
+        Random random = new Random();
+        z = random.nextInt(4) + 1;
+        y = random.nextInt(3);
+        x = random.nextInt(3);
+    }
 
     public String currentRoomNumber() {
         return z + "-" + y + "-" + x;

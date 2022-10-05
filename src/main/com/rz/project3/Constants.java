@@ -4,9 +4,13 @@ public class Constants {
     public static final String CLOCKWISE = "clockwise";
     public static final String COUNTERCLOCKWISE = "counterclockwise";
     public static final String BRAWLER_NAME = "B";
+    public static final String BRAWLER_FULL_NAME = "Brawler";
     public static final String RUNNER_NAME = "R";
+    public static final String RUNNER_FULL_NAME = "Runner";
     public static final String SNEAKER_NAME = "S";
+    public static final String SNEAKER_FULL_NAME = "Sneaker";
     public static final String THIEF_NAME = "T";
+    public static final String THIEF_FULL_NAME = "Thief";
     public static final String ORBITER_NAME = "O";
     public static final String SEEKER_NAME = "S";
     public static final String BLINKER_NAME = "B";
