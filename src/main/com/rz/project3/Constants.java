@@ -12,8 +12,11 @@ public class Constants {
     public static final String THIEF_NAME = "T";
     public static final String THIEF_FULL_NAME = "Thief";
     public static final String ORBITER_NAME = "O";
+    public static final String ORBITER_FULL_NAME = "Orbiter";
     public static final String SEEKER_NAME = "S";
+    public static final String SEEKER_FULL_NAME = "Seeker";
     public static final String BLINKER_NAME = "B";
+    public static final String BLINKER_FULL_NAME = "Blinker";
     public static final String ARMOR_NAME = "Armor";
     public static final String GEM_NAME = "Gem";
     public static final String PORTAL_NAME = "Portal";

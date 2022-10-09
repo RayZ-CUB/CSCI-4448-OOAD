@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Seeker extends Creature {
-    public Seeker() {
+    public Seeker(int id) {
+        this.fullName = Constants.SEEKER_FULL_NAME;
         this.setName(Constants.SEEKER_NAME);
+        this.id = id;
 
         Random random = new Random();   // https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
         int z = random.nextInt(4) + 1;

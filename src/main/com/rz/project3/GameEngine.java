@@ -7,6 +7,9 @@ import com.rz.project3.creature.Orbiter;
 import com.rz.project3.creature.Seeker;
 import com.rz.project3.map.GameMap;
 import com.rz.project3.map.Room;
+import com.rz.project3.observer.Logger;
+import com.rz.project3.observer.Publisher;
+import com.rz.project3.observer.Tracker;
 import com.rz.project3.skill.celebration.*;
 import com.rz.project3.skill.combat.*;
 import com.rz.project3.skill.search.CarefulSearch;
@@ -14,48 +17,58 @@ import com.rz.project3.skill.search.CarelessSearch;
 import com.rz.project3.skill.search.QuickSearch;
 import com.rz.project3.treasure.*;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
 
 public class GameEngine {
-    private static StringBuilder builder;
+    private static BufferedWriter writer;
+    private static Publisher publisher;
+    private static Tracker tracker;
+    private static GameMap gameMap;
 
     public static void main(String[] args) throws IOException {
-        // SingleGameRun
-        File singleGameRun = new File("SingleGameRun.txt");
-        FileOutputStream singleOS = new FileOutputStream(singleGameRun);
-        BufferedWriter singleWriter = new BufferedWriter(new OutputStreamWriter(singleOS));
-
         HashMap<String, Adventurer> adventurers = initAdventurers();
-        HashMap<String, Creature> creatures = initCreature();
+        HashMap<String, Creature> creatures = initCreatures();
         HashMap<String, Treasure> treasures = initTreasures();
-        GameMap gameMap = initGameMap(adventurers, creatures, treasures);
+        BufferedWriter singleRunWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("src/main/resources/singleGameRun/SingleGameRun.txt")));
+        gameMap = initGameMap(adventurers, creatures, treasures);
+        tracker = new Tracker(singleRunWriter);
         boolean flag = true;
 
         System.out.println(gameMap);
-        singleWriter.write(gameMap.toString());
-        singleWriter.newLine();
+//        writer.write(gameMap.toString());
+//        writer.newLine();
         while (flag) {
-            play(gameMap);
+            int turnCount = gameMap.getTurnCount() + 1;
+            String fileName = "src/main/resources/singleGameRun/log/Logger-" + turnCount + ".txt";
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
+            publisher = new Publisher();
+            publisher.addObserver(new Logger(writer));
+            publisher.addObserver(tracker);
+
+            play();
             System.out.println(gameMap);
-            singleWriter.write(gameMap.toString());
-            singleWriter.newLine();
-            singleWriter.write("-------------------------------------------------------------------------------------------\n\n");
-            if (checkIfAdventurersWin(gameMap).equals(Constants.ADVENTURER_WIN)) {
+//            writer.write(gameMap.toString());
+//            writer.newLine();
+//            writer.write("-------------------------------------------------------------------------------------------\n\n");
+            if (checkIfAdventurersWin().equals(Constants.ADVENTURER_WIN)) {
                 System.out.println(gameMap.winner);
-                singleWriter.write(gameMap.winner);
+//                writer.write(gameMap.winner);
                 flag = false;
-            } else if (checkIfAdventurersWin(gameMap).equals(Constants.CREATURE_WIN)) {
+            } else if (checkIfAdventurersWin().equals(Constants.CREATURE_WIN)) {
                 System.out.println(gameMap.winner);
-                singleWriter.write(gameMap.winner);
+//                writer.write(gameMap.winner);
                 flag = false;
             }
+            writer.close();
         }
-
-        singleWriter.close();
+        singleRunWriter.close();
 
         // MultipleGameRun
 //        File multipleGameRun = new File("MultipleGameRun.txt");
@@ -64,7 +77,7 @@ public class GameEngine {
 //
 //        for (int i = 1; i <= 30; i++) {
 //            adventurers = initAdventurers();
-//            creatures = initCreature();
+//            creatures = initCreatures();
 //            gameMap = initGameMap(adventurers, creatures, treasures);
 //            flag = true;
 //
@@ -144,12 +157,12 @@ public class GameEngine {
         return adventurers;
     }
 
-    private static HashMap<String, Creature> initCreature() {
+    private static HashMap<String, Creature> initCreatures() {
         HashMap<String, Creature> creatures = new HashMap<>();
         for (int i = 0; i < 4; i++) {
-            Blinker blinker = new Blinker();
-            Orbiter orbiter = new Orbiter();
-            Seeker seeker = new Seeker();
+            Blinker blinker = new Blinker(i);
+            Orbiter orbiter = new Orbiter(i);
+            Seeker seeker = new Seeker(i);
             creatures.put(Constants.BLINKER_NAME + i, blinker);
             creatures.put(Constants.ORBITER_NAME + i, orbiter);
             creatures.put(Constants.SEEKER_NAME + i, seeker);
@@ -221,26 +234,27 @@ public class GameEngine {
         return gameMap;
     }
 
-    private static void play(GameMap gameMap) {
-        moveAdventurers(gameMap);
-        combatAndSearchA(gameMap);
-        moveRunner(gameMap);
+    private static void play() throws IOException {
+        moveAdventurers();
+        combatAndSearch();
+        moveRunner();
         if (gameMap.runner != null) {
-            combatAndSearch(gameMap, gameMap.runner);
+            combatAndSearch(gameMap.runner);
         }
-        moveCreatures(gameMap);
-        combatAndSearchC(gameMap);
+        moveCreatures();
+        combatC();
         gameMap.setTurnCount(gameMap.getTurnCount() + 1);
+        tracker.export();
     }
 
-    private static void moveAdventurers(GameMap gameMap) {
-        moveBrawler(gameMap);
-        moveRunner(gameMap);
-        moveSneaker(gameMap);
-        moveThief(gameMap);
+    private static void moveAdventurers() throws IOException {
+        moveBrawler();
+        moveRunner();
+        moveSneaker();
+        moveThief();
     }
 
-    private static void moveBrawler(GameMap gameMap) {
+    private static void moveBrawler() throws IOException {
         if (gameMap.brawler == null) {
             return;
         }
@@ -252,9 +266,10 @@ public class GameEngine {
         Room newRoom = gameMap.rooms.get(gameMap.brawler.currentRoomNumber());
         newRoom.getAdventurers().put(Constants.BRAWLER_NAME, gameMap.brawler);
         gameMap.brawler.setRoom(newRoom);
+        publisher.publish(Constants.BRAWLER_FULL_NAME + " enters room: " + gameMap.brawler.currentRoomNumber());
     }
 
-    private static void moveRunner(GameMap gameMap) {
+    private static void moveRunner() throws IOException {
         if (gameMap.runner == null) {
             return;
         }
@@ -263,9 +278,10 @@ public class GameEngine {
         Room newRoom = gameMap.rooms.get(gameMap.runner.currentRoomNumber());
         newRoom.getAdventurers().put(Constants.RUNNER_NAME, gameMap.runner);
         gameMap.runner.setRoom(newRoom);
+        publisher.publish(Constants.RUNNER_FULL_NAME + " enters room: " + gameMap.runner.currentRoomNumber());
     }
 
-    private static void moveSneaker(GameMap gameMap) {
+    private static void moveSneaker() throws IOException {
         if (gameMap.sneaker == null) {
             return;
         }
@@ -274,9 +290,10 @@ public class GameEngine {
         Room newRoom = gameMap.rooms.get(gameMap.sneaker.currentRoomNumber());
         newRoom.getAdventurers().put(Constants.SNEAKER_NAME, gameMap.sneaker);
         gameMap.sneaker.setRoom(newRoom);
+        publisher.publish(Constants.SNEAKER_FULL_NAME + " enters room: " + gameMap.sneaker.currentRoomNumber());
     }
 
-    private static void moveThief(GameMap gameMap) {
+    private static void moveThief() throws IOException {
         if (gameMap.thief == null) {
             return;
         }
@@ -285,11 +302,13 @@ public class GameEngine {
         Room newRoom = gameMap.rooms.get(gameMap.thief.currentRoomNumber());
         newRoom.getAdventurers().put(Constants.THIEF_NAME, gameMap.thief);
         gameMap.thief.setRoom(newRoom);
+        publisher.publish(Constants.THIEF_FULL_NAME + " enters room: " + gameMap.thief.currentRoomNumber());
     }
 
-    private static void moveCreatures(GameMap gameMap) {
+    private static void moveCreatures() throws IOException {
         for (String key : gameMap.creatures.keySet()) {
             if (key.contains("O")) {
+                // Move orbiters
                 Creature creature = gameMap.creatures.get(key);
                 if (!(creature instanceof Orbiter orbiter)) {
                     throw new RuntimeException("Orbiter initialization failure.");
@@ -300,6 +319,7 @@ public class GameEngine {
                 Room newRoom = gameMap.rooms.get(orbiter.currentRoomNumber());
                 orbiter.setRoom(newRoom);
                 newRoom.getCreatures().put(key, orbiter);
+                publisher.publish(orbiter.fullName + orbiter.id + " enters room: " + orbiter.currentRoomNumber());
             } else if (key.contains("B")) {
                 // Move blinkers
                 Creature creature = gameMap.creatures.get(key);
@@ -312,6 +332,7 @@ public class GameEngine {
                 Room newRoom = gameMap.rooms.get(blinker.currentRoomNumber());
                 blinker.setRoom(newRoom);
                 newRoom.getCreatures().put(key, blinker);
+                publisher.publish(blinker.fullName + blinker.id + " enters room: " + blinker.currentRoomNumber());
             } else {
                 // Move seekers
                 Creature creature = gameMap.creatures.get(key);
@@ -324,30 +345,31 @@ public class GameEngine {
                 Room newRoom = gameMap.rooms.get(seeker.currentRoomNumber());
                 seeker.setRoom(newRoom);
                 newRoom.getCreatures().put(key, seeker);
+                publisher.publish(seeker.fullName + seeker.id + " enters room: " + seeker.currentRoomNumber());
             }
         }
     }
 
-    private static void combatAndSearchA(GameMap gameMap) {
+    private static void combatAndSearch() throws IOException {
         if (gameMap.brawler != null) {
-            combatAndSearch(gameMap, gameMap.brawler);
+            combatAndSearch(gameMap.brawler);
         }
 
         if (gameMap.runner != null) {
-            combatAndSearch(gameMap, gameMap.runner);
+            combatAndSearch(gameMap.runner);
         }
 
         if (gameMap.sneaker != null) {
-            combatAndSearch(gameMap, gameMap.sneaker);
+            combatAndSearch(gameMap.sneaker);
         }
 
 
         if (gameMap.thief != null) {
-            combatAndSearch(gameMap, gameMap.thief);
+            combatAndSearch(gameMap.thief);
         }
     }
 
-    private static void combatAndSearchC(GameMap gameMap) {
+    private static void combatC() throws IOException {
         Random random = new Random();
         // https://www.baeldung.com/java-concurrentmodificationexception
         for (Iterator<Map.Entry<String, Creature>> iterator = gameMap.creatures.entrySet().iterator(); iterator.hasNext(); ) {
@@ -413,26 +435,31 @@ public class GameEngine {
                 builder.append(adventurer.fullName).append(" celebrates: ");
 
                 if (combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 0) {
+                    publisher.publish(adventurer.fullName + " wins. " + creature.fullName + creature.id + " loses.");
                     currentRoom.getCreatures().remove(key);
                     iterator.remove();
-                    updateCreatureCount(gameMap, creature);
+                    updateCreatureCount(creature);
+                    publisher.publish(creature.fullName + creature.id + " is removed.");
                     if (combat instanceof Celebrate) {
                         builder.replace(builder.length()-2, builder.length()-1, ".");
                         System.out.println(builder);
+                        publisher.publish(builder.toString());
                     }
                     break;
                 } else if (adventurer.combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 1) {
-                    if (adventurer.getDamage() < 3) {
+                    publisher.publish(adventurer.fullName + " loses. " + creature.fullName + creature.id + " wins.");
+//                    if (adventurer.getDamage() < 3) {
                         adventurer.setDamage(adventurer.getDamage() + 1);
-                    }
+                        publisher.publish(adventurer.fullName + "'s new damage: " + adventurer.getDamage());
+//                    }
                 }
 
-                checkAdventurersDamage(adventurer, currentRoom, gameMap);
+                checkAdventurersDamage(adventurer, currentRoom);
             }
         }
     }
 
-    private static void combatAndSearch(GameMap gameMap, Adventurer adventurer) {
+    private static void combatAndSearch(Adventurer adventurer) throws IOException {
         Room currentRoom = adventurer.getRoom();
         HashMap<String, Creature> creaturesInRoom = currentRoom.getCreatures();
         HashMap<String, Treasure> treasuresInRoom = currentRoom.getTreasures();
@@ -450,16 +477,19 @@ public class GameEngine {
                         adventurer.setDamage(adventurer.getDamage() + 1);
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
+                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.armor == null && treasure instanceof Armor) {
                         adventurer.armor = (Armor) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
+                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.gem == null && treasure instanceof Gem) {
                         adventurer.gem = (Gem) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
+                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (treasure.name.equals(Constants.PORTAL_NAME)) {
                         // Delete adventurer in original room
@@ -472,16 +502,19 @@ public class GameEngine {
                         adventurer.setRoom(newRoom);
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
+                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.potion == null && treasure instanceof Potion) {
                         adventurer.potion = (Potion) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
+                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.sword == null && treasure instanceof Sword) {
                         adventurer.sword = (Sword) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
+                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else {
                         break;
@@ -545,26 +578,31 @@ public class GameEngine {
                 builder.append(adventurer.fullName).append(" celebrates: ");
 
                 if (combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 0) {
+                    publisher.publish(adventurer.fullName + " wins. " + creature.fullName + creature.id + " loses.");
                     iterator.remove();
                     gameMap.creatures.remove(key);
-                    updateCreatureCount(gameMap, creature);
+                    updateCreatureCount(creature);
+                    publisher.publish(creature.fullName + creature.id + " is removed.");
                     if (combat instanceof Celebrate) {
                         builder.replace(builder.length()-2, builder.length()-1, ".");
                         System.out.println(builder);
+                        publisher.publish(builder.toString());
                     }
                 } else if (adventurer.combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 1) {
-                    if (adventurer.getDamage() < 3) {
+                    publisher.publish(adventurer.fullName + " loses. " + creature.fullName + creature.id + " wins.");
+//                    if (adventurer.getDamage() < 3) {
                         adventurer.setDamage(adventurer.getDamage() + 1);
-                    }
+                        publisher.publish(adventurer.fullName + "'s new damage: " + adventurer.getDamage());
+//                    }
                 }
 
-                checkAdventurersDamage(adventurer, currentRoom, gameMap);
+                checkAdventurersDamage(adventurer, currentRoom);
             }
         }
     }
 
 
-    private static void checkAdventurersDamage(Adventurer adventurer, Room currentRoom, GameMap gameMap) {
+    private static void checkAdventurersDamage(Adventurer adventurer, Room currentRoom) throws IOException {
         if (adventurer.getDamage() >= 3) {
             if (adventurer.potion != null && adventurer.getDamage() - 1 < 3) {
                 adventurer.potion = null;
@@ -572,6 +610,7 @@ public class GameEngine {
                 return;
             }
             currentRoom.getAdventurers().remove(adventurer.getName());
+            publisher.publish(adventurer.fullName + " is removed.");
             if (adventurer instanceof Brawler) {
                 gameMap.brawler = null;
             } else if (adventurer instanceof Runner) {
@@ -584,7 +623,7 @@ public class GameEngine {
         }
     }
 
-    private static void updateCreatureCount(GameMap gameMap, Creature creature) {
+    private static void updateCreatureCount(Creature creature) {
         if (creature instanceof Blinker) {
             gameMap.setBlinkerCount(gameMap.getBlinkerCount() - 1);
         } else if (creature instanceof Orbiter) {
@@ -594,7 +633,7 @@ public class GameEngine {
         }
     }
 
-    private static String checkIfAdventurersWin(GameMap gameMap) {
+    private static String checkIfAdventurersWin() {
         if (gameMap.getTotalTreasureCount() == 24 || gameMap.creatures.size() == 0) {
             gameMap.winner = Constants.ADVENTURER_WIN;
             return Constants.ADVENTURER_WIN;

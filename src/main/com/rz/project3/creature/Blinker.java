@@ -1,13 +1,16 @@
 package com.rz.project3.creature;
 
+import com.rz.project3.Constants;
 import com.rz.project3.map.Room;
 
 import java.util.Random;
 
 public class Blinker extends Creature {
 
-    public Blinker() {
+    public Blinker(int id) {
+        this.fullName = Constants.BLINKER_FULL_NAME;
         this.setName("B");
+        this.id = id;
 
         Random random = new Random();   // https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
         int z = 4;

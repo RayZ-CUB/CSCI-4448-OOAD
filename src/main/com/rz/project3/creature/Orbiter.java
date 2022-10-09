@@ -8,9 +8,11 @@ import java.util.Random;
 public class Orbiter extends Creature {
     private final String direction;
 
-    public Orbiter() {
+    public Orbiter(int id) {
+        this.fullName = Constants.ORBITER_FULL_NAME;
         // Set up name
         this.setName(Constants.ORBITER_NAME);
+        this.id = id;
 
         // Set up starting room
         Random random = new Random();   // https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java

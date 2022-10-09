@@ -7,6 +7,8 @@ import java.util.Random;
 
 //In creature abstract class, using abstraction to abstract all attribute that creatures have.
 public abstract class Creature {
+    public String fullName;
+    public int id;
     private String name;
     private Room room;
     // z-y-x
