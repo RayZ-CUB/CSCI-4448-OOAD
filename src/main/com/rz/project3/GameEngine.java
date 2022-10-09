@@ -16,11 +16,9 @@ import com.rz.project3.skill.search.CarefulSearch;
 import com.rz.project3.skill.search.CarelessSearch;
 import com.rz.project3.skill.search.QuickSearch;
 import com.rz.project3.treasure.*;
+import org.apache.commons.io.FileUtils;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -33,6 +31,9 @@ public class GameEngine {
     private static GameMap gameMap;
 
     public static void main(String[] args) throws IOException {
+        //https://stackoverflow.com/questions/13195797/delete-all-files-in-directory-but-not-directory-one-liner-solution
+        // Clean logs
+        FileUtils.cleanDirectory(new File("src/main/resources/singleGameRun/log"));
         HashMap<String, Adventurer> adventurers = initAdventurers();
         HashMap<String, Creature> creatures = initCreatures();
         HashMap<String, Treasure> treasures = initTreasures();
