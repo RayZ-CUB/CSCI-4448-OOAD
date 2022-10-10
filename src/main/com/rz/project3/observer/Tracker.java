@@ -361,8 +361,6 @@ public class Tracker implements Observer {
                     .append(seeker3.get(1)).append("\n");
         }
         output.append("\n\n");
-        output.append("-----------------------------------------------------------------------------------------------------------------");
-        output.append("\n\n");
         writer.write(output.toString());
     }
 

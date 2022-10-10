@@ -5,6 +5,7 @@ import com.rz.project3.treasure.Armor;
 import com.rz.project3.treasure.Gem;
 import com.rz.project3.treasure.Sword;
 
+//use Decorator pattern
 public abstract class Celebrate extends Combat{
     Combat decoratedCombat;
 

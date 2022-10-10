@@ -1,0 +1,956 @@
+RotLA Turn 0:
+
+0-1-1: BRST : - : -									
+1-0-0: - : O : -									1-0-1: - : O : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : S : -									1-1-2: - : - : Portal 									
+1-2-0: - : - : -									1-2-1: - : - : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : S : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : B : Potion 									4-0-2: - : B : -									
+4-1-0: - : S : Portal 									4-1-1: - : B : -									4-1-2: - : OO : -									
+4-2-0: - : B : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+Tracker: Turn 1
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-1					1				
+Sneaker					1-1-1					0				
+Runner					2-1-1					0				
+Thief					1-1-1					0				
+
+Total Active Creatures: 11
+
+Creatures				Room
+Blinker					3-0-0
+Blinker					2-1-2
+Blinker					3-1-1
+Blinker					3-0-2
+Orbiter					4-2-2
+Orbiter					1-0-1
+Orbiter					4-0-2
+Orbiter					1-0-2
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 1:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : O : -									1-0-2: - : O : Trap 									
+1-1-0: - : - : -									1-1-1: BST : - : -									1-1-2: - : - : Portal 									
+1-2-0: - : - : -									1-2-1: - : - : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: R : S : -									2-1-2: - : B : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : B : -									3-0-1: - : - : Sword 									3-0-2: - : B : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : B : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: - : O : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : O : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 2
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-1					1				
+Sneaker					1-0-1					0				
+Runner					2-0-0					0				
+Thief					1-0-1					0				
+
+Total Active Creatures: 10
+
+Creatures				Room
+Blinker					3-1-1
+Blinker					2-1-2
+Blinker					3-0-2
+Blinker					3-0-0
+Orbiter					4-2-1
+Orbiter					4-0-1
+Orbiter					1-1-2
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 2:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: ST : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: - : O : Portal 									
+1-2-0: - : - : -									1-2-1: B : - : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: R : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : S : -									2-1-2: - : B : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : B : -									3-0-1: - : - : Sword 									3-0-2: - : B : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : B : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : O : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : O : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 3
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-0					1				
+Sneaker					1-0-2					0				
+Runner					2-0-2					0				
+Thief					1-0-2					0				
+
+Total Active Creatures: 10
+
+Creatures				Room
+Blinker					4-0-0
+Blinker					2-2-1
+Blinker					2-0-0
+Blinker					2-0-0
+Orbiter					4-2-0
+Orbiter					4-0-0
+Orbiter					1-2-2
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 3:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: ST : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: - : - : Portal 									
+1-2-0: B : - : -									1-2-1: - : - : Armor 									1-2-2: - : O : Trap Sword 									
+2-0-0: - : BB : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : S : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : B : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : OB : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : O : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 4
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-0					1				
+Sneaker					1-0-1					0				
+Runner					2-0-2					0				
+Thief					1-1-2					0				
+
+Total Active Creatures: 10
+
+Creatures				Room
+Blinker					1-0-0
+Blinker					1-1-2
+Blinker					2-2-0
+Blinker					4-1-1
+Orbiter					4-1-0
+Orbiter					4-1-0
+Orbiter					1-2-1
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 4:
+
+0-1-1: - : - : -									
+1-0-0: - : B : -									1-0-1: S : - : -									1-0-2: - : - : Trap 									
+1-1-0: B : - : -									1-1-1: - : - : -									1-1-2: T : B : Portal 									
+1-2-0: - : - : -									1-2-1: - : O : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : S : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : B : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : OOS : Portal 									4-1-1: - : B : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 5
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-0-0					1				
+Sneaker					1-0-2					0				
+Runner					2-2-2					0				
+Thief					1-0-2					0				
+
+Total Active Creatures: 10
+
+Creatures				Room
+Blinker					1-0-0
+Blinker					1-2-1
+Blinker					4-2-1
+Blinker					3-0-2
+Orbiter					4-0-0
+Orbiter					4-2-0
+Orbiter					1-2-0
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 5:
+
+0-1-1: - : - : -									
+1-0-0: B : B : -									1-0-1: - : - : -									1-0-2: ST : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: - : - : Portal 									
+1-2-0: - : O : -									1-2-1: - : B : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : S : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: R : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : B : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : O : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : O : Portal 									4-2-1: - : B : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 6
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-0					1				
+Sneaker					1-0-1					0				
+Runner					2-2-0					0				
+Thief					1-0-1					0				
+
+Total Active Creatures: 10
+
+Creatures				Room
+Blinker					3-2-2
+Blinker					3-0-0
+Blinker					4-1-1
+Blinker					4-0-2
+Orbiter					4-0-1
+Orbiter					4-2-1
+Orbiter					1-1-0
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 6:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: ST : - : -									1-0-2: - : - : Trap 									
+1-1-0: B : O : -									1-1-1: - : - : -									1-1-2: - : - : Portal 									
+1-2-0: - : - : -									1-2-1: - : - : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : S : -									2-1-2: - : - : Sword Sword 									
+2-2-0: R : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : B : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : B : -									
+4-0-0: - : - : -									4-0-1: - : O : Potion 									4-0-2: - : B : -									
+4-1-0: - : S : Portal 									4-1-1: - : B : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : O : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 7
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-1					1				
+Sneaker					1-0-0					0				
+Runner					2-1-1					1				
+Thief					1-0-2					0				
+
+Total Active Creatures: 10
+
+Creatures				Room
+Blinker					4-2-2
+Blinker					1-2-1
+Blinker					2-0-2
+Blinker					4-1-2
+Orbiter					4-0-2
+Orbiter					4-2-2
+Orbiter					1-0-0
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 7:
+
+0-1-1: - : - : -									
+1-0-0: S : O : -									1-0-1: - : - : -									1-0-2: T : - : Trap 									
+1-1-0: - : - : -									1-1-1: B : - : -									1-1-2: - : - : Portal 									
+1-2-0: - : - : -									1-2-1: - : B : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : B : Armor 									
+2-1-0: - : - : -									2-1-1: R : S : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: - : O : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : B : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : OB : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 8
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-0					1				
+Sneaker					1-1-0					0				
+Runner					2-0-2					1				
+Thief					1-1-2					0				
+
+Total Active Creatures: 9
+
+Creatures				Room
+Blinker					3-2-2
+Blinker					1-2-2
+Blinker					1-1-1
+Orbiter					4-1-2
+Orbiter					4-1-2
+Orbiter					1-0-1
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					2-1-1
+
+
+RotLA Turn 8:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : O : -									1-0-2: - : - : Trap 									
+1-1-0: BS : - : -									1-1-1: - : B : -									1-1-2: T : - : Portal 									
+1-2-0: - : - : -									1-2-1: - : - : Armor 									1-2-2: - : B : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : S : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : B : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : OO : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 9
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-1					1				
+Sneaker					1-1-1					0				
+Runner					2-0-2					1				
+Thief					1-1-1					0				
+
+Total Active Creatures: 8
+
+Creatures				Room
+Blinker					3-2-1
+Blinker					3-2-0
+Orbiter					4-2-2
+Orbiter					4-0-2
+Orbiter					1-0-2
+Seeker					4-1-0
+Seeker					3-2-1
+Seeker					1-1-1
+
+
+RotLA Turn 9:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : O : Trap 									
+1-1-0: - : - : -									1-1-1: BST : S : -									1-1-2: - : - : Portal 									
+1-2-0: - : - : -									1-2-1: - : - : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : B : Armor 									3-2-1: - : BS : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: - : O : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : O : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 10
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-1					1				
+Sneaker					1-1-2					0				
+Runner					2-0-0					1				
+Thief					1-2-1					0				
+
+Total Active Creatures: 7
+
+Creatures				Room
+Blinker					2-0-0
+Blinker					1-0-0
+Orbiter					4-2-1
+Orbiter					4-0-1
+Orbiter					1-1-2
+Seeker					4-1-0
+Seeker					3-2-1
+
+
+RotLA Turn 10:
+
+0-1-1: - : - : -									
+1-0-0: - : B : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: S : O : Portal 									
+1-2-0: - : - : -									1-2-1: BT : - : Armor 									1-2-2: - : - : Trap Sword 									
+2-0-0: R : B : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : O : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : O : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 11
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-2					1				
+Sneaker					1-1-1					0				
+Runner					2-0-0					1				
+Thief					1-2-0					0				
+
+Total Active Creatures: 7
+
+Creatures				Room
+Blinker					2-0-0
+Blinker					2-0-2
+Orbiter					4-2-0
+Orbiter					4-0-0
+Orbiter					1-2-2
+Seeker					4-1-0
+Seeker					3-2-1
+
+
+RotLA Turn 11:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: S : - : -									1-1-2: - : - : Portal 									
+1-2-0: T : - : -									1-2-1: - : - : Armor 									1-2-2: B : O : Trap Sword 									
+2-0-0: R : B : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : B : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : O : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : O : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 12
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-2					1				
+Sneaker					1-2-1					0				Armor
+Runner					2-0-2					1				
+Thief					1-2-1					0				
+
+Total Active Creatures: 7
+
+Creatures				Room
+Blinker					4-0-0
+Blinker					2-0-2
+Orbiter					4-1-0
+Orbiter					4-1-0
+Orbiter					1-2-1
+Seeker					4-1-0
+Seeker					3-2-1
+
+
+RotLA Turn 12:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: B : - : Portal 									
+1-2-0: - : - : -									1-2-1: ST : O : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : B : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : B : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : OOS : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 13
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-2					1				
+Sneaker					1-1-1					0				Armor
+Runner					2-1-1					1				
+Thief					1-2-2					0				
+
+Total Active Creatures: 7
+
+Creatures				Room
+Blinker					2-0-1
+Blinker					2-1-0
+Orbiter					4-0-0
+Orbiter					4-2-0
+Orbiter					1-2-0
+Seeker					4-1-0
+Seeker					3-2-1
+
+
+RotLA Turn 13:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: S : - : -									1-1-2: - : - : Portal 									
+1-2-0: - : O : -									1-2-1: - : - : -									1-2-2: BT : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : B : -									2-0-2: - : - : Armor 									
+2-1-0: - : B : -									2-1-1: R : - : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : O : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : O : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 14
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-2					1				
+Sneaker					1-1-2					0				Armor
+Runner					2-0-2					1				
+Thief					1-1-2					0				
+
+Total Active Creatures: 6
+
+Creatures				Room
+Blinker					2-1-2
+Orbiter					4-0-1
+Orbiter					4-2-1
+Orbiter					1-1-0
+Seeker					4-1-0
+Seeker					3-2-1
+
+
+RotLA Turn 14:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : O : -									1-1-1: - : - : -									1-1-2: BS : - : -									
+1-2-0: - : - : -									1-2-1: - : - : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : B : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: T : O : Potion 									4-0-2: - : - : -									
+4-1-0: - : S : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : O : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 15
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-2					1				
+Sneaker					1-1-1					0				Armor
+Runner					2-2-2					1				
+Thief					4-0-0					0				
+
+Total Active Creatures: 5
+
+Creatures				Room
+Orbiter					4-0-2
+Orbiter					4-2-2
+Orbiter					1-0-0
+Seeker					4-0-0
+Seeker					3-2-1
+
+
+RotLA Turn 15:
+
+0-1-1: - : - : -									
+1-0-0: - : O : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: S : - : -									1-1-2: - : - : -									
+1-2-0: - : - : -									1-2-1: - : - : -									1-2-2: B : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: R : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: T : S : -									4-0-1: - : - : Potion 									4-0-2: - : O : -									
+4-1-0: - : - : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : O : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 16
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-1					1				
+Sneaker					2-1-1					0				Armor
+Runner					2-1-1					1				Sword
+Thief					4-0-1					0				
+
+Total Active Creatures: 5
+
+Creatures				Room
+Orbiter					4-1-2
+Orbiter					4-1-2
+Orbiter					1-0-1
+Seeker					4-0-1
+Seeker					3-2-1
+
+
+RotLA Turn 16:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : O : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: - : - : -									
+1-2-0: - : - : -									1-2-1: B : - : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: RS : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: T : S : Potion 									4-0-2: - : - : -									
+4-1-0: - : - : Portal 									4-1-1: - : - : -									4-1-2: - : OO : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 17
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-1					1				
+Sneaker					3-1-1					0				Armor
+Runner					2-0-2					1				Sword
+Thief					4-0-2					0				
+
+Total Active Creatures: 5
+
+Creatures				Room
+Orbiter					4-2-2
+Orbiter					4-0-2
+Orbiter					1-0-2
+Seeker					4-0-2
+Seeker					3-1-1
+
+
+RotLA Turn 17:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : O : Trap 									
+1-1-0: - : - : -									1-1-1: B : - : -									1-1-2: - : - : -									
+1-2-0: - : - : -									1-2-1: - : - : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: S : S : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : - : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: T : OS : -									
+4-1-0: - : - : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : O : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 18
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-1					1				
+Sneaker					3-1-0					0				Armor
+Runner					2-0-2					1				Sword
+Thief					4-0-1					0				
+
+Total Active Creatures: 5
+
+Creatures				Room
+Orbiter					4-2-1
+Orbiter					4-0-1
+Orbiter					1-1-2
+Seeker					4-0-1
+Seeker					3-1-0
+
+
+RotLA Turn 18:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: - : O : -									
+1-2-0: - : - : -									1-2-1: B : - : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: R : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: S : S : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : - : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: T : OS : Potion 									4-0-2: - : - : -									
+4-1-0: - : - : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : O : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 19
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-1					1				
+Sneaker					3-2-0					0				Armor
+Runner					2-1-1					1				Sword
+Thief					4-1-1					0				
+
+Total Active Creatures: 5
+
+Creatures				Room
+Orbiter					4-2-0
+Orbiter					4-0-0
+Orbiter					1-2-2
+Seeker					4-1-1
+Seeker					3-2-0
+
+
+RotLA Turn 19:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: B : - : -									1-1-2: - : - : -									
+1-2-0: - : - : -									1-2-1: - : - : -									1-2-2: - : O : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: R : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: S : S : Armor 									3-2-1: - : - : -									3-2-2: - : - : -									
+4-0-0: - : O : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : - : Portal 									4-1-1: T : S : -									4-1-2: - : - : -									
+4-2-0: - : O : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 20
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-1-0					1				
+Sneaker					3-2-1					0				Armor
+Runner					1-0-1					1				Sword
+Thief					4-1-0					0				
+
+Total Active Creatures: 4
+
+Creatures				Room
+Orbiter					4-1-0
+Orbiter					1-2-1
+Seeker					4-1-0
+Seeker					3-2-1
+
+
+RotLA Turn 20:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: R : - : -									1-0-2: - : - : Trap 									
+1-1-0: B : - : -									1-1-1: - : - : -									1-1-2: - : - : -									
+1-2-0: - : - : -									1-2-1: - : O : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: S : S : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: T : OS : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 21
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-0					1				
+Sneaker					3-2-2					0				Armor
+Runner					1-2-1					2				Sword
+Thief					4-1-1					0				
+
+Total Active Creatures: 4
+
+Creatures				Room
+Orbiter					4-0-0
+Orbiter					1-2-1
+Seeker					4-1-1
+Seeker					3-2-2
+
+
+RotLA Turn 21:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: - : - : -									
+1-2-0: B : - : -									1-2-1: R : O : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: - : - : -									3-2-2: S : S : -									
+4-0-0: - : O : -									4-0-1: - : - : Potion 									4-0-2: - : - : -									
+4-1-0: - : - : Portal 									4-1-1: T : S : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 22
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-1					1				
+Sneaker					3-2-1					0				Armor
+Runner					1-1-2					2				Sword
+Thief					4-0-1					0				
+
+Total Active Creatures: 1
+
+Creatures				Room
+Seeker					4-0-1
+
+
+RotLA Turn 22:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: R : - : -									
+1-2-0: - : - : -									1-2-1: B : - : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: - : - : Armor 									3-2-1: S : - : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: T : S : Potion 									4-0-2: - : - : -									
+4-1-0: - : - : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 23
+
+Total Active Adventurers: 4
+
+Adventurers				Room				Damage				Treasure
+Brawler					1-2-0					1				
+Sneaker					3-2-0					0				Armor
+Runner					2-1-1					2				Sword
+Thief					4-0-2					0				
+
+Total Active Creatures: 0
+
+Creatures				Room
+
+
+RotLA Turn 23:
+
+0-1-1: - : - : -									
+1-0-0: - : - : -									1-0-1: - : - : -									1-0-2: - : - : Trap 									
+1-1-0: - : - : -									1-1-1: - : - : -									1-1-2: - : - : -									
+1-2-0: B : - : -									1-2-1: - : - : -									1-2-2: - : - : Trap Sword 									
+2-0-0: - : - : Trap Gem Potion 									2-0-1: - : - : -									2-0-2: - : - : Armor 									
+2-1-0: - : - : -									2-1-1: R : - : -									2-1-2: - : - : Sword 									
+2-2-0: - : - : -									2-2-1: - : - : Potion 									2-2-2: - : - : -									
+3-0-0: - : - : -									3-0-1: - : - : Sword 									3-0-2: - : - : Gem Potion 									
+3-1-0: - : - : Armor Gem Trap 									3-1-1: - : - : -									3-1-2: - : - : Gem 									
+3-2-0: S : - : Armor 									3-2-1: - : - : -									3-2-2: - : - : -									
+4-0-0: - : - : -									4-0-1: - : - : Potion 									4-0-2: T : - : -									
+4-1-0: - : - : Portal 									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Portal 									4-2-1: - : - : -									4-2-2: - : - : Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Adventurers win!

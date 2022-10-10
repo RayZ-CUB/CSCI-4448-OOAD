@@ -1,0 +1,13 @@
+Brawler enters room: 1-1-2
+Runner enters room: 2-0-1
+Sneaker enters room: 1-2-1
+Thief enters room: 1-2-1
+Armor is found by Sneaker.
+Runner enters room: 2-0-2
+Orbiter0 enters room: 4-1-0
+Orbiter2 enters room: 4-1-0
+Orbiter3 enters room: 1-2-1
+Seeker0 enters room: 4-1-0
+Blinker0 enters room: 4-0-0
+Blinker1 enters room: 2-0-2
+Seeker2 enters room: 3-2-1

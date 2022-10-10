@@ -1,0 +1,8 @@
+Brawler enters room: 4-1-0
+Runner enters room: 2-0-1
+Sneaker enters room: 2-1-0
+Thief enters room: 3-2-2
+Portal is found by Sneaker.
+Runner enters room: 2-0-2
+Orbiter2 enters room: 1-2-2
+Orbiter3 enters room: 1-2-0

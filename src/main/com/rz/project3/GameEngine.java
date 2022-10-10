@@ -31,6 +31,7 @@ public class GameEngine {
     private static GameMap gameMap;
 
     public static void main(String[] args) throws IOException {
+        // SingleGameRun
         //https://stackoverflow.com/questions/13195797/delete-all-files-in-directory-but-not-directory-one-liner-solution
         // Clean logs
         FileUtils.cleanDirectory(new File("src/main/resources/singleGameRun/log"));
@@ -43,8 +44,8 @@ public class GameEngine {
         boolean flag = true;
 
         System.out.println(gameMap);
-//        writer.write(gameMap.toString());
-//        writer.newLine();
+        singleRunWriter.write(gameMap.toString());
+        singleRunWriter.newLine();
         while (flag) {
             int turnCount = gameMap.getTurnCount() + 1;
             String fileName = "src/main/resources/singleGameRun/log/Logger-" + turnCount + ".txt";
@@ -55,16 +56,16 @@ public class GameEngine {
 
             play();
             System.out.println(gameMap);
-//            writer.write(gameMap.toString());
-//            writer.newLine();
-//            writer.write("-------------------------------------------------------------------------------------------\n\n");
+            singleRunWriter.write(gameMap.toString());
+            singleRunWriter.newLine();
+            singleRunWriter.write("-----------------------------------------------------------------------------------------------------------------------------------\n\n");
             if (checkIfAdventurersWin().equals(Constants.ADVENTURER_WIN)) {
                 System.out.println(gameMap.winner);
-//                writer.write(gameMap.winner);
+                singleRunWriter.write(gameMap.winner);
                 flag = false;
             } else if (checkIfAdventurersWin().equals(Constants.CREATURE_WIN)) {
                 System.out.println(gameMap.winner);
-//                writer.write(gameMap.winner);
+                singleRunWriter.write(gameMap.winner);
                 flag = false;
             }
             writer.close();
@@ -72,75 +73,95 @@ public class GameEngine {
         singleRunWriter.close();
 
         // MultipleGameRun
-//        File multipleGameRun = new File("MultipleGameRun.txt");
-//        FileOutputStream multipleOS = new FileOutputStream(multipleGameRun);
-//        BufferedWriter multipleWriter = new BufferedWriter(new OutputStreamWriter(multipleOS));
+        BufferedWriter multipleWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("src/main/resources/multipleGameRun/MultipleGameRun.txt")));
 //
-//        for (int i = 1; i <= 30; i++) {
-//            adventurers = initAdventurers();
-//            creatures = initCreatures();
-//            gameMap = initGameMap(adventurers, creatures, treasures);
-//            flag = true;
-//
-//            while (flag) {
-//                play(gameMap);
-//                if (checkIfAdventurersWin(gameMap).equals(Constants.ADVENTURER_WIN)) {
-//                    flag = false;
-//                    printToMultiple(gameMap, i, multipleWriter);
-//
-//                } else if (checkIfAdventurersWin(gameMap).equals(Constants.CREATURE_WIN)) {
-//                    flag = false;
-//                    printToMultiple(gameMap, i, multipleWriter);
-//                }
-//            }
-//        }
-//
-//        multipleWriter.close();
+        for (int i = 1; i <= 30; i++) {
+            FileUtils.cleanDirectory(new File("src/main/resources/multipleGameRun/log"));
+            adventurers = initAdventurers();
+            creatures = initCreatures();
+            treasures = initTreasures();
+            gameMap = initGameMap(adventurers, creatures, treasures);
+            String fileName = "src/main/resources/multipleGameRun/tracker.txt";
+            BufferedWriter trackerWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
+            tracker = new Tracker(trackerWriter);
+            flag = true;
+
+            while (flag) {
+                int turnCount = gameMap.getTurnCount() + 1;
+                fileName = "src/main/resources/multipleGameRun/log/Logger-" + turnCount + ".txt";
+                writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
+                publisher = new Publisher();
+                publisher.addObserver(new Logger(writer));
+                publisher.addObserver(tracker);
+
+                play();
+                if (checkIfAdventurersWin().equals(Constants.ADVENTURER_WIN)) {
+                    flag = false;
+                    printToMultiple(i, multipleWriter);
+                } else if (checkIfAdventurersWin().equals(Constants.CREATURE_WIN)) {
+                    flag = false;
+                    printToMultiple(i, multipleWriter);
+                }
+                writer.close();
+            }
+            trackerWriter.close();
+        }
+        multipleWriter.close();
     }
 
-    private static void printToMultiple(GameMap gameMap, int gameCount, BufferedWriter writer) throws IOException {
+    private static void printToMultiple(int gameCount, BufferedWriter multipleWriter) throws IOException {
         // https://www.programcreek.com/2011/03/java-write-to-a-file-code-example/
 
-//        StringBuilder output = new StringBuilder();
+        StringBuilder output = new StringBuilder();
+        int adventurerCount = 4;
 
-//        // Print out game count
-//        output.append("Game: ").append(gameCount).append("\n\n");
-//
-//        // Print out turn count
-//        output.append("RotLA Turn ").append(gameMap.getTurnCount()).append(":\n\n");
-//        // Print out adventurers' information
-//        if (gameMap.brawler != null) {
-//            output.append("Brawler - ").append(gameMap.brawler.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.brawler.getDamage()).append(" Damage\n");
-//        } else {
-//            output.append("Brawler died. \n");
-//        }
-//
-//        if (gameMap.sneaker != null) {
-//            output.append("Sneaker - ").append(gameMap.sneaker.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.sneaker.getDamage()).append(" Damage\n");
-//        } else {
-//            output.append("Sneaker died. \n");
-//        }
-//
-//        if (gameMap.runner != null) {
-//            output.append("Runner - ").append(gameMap.runner.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.runner.getDamage()).append(" Damage\n");
-//        } else {
-//            output.append("Runner died. \n");
-//        }
-//
-//        if (gameMap.thief != null) {
-//            output.append("Thief - ").append(gameMap.thief.getTreasureCount()).append(" Treasure(s) - ").append(gameMap.thief.getDamage()).append(" Damage\n\n");
-//        } else {
-//            output.append("Thief died. \n\n");
-//        }
-//
-//        // Print out creatures' count
-//        output.append("Orbiters - ").append(gameMap.getOrbiterCount()).append(" Remaining\n");
-//        output.append("Seekers - ").append(gameMap.getSeekerCount()).append(" Remaining\n");
-//        output.append("Blinkers - ").append(gameMap.getBlinkerCount()).append(" Remaining\n\n");
-//        output.append(gameMap.winner).append("\n\n");
-//        output.append("-------------------------------------------------------------------------------------------\n\n");
+        // Print out game count
+        output.append("Game: ").append(gameCount).append("\n\n");
 
-//        writer.write(output.toString());
+        // Print out turn count
+        output.append("RotLA Turn ").append(gameMap.getTurnCount()).append(":\n\n");
+
+        // Update active adventurers' count
+        if (gameMap.brawler == null) {
+            adventurerCount--;
+        }
+
+        if (gameMap.sneaker == null) {
+            adventurerCount--;
+        }
+
+        if (gameMap.runner == null) {
+            adventurerCount--;
+        }
+
+        if (gameMap.thief == null) {
+            adventurerCount--;
+        }
+
+        // Print Adventurer count
+        if (adventurerCount != 0) {
+            output.append("Alive Adventurers: ").append(adventurerCount).append("\n");
+        } else {
+            output.append("All Adventurers eliminated.").append("\n");
+        }
+
+        // Print Creature count
+        if (gameMap.creatures.size() != 0) {
+            output.append("Alive Creatures: ").append(gameMap.creatures.size()).append("\n");
+        } else {
+            output.append("All Creatures eliminated.").append("\n");
+        }
+
+        // Print Creature count
+        if (gameMap.treasures.size() != 0) {
+            output.append("Left Treasures: ").append(gameMap.treasures.size()).append("\n\n\n");
+        } else {
+            output.append("All Treasures found.").append("\n\n\n");
+        }
+
+        output.append("---------------------------------------------------------------------------------\n\n\n");
+
+        multipleWriter.write(output.toString());
     }
 
     private static HashMap<String, Adventurer> initAdventurers() {
@@ -477,18 +498,21 @@ public class GameEngine {
                         }
                         adventurer.setDamage(adventurer.getDamage() + 1);
                         treasuresInRoom.remove(key);
+                        gameMap.treasures.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.armor == null && treasure instanceof Armor) {
                         adventurer.armor = (Armor) treasure;
                         treasuresInRoom.remove(key);
+                        gameMap.treasures.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.gem == null && treasure instanceof Gem) {
                         adventurer.gem = (Gem) treasure;
                         treasuresInRoom.remove(key);
+                        gameMap.treasures.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
@@ -502,18 +526,21 @@ public class GameEngine {
                         newRoom.getAdventurers().put(adventurer.getName(), adventurer);
                         adventurer.setRoom(newRoom);
                         treasuresInRoom.remove(key);
+                        gameMap.treasures.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.potion == null && treasure instanceof Potion) {
                         adventurer.potion = (Potion) treasure;
                         treasuresInRoom.remove(key);
+                        gameMap.treasures.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;
                     } else if (adventurer.sword == null && treasure instanceof Sword) {
                         adventurer.sword = (Sword) treasure;
                         treasuresInRoom.remove(key);
+                        gameMap.treasures.remove(key);
                         gameMap.setTotalTreasureCount(gameMap.getTotalTreasureCount() + 1);
                         publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
                         break;

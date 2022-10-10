@@ -1,0 +1,360 @@
+Game: 1
+
+RotLA Turn 108:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 7
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 2
+
+RotLA Turn 41:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 14
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 3
+
+RotLA Turn 73:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 15
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 4
+
+RotLA Turn 128:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 14
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 5
+
+RotLA Turn 73:
+
+Alive Adventurers: 2
+All Creatures eliminated.
+Left Treasures: 16
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 6
+
+RotLA Turn 156:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 10
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 7
+
+RotLA Turn 67:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 17
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 8
+
+RotLA Turn 88:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 11
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 9
+
+RotLA Turn 62:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 15
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 10
+
+RotLA Turn 59:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 17
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 11
+
+RotLA Turn 92:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 11
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 12
+
+RotLA Turn 76:
+
+Alive Adventurers: 2
+All Creatures eliminated.
+Left Treasures: 16
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 13
+
+RotLA Turn 48:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 14
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 14
+
+RotLA Turn 70:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 13
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 15
+
+RotLA Turn 54:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 14
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 16
+
+RotLA Turn 91:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 16
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 17
+
+RotLA Turn 79:
+
+Alive Adventurers: 1
+All Creatures eliminated.
+Left Treasures: 17
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 18
+
+RotLA Turn 100:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 11
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 19
+
+RotLA Turn 168:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 10
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 20
+
+RotLA Turn 44:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 15
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 21
+
+RotLA Turn 69:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 12
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 22
+
+RotLA Turn 38:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 20
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 23
+
+RotLA Turn 148:
+
+Alive Adventurers: 2
+All Creatures eliminated.
+Left Treasures: 13
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 24
+
+RotLA Turn 116:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 12
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 25
+
+RotLA Turn 175:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 13
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 26
+
+RotLA Turn 93:
+
+Alive Adventurers: 2
+All Creatures eliminated.
+Left Treasures: 13
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 27
+
+RotLA Turn 62:
+
+Alive Adventurers: 3
+All Creatures eliminated.
+Left Treasures: 18
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 28
+
+RotLA Turn 39:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 15
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 29
+
+RotLA Turn 53:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 10
+
+
+---------------------------------------------------------------------------------
+
+
+Game: 30
+
+RotLA Turn 86:
+
+Alive Adventurers: 4
+All Creatures eliminated.
+Left Treasures: 12
+
+
+---------------------------------------------------------------------------------
+
+
