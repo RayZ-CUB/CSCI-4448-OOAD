@@ -352,6 +352,7 @@ public class GameEngine {
     }
 
     private static void checkIfAdventurersWin() throws IOException {
+        writer.close();
         if (!adventurer.currentRoomNumber().equals(Constants.ENTRANCE_ROOM)) {
             return;
         }
@@ -372,6 +373,5 @@ public class GameEngine {
             System.out.println(gameMap.winner);
             flag = false;
         }
-        writer.close();
     }
 }

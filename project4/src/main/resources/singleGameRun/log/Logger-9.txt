@@ -1,0 +1,12 @@
+RZ enters room: 3-1-1
+Portal is found by RZ.
+Blinker2 enters room: 1-1-2
+Seeker3 enters room: 1-2-0
+Orbiter0 enters room: 1-2-2
+Blinker3 enters room: 2-0-2
+Orbiter1 enters room: 1-0-0
+Orbiter2 enters room: 2-0-0
+Blinker0 enters room: 2-2-2
+Seeker1 enters room: 2-0-1
+Blinker1 enters room: 3-2-0
+Seeker2 enters room: 3-0-2
