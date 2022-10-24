@@ -5,24 +5,23 @@ Total Active Adventurers: 4
 Adventurers				Room				Damage				Treasure
 Brawler					1-1-1					0				
 Sneaker					1-1-1					0				
-Runner					2-1-1					0				
+Runner					1-1-2					0				
 Thief					1-1-1					0				
 
-Total Active Creatures: 12
+Total Active Creatures: 11
 
 Creatures				Room
-Blinker					3-2-2
-Blinker					2-1-1
-Blinker					4-2-0
-Blinker					2-0-0
+Blinker					4-1-0
+Blinker					1-2-1
+Blinker					4-2-2
+Blinker					1-1-1
+Orbiter					2-2-1
+Orbiter					3-2-1
 Orbiter					2-1-2
-Orbiter					4-2-0
-Orbiter					1-1-0
-Orbiter					1-0-2
-Seeker					1-2-0
-Seeker					4-1-2
-Seeker					1-0-2
-Seeker					3-2-2
+Seeker					3-1-2
+Seeker					3-1-0
+Seeker					3-0-2
+Seeker					1-1-1
 
 
 Tracker: Turn 2
@@ -30,26 +29,24 @@ Tracker: Turn 2
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-1					0				
-Sneaker					1-1-0					0				
-Runner					4-1-1					0				
+Brawler					1-1-0					0				
+Sneaker					2-1-1					0				
+Runner					2-1-1					1				
 Thief					1-1-2					0				
 
-Total Active Creatures: 12
+Total Active Creatures: 10
 
 Creatures				Room
-Blinker					3-2-0
-Blinker					4-0-1
-Blinker					1-1-1
-Blinker					2-2-2
+Blinker					1-2-1
+Blinker					3-1-0
+Blinker					4-0-2
+Blinker					4-1-1
+Orbiter					2-2-2
+Orbiter					3-2-2
 Orbiter					2-0-2
-Orbiter					4-2-1
-Orbiter					1-1-0
-Orbiter					1-0-1
-Seeker					1-1-0
-Seeker					4-1-1
-Seeker					1-1-2
-Seeker					3-2-2
+Seeker					3-1-2
+Seeker					3-1-0
+Seeker					3-0-2
 
 
 Tracker: Turn 3
@@ -58,25 +55,23 @@ Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
 Brawler					1-0-0					0				
-Sneaker					1-0-0					0				
-Runner					3-1-0					0				
+Sneaker					1-1-1					0				
+Runner					2-0-0					1				
 Thief					1-2-2					0				
 
-Total Active Creatures: 12
+Total Active Creatures: 10
 
 Creatures				Room
-Blinker					1-1-1
-Blinker					4-1-2
-Blinker					4-2-1
-Blinker					2-2-0
+Blinker					4-0-0
+Blinker					2-1-2
+Blinker					2-1-1
+Blinker					1-2-0
+Orbiter					2-1-2
+Orbiter					3-1-2
 Orbiter					2-0-1
-Orbiter					4-2-2
-Orbiter					1-2-0
-Orbiter					1-0-0
-Seeker					1-0-0
-Seeker					4-1-1
-Seeker					1-2-2
-Seeker					3-2-2
+Seeker					3-1-2
+Seeker					3-1-0
+Seeker					3-0-2
 
 
 Tracker: Turn 4
@@ -84,26 +79,23 @@ Tracker: Turn 4
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-1					0				
-Sneaker					1-0-1					0				
-Runner					3-1-0					0				
+Brawler					1-1-0					0				
+Sneaker					1-2-1					0				
+Runner					2-0-2					1				
 Thief					1-1-2					0				
 
-Total Active Creatures: 12
+Total Active Creatures: 9
 
 Creatures				Room
-Blinker					4-0-0
-Blinker					4-0-0
+Blinker					2-2-0
+Blinker					1-2-0
+Blinker					3-1-2
 Blinker					4-1-1
-Blinker					1-2-1
-Orbiter					2-0-0
-Orbiter					4-1-2
-Orbiter					1-2-1
-Orbiter					1-1-0
-Seeker					1-0-1
-Seeker					4-1-1
-Seeker					1-1-2
-Seeker					3-2-2
+Orbiter					2-0-2
+Orbiter					3-0-2
+Seeker					3-1-1
+Seeker					3-1-1
+Seeker					3-0-2
 
 
 Tracker: Turn 5
@@ -111,26 +103,22 @@ Tracker: Turn 5
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-2					0				
-Sneaker					1-0-0					0				
-Runner					2-1-1					0				
-Thief					1-0-2					0				
+Brawler					1-1-1					0				
+Sneaker					1-1-1					0				
+Runner					2-2-2					1				
+Thief					4-1-1					0				
 
-Total Active Creatures: 12
+Total Active Creatures: 8
 
 Creatures				Room
-Blinker					3-1-0
-Blinker					2-0-1
-Blinker					3-1-0
-Blinker					4-2-0
-Orbiter					2-1-0
-Orbiter					4-0-2
-Orbiter					1-2-2
-Orbiter					1-2-0
-Seeker					1-0-2
+Blinker					3-0-1
+Blinker					2-0-2
+Blinker					4-0-0
+Orbiter					2-0-1
+Orbiter					3-0-1
 Seeker					4-1-1
-Seeker					1-0-2
-Seeker					3-2-2
+Seeker					4-1-1
+Seeker					3-0-2
 
 
 Tracker: Turn 6
@@ -138,26 +126,22 @@ Tracker: Turn 6
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-1-2					0				
-Sneaker					1-0-1					0				
-Runner					2-0-2					0				
-Thief					1-0-1					0				
+Brawler					2-1-1					0				
+Sneaker					2-1-1					0				
+Runner					2-1-1					1				
+Thief					4-2-1					0				
 
-Total Active Creatures: 12
+Total Active Creatures: 8
 
 Creatures				Room
-Blinker					3-0-1
-Blinker					4-1-1
-Blinker					4-1-2
-Blinker					3-2-2
-Orbiter					2-2-0
-Orbiter					4-0-1
-Orbiter					1-1-2
-Orbiter					1-2-1
-Seeker					1-1-2
-Seeker					4-1-1
-Seeker					1-1-2
-Seeker					3-2-2
+Blinker					1-0-2
+Blinker					1-2-1
+Blinker					4-2-2
+Orbiter					2-0-0
+Orbiter					3-0-0
+Seeker					4-2-1
+Seeker					4-2-1
+Seeker					3-0-2
 
 
 Tracker: Turn 7
@@ -165,26 +149,20 @@ Tracker: Turn 7
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-2-2					0				
-Sneaker					1-1-1					0				
-Runner					2-0-2					0				
-Thief					1-1-1					0				
+Brawler					3-1-1					0				
+Sneaker					2-1-0					0				
+Runner					2-0-0					1				
+Thief					4-2-2					1				
 
-Total Active Creatures: 12
+Total Active Creatures: 6
 
 Creatures				Room
-Blinker					4-2-1
 Blinker					2-1-2
-Blinker					1-0-2
-Blinker					3-2-1
-Orbiter					2-2-1
-Orbiter					4-0-0
-Orbiter					1-0-2
-Orbiter					1-2-2
-Seeker					1-2-2
-Seeker					4-1-1
-Seeker					1-2-2
-Seeker					3-2-2
+Blinker					2-2-1
+Orbiter					3-1-0
+Seeker					4-2-2
+Seeker					4-2-2
+Seeker					3-0-2
 
 
 Tracker: Turn 8
@@ -192,25 +170,18 @@ Tracker: Turn 8
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-1-2					0				
-Sneaker					1-1-0					0				
-Runner					2-0-2					0				
-Thief					2-1-1					0				
+Brawler					3-1-0					0				
+Sneaker					2-0-0					0				
+Runner					2-0-2					1				
+Thief					4-2-1					1				
 
-Total Active Creatures: 11
+Total Active Creatures: 4
 
 Creatures				Room
-Blinker					4-2-1
-Blinker					4-2-0
-Blinker					4-2-2
-Orbiter					2-2-2
-Orbiter					4-1-0
-Orbiter					1-0-1
-Orbiter					1-1-2
-Seeker					1-1-2
-Seeker					4-1-1
-Seeker					1-1-2
-Seeker					3-2-2
+Blinker					1-1-2
+Blinker					1-2-0
+Seeker					4-2-1
+Seeker					3-0-2
 
 
 Tracker: Turn 9
@@ -218,25 +189,18 @@ Tracker: Turn 9
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-2					0				Armor
-Sneaker					1-0-0					0				
-Runner					2-0-2					0				
-Thief					2-2-1					0				
+Brawler					3-1-1					0				
+Sneaker					2-1-0					0				
+Runner					2-2-2					1				
+Thief					4-1-1					1				
 
-Total Active Creatures: 11
+Total Active Creatures: 4
 
 Creatures				Room
-Blinker					2-0-0
-Blinker					3-2-1
-Blinker					2-2-2
-Orbiter					2-1-2
-Orbiter					4-2-0
-Orbiter					1-0-0
-Orbiter					1-0-2
-Seeker					1-0-2
+Blinker					3-0-1
+Blinker					4-2-1
 Seeker					4-1-1
-Seeker					1-0-2
-Seeker					3-2-2
+Seeker					3-0-2
 
 
 Tracker: Turn 10
@@ -244,25 +208,16 @@ Tracker: Turn 10
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-1					0				Armor
-Sneaker					1-1-0					0				
-Runner					2-0-0					0				
-Thief					2-1-1					0				
+Brawler					3-0-1					0				
+Sneaker					2-2-0					0				
+Runner					2-2-2					1				
+Thief					4-0-1					1				Sword
 
-Total Active Creatures: 11
+Total Active Creatures: 2
 
 Creatures				Room
-Blinker					2-0-0
-Blinker					1-1-1
-Blinker					1-1-0
-Orbiter					2-0-2
-Orbiter					4-2-1
-Orbiter					1-1-0
-Orbiter					1-0-1
-Seeker					1-0-1
-Seeker					4-1-1
-Seeker					1-0-1
-Seeker					3-2-2
+Blinker					3-0-0
+Seeker					3-0-1
 
 
 Tracker: Turn 11
@@ -270,23 +225,16 @@ Tracker: Turn 11
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-1-1					0				Armor
-Sneaker					1-1-1					0				
-Runner					2-0-0					0				
-Thief					2-2-1					0				
+Brawler					3-0-2					0				
+Sneaker					2-2-1					0				
+Runner					2-2-2					1				
+Thief					4-0-2					1				Sword
 
-Total Active Creatures: 9
+Total Active Creatures: 2
 
 Creatures				Room
-Blinker					3-1-1
-Orbiter					2-0-1
-Orbiter					4-2-2
-Orbiter					1-2-0
-Orbiter					1-0-0
-Seeker					1-1-1
-Seeker					4-1-1
-Seeker					1-1-1
-Seeker					3-2-2
+Blinker					1-1-2
+Seeker					3-0-2
 
 
 Tracker: Turn 12
@@ -294,22 +242,16 @@ Tracker: Turn 12
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					2-1-1					0				Armor
-Sneaker					1-1-2					0				
-Runner					2-0-0					0				
-Thief					2-2-0					0				
+Brawler					3-0-1					0				
+Sneaker					2-2-0					0				
+Runner					2-1-1					1				
+Thief					4-0-1					1				Sword
 
-Total Active Creatures: 8
+Total Active Creatures: 2
 
 Creatures				Room
-Blinker					2-1-1
-Orbiter					4-1-2
-Orbiter					1-2-1
-Orbiter					1-1-0
-Seeker					2-1-1
-Seeker					4-1-1
-Seeker					2-1-1
-Seeker					3-2-2
+Blinker					1-0-2
+Seeker					3-0-1
 
 
 Tracker: Turn 13
@@ -317,19 +259,16 @@ Tracker: Turn 13
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-1-1					0				Armor
-Sneaker					1-0-2					0				
-Runner					2-1-1					0				
-Thief					2-2-1					0				
+Brawler					3-1-1					0				
+Sneaker					2-2-1					0				
+Runner					2-0-0					1				
+Thief					4-1-1					1				Sword
 
-Total Active Creatures: 5
+Total Active Creatures: 2
 
 Creatures				Room
-Orbiter					4-0-2
-Orbiter					1-2-2
-Orbiter					1-2-0
-Seeker					4-1-1
-Seeker					3-2-2
+Blinker					4-1-0
+Seeker					3-1-1
 
 
 Tracker: Turn 14
@@ -337,19 +276,16 @@ Tracker: Turn 14
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-1					0				Armor
-Sneaker					1-1-2					0				
-Runner					2-1-1					0				
-Thief					2-2-0					0				
+Brawler					3-1-0					0				
+Sneaker					2-2-2					0				
+Runner					2-0-0					1				
+Thief					4-2-1					1				Sword
 
-Total Active Creatures: 5
+Total Active Creatures: 2
 
 Creatures				Room
-Orbiter					4-0-1
-Orbiter					1-1-2
-Orbiter					1-2-1
-Seeker					4-1-1
-Seeker					3-2-2
+Blinker					1-0-0
+Seeker					3-1-0
 
 
 Tracker: Turn 15
@@ -357,19 +293,16 @@ Tracker: Turn 15
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-2					0				Armor
-Sneaker					1-1-1					0				
-Runner					2-1-1					0				
-Thief					2-1-0					0				
+Brawler					3-2-0					0				
+Sneaker					2-2-1					0				
+Runner					2-0-0					1				Sword
+Thief					4-2-0					1				Sword
 
-Total Active Creatures: 5
+Total Active Creatures: 2
 
 Creatures				Room
-Orbiter					4-0-0
-Orbiter					1-0-2
-Orbiter					1-2-2
-Seeker					4-1-1
-Seeker					3-2-2
+Blinker					3-2-1
+Seeker					3-2-0
 
 
 Tracker: Turn 16
@@ -377,1255 +310,10 @@ Tracker: Turn 16
 Total Active Adventurers: 4
 
 Adventurers				Room				Damage				Treasure
-Brawler					1-0-1					0				Armor
-Sneaker					2-1-1					0				
-Runner					2-1-1					0				
-Thief					2-1-1					0				
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-1-0
-Orbiter					1-0-1
-Orbiter					1-1-2
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 17
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					1-1-1					0				Armor
-Sneaker					2-2-1					0				
-Runner					2-1-1					0				
-Thief					2-2-1					0				
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-2-0
-Orbiter					1-0-0
-Orbiter					1-0-2
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 18
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					1-0-1					0				Armor
-Sneaker					2-1-1					0				
-Runner					2-1-1					0				
-Thief					2-2-0					0				
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-2-1
-Orbiter					1-1-0
-Orbiter					1-0-1
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 19
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					1-0-0					0				Armor
-Sneaker					2-0-1					0				
-Runner					2-1-1					0				
-Thief					2-2-1					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-2-2
-Orbiter					1-2-0
-Orbiter					1-0-0
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 20
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					1-1-0					0				Armor
-Sneaker					2-0-2					0				
-Runner					2-0-0					0				
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-1-2
-Orbiter					1-2-1
-Orbiter					1-1-0
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 21
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					1-2-0					0				Armor
-Sneaker					2-0-1					0				
-Runner					2-0-0					0				
-Thief					2-2-1					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-0-2
-Orbiter					1-2-2
-Orbiter					1-2-0
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 22
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					1-1-0					0				Armor
-Sneaker					2-0-0					0				
-Runner					2-1-1					0				
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-0-1
-Orbiter					1-1-2
-Orbiter					1-2-1
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 23
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					1-1-1					0				Armor
-Sneaker					2-0-1					0				
-Runner					2-1-1					0				
-Thief					2-0-1					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-0-0
-Orbiter					1-0-2
-Orbiter					1-2-2
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 24
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-1-1					0				Armor
-Sneaker					2-0-0					0				
-Runner					2-0-2					0				
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-1-0
-Orbiter					1-0-1
-Orbiter					1-1-2
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 25
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-0-1					0				Armor
-Sneaker					2-0-1					0				
-Runner					2-1-1					0				
-Thief					2-2-1					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-2-0
-Orbiter					1-0-0
-Orbiter					1-0-2
-Seeker					4-1-1
-Seeker					3-2-2
-
-
-Tracker: Turn 26
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-0-0					0				Armor
-Sneaker					2-0-2					0				Gem
-Runner					3-2-1					0				
-Thief					2-2-0					0				Sword
-
-Total Active Creatures: 5
-
-Creatures				Room
-Orbiter					4-2-1
-Orbiter					1-1-0
-Orbiter					1-0-1
-Seeker					4-1-1
-Seeker					3-2-1
-
-
-Tracker: Turn 27
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-0-1					0				Armor
-Sneaker					2-0-1					0				Gem
-Runner					3-2-1					0				
-Thief					2-1-0					0				Sword
-
-Total Active Creatures: 4
-
-Creatures				Room
-Orbiter					4-2-2
-Orbiter					1-2-0
-Orbiter					1-0-0
-Seeker					4-1-1
-
-
-Tracker: Turn 28
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-0-2					0				Armor
-Sneaker					2-0-0					0				Gem
-Runner					3-1-0					0				Armor
-Thief					2-2-0					0				Sword
-
-Total Active Creatures: 4
-
-Creatures				Room
-Orbiter					4-1-2
-Orbiter					1-2-1
-Orbiter					1-1-0
-Seeker					4-1-1
-
-
-Tracker: Turn 29
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-1-2					0				Armor
-Sneaker					2-1-0					0				Gem
-Runner					3-2-1					0				Armor
-Thief					2-2-1					0				Sword
-
-Total Active Creatures: 4
-
-Creatures				Room
-Orbiter					4-0-2
-Orbiter					1-2-2
-Orbiter					1-2-0
-Seeker					4-1-1
-
-
-Tracker: Turn 30
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-1-1					0				Armor
-Sneaker					2-1-1					0				Gem
-Runner					3-1-2					0				Armor
-Thief					2-2-2					0				Sword
-
-Total Active Creatures: 4
-
-Creatures				Room
-Orbiter					4-0-1
-Orbiter					1-1-2
-Orbiter					1-2-1
-Seeker					4-1-1
-
-
-Tracker: Turn 31
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-0-1					0				Armor
-Sneaker					2-0-1					0				Gem
-Runner					3-1-2					0				Armor
-Thief					2-2-1					0				Sword
-
-Total Active Creatures: 4
-
-Creatures				Room
-Orbiter					4-0-0
-Orbiter					1-0-2
-Orbiter					1-2-2
-Seeker					4-1-1
-
-
-Tracker: Turn 32
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-0-0					0				Armor
-Sneaker					2-0-2					0				Gem
-Runner					4-1-1					0				Armor, Gem
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-1-0
-Orbiter					1-0-1
-Orbiter					1-1-2
-
-
-Tracker: Turn 33
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-1-0					0				Armor
-Sneaker					2-0-1					0				Gem, Sword
-Runner					4-2-0					0				Armor, Gem
-Thief					1-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-2-0
-Orbiter					1-0-0
-Orbiter					1-0-2
-
-
-Tracker: Turn 34
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					2-1-1					0				Armor
-Sneaker					2-0-2					0				Gem, Sword
-Runner					4-2-0					1				Armor, Gem
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-2-0
-Orbiter					1-1-0
-Orbiter					1-0-1
-
-
-Tracker: Turn 35
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					2-0-1					0				Gem, Sword
-Runner					4-1-1					1				Armor, Gem
-Thief					2-2-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-2-1
-Orbiter					1-2-0
-Orbiter					1-0-0
-
-
-Tracker: Turn 36
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-1					0				Armor
-Sneaker					2-1-1					0				Gem, Sword
-Runner					3-1-0					1				Armor, Gem
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-2-2
-Orbiter					1-2-1
-Orbiter					1-1-0
-
-
-Tracker: Turn 37
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					2-1-2					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem
-Thief					2-2-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-1-2
-Orbiter					1-2-2
-Orbiter					1-2-0
-
-
-Tracker: Turn 38
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-2-1					0				Armor
-Sneaker					2-1-1					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem
-Thief					2-2-0					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-0-2
-Orbiter					1-1-2
-Orbiter					1-2-1
-
-
-Tracker: Turn 39
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-2-0					0				Armor
-Sneaker					2-1-0					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem
-Thief					2-1-0					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-0-1
-Orbiter					1-0-2
-Orbiter					1-2-2
-
-
-Tracker: Turn 40
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-0					0				Armor
-Sneaker					2-2-0					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem, Sword
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-0-0
-Orbiter					1-0-1
-Orbiter					1-1-2
-
-
-Tracker: Turn 41
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-0					0				Armor
-Sneaker					2-2-1					0				Gem, Sword
-Runner					3-1-0					1				Armor, Gem, Sword
-Thief					3-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-1-0
-Orbiter					1-0-0
-Orbiter					1-0-2
-
-
-Tracker: Turn 42
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-0					0				Armor
-Sneaker					2-2-0					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem, Sword
-Thief					2-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-2-0
-Orbiter					1-1-0
-Orbiter					1-0-1
-
-
-Tracker: Turn 43
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					2-1-0					0				Gem, Sword
-Runner					3-1-0					1				Armor, Gem, Sword
-Thief					3-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-2-1
-Orbiter					1-2-0
-Orbiter					1-0-0
-
-
-Tracker: Turn 44
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-2-1					0				Armor
-Sneaker					2-1-1					0				Gem, Sword
-Runner					3-1-0					1				Armor, Gem, Sword
-Thief					3-0-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-2-2
-Orbiter					1-2-1
-Orbiter					1-1-0
-
-
-Tracker: Turn 45
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					2-1-2					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem, Sword
-Thief					3-0-0					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-1-2
-Orbiter					1-2-2
-Orbiter					1-2-0
-
-
-Tracker: Turn 46
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-1					0				Armor
-Sneaker					2-1-1					0				Gem, Sword
-Runner					3-1-2					1				Armor, Gem, Sword
-Thief					3-1-0					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-0-2
-Orbiter					1-1-2
-Orbiter					1-2-1
-
-
-Tracker: Turn 47
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-0					0				Armor
-Sneaker					2-2-1					0				Gem, Sword
-Runner					3-1-2					1				Armor, Gem, Sword
-Thief					3-0-0					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-0-1
-Orbiter					1-0-2
-Orbiter					1-2-2
-
-
-Tracker: Turn 48
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-2-0					0				Armor
-Sneaker					2-2-2					0				Gem, Sword
-Runner					3-1-2					1				Armor, Gem, Sword
-Thief					3-1-0					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-0-0
-Orbiter					1-0-1
-Orbiter					1-1-2
-
-
-Tracker: Turn 49
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-2-1					0				Armor
-Sneaker					2-1-2					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem, Sword
-Thief					3-1-1					0				Sword
-
-Total Active Creatures: 3
-
-Creatures				Room
-Orbiter					4-1-0
-Orbiter					1-0-0
-Orbiter					1-0-2
-
-
-Tracker: Turn 50
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-2-0					0				Armor
-Sneaker					2-2-2					0				Gem, Sword
-Runner					4-1-1					1				Armor, Gem, Sword
-Thief					3-1-0					0				Sword
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-0
-Orbiter					1-0-1
-
-
-Tracker: Turn 51
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-0					0				Armor
-Sneaker					2-1-2					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem, Sword
-Thief					3-1-1					0				Sword
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-0
-Orbiter					1-0-0
-
-
-Tracker: Turn 52
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-0-0					0				Armor
-Sneaker					2-0-2					0				Gem, Sword
-Runner					3-2-1					1				Armor, Gem, Sword
-Thief					3-0-1					0				Sword
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-1
-Orbiter					1-1-0
-
-
-Tracker: Turn 53
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-0-1					0				Armor
-Sneaker					2-0-1					0				Gem, Sword
-Runner					3-0-1					1				Armor, Gem, Sword
-Thief					3-1-1					0				Sword
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-2
-Orbiter					1-2-0
-
-
-Tracker: Turn 54
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-1					0				Armor
-Sneaker					2-0-2					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					3-0-1					0				Sword
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-2
-Orbiter					1-2-1
-
-
-Tracker: Turn 55
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-2-1					0				Armor
-Sneaker					2-1-2					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					3-0-0					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-2
-Orbiter					1-2-2
-
-
-Tracker: Turn 56
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-2-2					0				Armor
-Sneaker					2-0-2					0				Gem, Sword
-Runner					2-2-0					1				Armor, Gem, Sword
-Thief					3-1-0					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-1
-Orbiter					1-1-2
-
-
-Tracker: Turn 57
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-2-1					0				Armor
-Sneaker					2-0-1					0				Gem, Sword
-Runner					2-2-2					1				Armor, Gem, Sword
-Thief					3-0-0					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-0
-Orbiter					1-0-2
-
-
-Tracker: Turn 58
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-2-0					0				Armor
-Sneaker					2-0-2					0				Gem, Sword
-Runner					2-2-2					1				Armor, Gem, Sword
-Thief					3-0-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-0
-Orbiter					1-0-1
-
-
-Tracker: Turn 59
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-0					0				Armor
-Sneaker					2-0-1					0				Gem, Sword
-Runner					2-2-0					1				Armor, Gem, Sword
-Thief					3-0-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-0
-Orbiter					1-0-0
-
-
-Tracker: Turn 60
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-1					0				Armor
-Sneaker					2-0-0					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					3-1-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-1
-Orbiter					1-1-0
-
-
-Tracker: Turn 61
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-0					0				Armor
-Sneaker					2-1-0					0				Gem, Sword
-Runner					2-0-2					1				Armor, Gem, Sword
-Thief					3-2-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-2
-Orbiter					1-2-0
-
-
-Tracker: Turn 62
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-1					0				Armor
-Sneaker					2-2-0					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					3-2-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-2
-Orbiter					1-2-1
-
-
-Tracker: Turn 63
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					2-1-0					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					3-2-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-2
-Orbiter					1-2-2
-
-
-Tracker: Turn 64
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-1					0				Armor
-Sneaker					2-1-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					3-2-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-1
-Orbiter					1-1-2
-
-
-Tracker: Turn 65
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-2					0				Armor
-Sneaker					2-1-0					0				Gem, Sword
-Runner					2-0-2					1				Armor, Gem, Sword
-Thief					3-1-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-0
-Orbiter					1-0-2
-
-
-Tracker: Turn 66
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-2					0				Armor
-Sneaker					2-2-0					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					3-1-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-0
-Orbiter					1-0-1
-
-
-Tracker: Turn 67
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					2-2-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					3-0-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-0
-Orbiter					1-0-0
-
-
-Tracker: Turn 68
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-2					0				Armor
-Sneaker					2-2-2					0				Gem, Sword
-Runner					2-2-0					1				Armor, Gem, Sword
-Thief					3-1-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-1
-Orbiter					1-1-0
-
-
-Tracker: Turn 69
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-2					0				Armor
-Sneaker					2-2-1					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					3-1-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-2
-Orbiter					1-2-0
-
-
-Tracker: Turn 70
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-2					0				Armor
-Sneaker					2-1-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					2-1-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-2
-Orbiter					1-2-1
-
-
-Tracker: Turn 71
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					3-1-1					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					2-2-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-2
-Orbiter					1-2-2
-
-
-Tracker: Turn 72
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-1					0				Armor
-Sneaker					3-1-2					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					2-1-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-1
-Orbiter					1-1-2
-
-
-Tracker: Turn 73
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-0-1					0				Armor
-Sneaker					3-1-1					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					1-1-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-0
-Orbiter					1-0-2
-
-
-Tracker: Turn 74
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-0-0					0				Armor
-Sneaker					3-2-1					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					1-2-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-0
-Orbiter					1-0-1
-
-
-Tracker: Turn 75
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-0-1					0				Armor
-Sneaker					3-2-2					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					1-1-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-0
-Orbiter					1-0-0
-
-
-Tracker: Turn 76
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					4-1-1					0				Armor
-Sneaker					3-2-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					1-1-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-1
-Orbiter					1-1-0
-
-
-Tracker: Turn 77
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					3-2-2					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					1-0-2					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-2-2
-Orbiter					1-2-0
-
-
-Tracker: Turn 78
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-0					0				Armor
-Sneaker					3-2-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					1-0-1					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-1-2
-Orbiter					1-2-1
-
-
-Tracker: Turn 79
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-0					0				Armor
-Sneaker					3-2-2					0				Gem, Sword
-Runner					2-0-2					1				Armor, Gem, Sword
-Thief					1-0-0					0				Sword, Gem
-
-Total Active Creatures: 2
-
-Creatures				Room
-Orbiter					1-0-2
-Orbiter					1-2-2
-
-
-Tracker: Turn 80
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-1					0				Armor
-Sneaker					3-2-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					1-0-1					0				Sword, Gem
-
-Total Active Creatures: 1
-
-Creatures				Room
-Orbiter					1-1-2
-
-
-Tracker: Turn 81
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-0					0				Armor
-Sneaker					3-1-1					0				Gem, Sword
-Runner					2-0-0					1				Armor, Gem, Sword
-Thief					1-0-0					0				Sword, Gem
-
-Total Active Creatures: 1
-
-Creatures				Room
-Orbiter					1-0-2
-
-
-Tracker: Turn 82
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-0					0				Armor
-Sneaker					3-0-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					1-1-0					0				Sword, Gem
-
-Total Active Creatures: 1
-
-Creatures				Room
-Orbiter					1-0-1
-
-
-Tracker: Turn 83
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-1-1					0				Armor
-Sneaker					3-0-2					0				Gem, Sword
-Runner					2-2-2					1				Armor, Gem, Sword
-Thief					1-1-1					0				Sword, Gem
-
-Total Active Creatures: 1
-
-Creatures				Room
-Orbiter					1-0-0
-
-
-Tracker: Turn 84
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-1					0				Armor
-Sneaker					3-0-1					0				Gem, Sword
-Runner					2-0-2					1				Armor, Gem, Sword
-Thief					1-0-1					0				Sword, Gem
-
-Total Active Creatures: 1
-
-Creatures				Room
-Orbiter					1-1-0
-
-
-Tracker: Turn 85
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-0					0				Armor
-Sneaker					3-0-0					0				Gem, Sword
-Runner					2-2-2					1				Armor, Gem, Sword
-Thief					1-1-1					0				Sword, Gem
-
-Total Active Creatures: 1
-
-Creatures				Room
-Orbiter					1-2-0
-
-
-Tracker: Turn 86
-
-Total Active Adventurers: 4
-
-Adventurers				Room				Damage				Treasure
-Brawler					3-0-1					0				Armor
-Sneaker					3-0-1					0				Gem, Sword
-Runner					2-1-1					1				Armor, Gem, Sword
-Thief					1-2-1					0				Sword, Gem
+Brawler					3-1-0					0				
+Sneaker					2-2-0					0				
+Runner					2-1-1					1				Sword
+Thief					4-1-0					1				Sword
 
 Total Active Creatures: 0
 

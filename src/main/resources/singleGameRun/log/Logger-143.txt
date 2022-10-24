@@ -1,0 +1,6 @@
+Brawler enters room: 3-1-1
+Sneaker enters room: 2-2-1
+Thief enters room: 3-0-0
+Trap is found by Thief.
+Orbiter3 enters room: 1-2-2
+Seeker2 enters room: 3-1-1

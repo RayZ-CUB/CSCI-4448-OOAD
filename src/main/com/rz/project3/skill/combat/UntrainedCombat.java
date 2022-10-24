@@ -11,7 +11,7 @@ public class UntrainedCombat extends Combat{
         return defaultCombat(armor, gem, sword);
     }
 
-    static int defaultCombat(Armor armor, Gem gem, Sword sword) {
+    public static int defaultCombat(Armor armor, Gem gem, Sword sword) {
         int adventurerAttack = GameUtil.rollDices();
         int creatureAttack = GameUtil.rollDices();
 

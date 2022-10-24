@@ -1,0 +1,7 @@
+Brawler enters room: 3-1-1
+Sneaker enters room: 1-0-2
+Thief enters room: 1-2-2
+Orbiter3 enters room: 1-2-2
+Thief loses. Orbiter3 wins.
+Thief's new damage: 3
+Thief is removed.
