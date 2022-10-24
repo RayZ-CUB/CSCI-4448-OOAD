@@ -1,0 +1,13 @@
+Brawler enters room: 3-1-1
+Runner enters room: 2-2-1
+Sneaker enters room: 3-1-1
+Thief enters room: 3-1-1
+Runner enters room: 2-2-2
+Runner wins. Orbiter1 loses.
+Orbiter1 is removed.
+Runner celebrates: dance, spin, spin. 
+Seeker3 enters room: 4-1-0
+Orbiter0 enters room: 1-0-0
+Orbiter2 enters room: 1-0-0
+Orbiter3 enters room: 3-2-0
+Seeker1 enters room: 4-0-2

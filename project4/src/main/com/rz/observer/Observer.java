@@ -5,6 +5,5 @@ import java.io.IOException;
 //use Observer patterns
 
 public interface Observer {
-    void update(String event) throws IOException;
-
+     void update(String event) throws IOException;
 }

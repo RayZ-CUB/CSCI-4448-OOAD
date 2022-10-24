@@ -4,6 +4,7 @@ import com.rz.Constants;
 import com.rz.adventurer.Adventurer;
 import com.rz.map.GameMap;
 import com.rz.map.Room;
+import com.rz.observer.Publisher;
 import com.rz.skill.search.CarefulSearch;
 import com.rz.treasure.*;
 
@@ -14,10 +15,12 @@ import java.util.Random;
 public class SearchCommand implements Command {
     Adventurer adventurer;
     GameMap gameMap;
+    Publisher publisher;
 
-    public SearchCommand(Adventurer adventurer, GameMap gameMap) {
+    public SearchCommand(Adventurer adventurer, GameMap gameMap, Publisher publisher) {
         this.adventurer = adventurer;
         this.gameMap = gameMap;
+        this.publisher = publisher;
     }
 
     @Override
@@ -38,21 +41,21 @@ public class SearchCommand implements Command {
                         treasuresInRoom.remove(key);
                         gameMap.treasures.remove(key);
                         adventurer.updateTreasuresSearched(treasure);
-//                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
+                        publisher.publish(treasure.name + " is found by " + adventurer.getName() + ".");
                         break;
                     } else if (adventurer.armor == null && treasure instanceof Armor) {
                         adventurer.armor = (Armor) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.treasures.remove(key);
                         adventurer.updateTreasuresSearched(treasure);
-//                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
+                        publisher.publish(treasure.name + " is found by " + adventurer.getName() + ".");
                         break;
                     } else if (adventurer.gem == null && treasure instanceof Gem) {
                         adventurer.gem = (Gem) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.treasures.remove(key);
                         adventurer.updateTreasuresSearched(treasure);
-//                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
+                        publisher.publish(treasure.name + " is found by " + adventurer.getName() + ".");
                         break;
                     } else if (treasure.name.equals(Constants.PORTAL_NAME)) {
                         // Delete adventurer in original room
@@ -66,21 +69,21 @@ public class SearchCommand implements Command {
                         treasuresInRoom.remove(key);
                         gameMap.treasures.remove(key);
                         adventurer.updateTreasuresSearched(treasure);
-//                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
+                        publisher.publish(treasure.name + " is found by " + adventurer.getName() + ".");
                         break;
                     } else if (treasure instanceof Potion) {
                         adventurer.setHp(adventurer.getHp() + 1);
                         treasuresInRoom.remove(key);
                         gameMap.treasures.remove(key);
                         adventurer.updateTreasuresSearched(treasure);
-//                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
+                        publisher.publish(treasure.name + " is found by " + adventurer.getName() + ".");
                         break;
                     } else if (adventurer.sword == null && treasure instanceof Sword) {
                         adventurer.sword = (Sword) treasure;
                         treasuresInRoom.remove(key);
                         gameMap.treasures.remove(key);
                         adventurer.updateTreasuresSearched(treasure);
-//                        publisher.publish(treasure.name + " is found by " + adventurer.fullName + ".");
+                        publisher.publish(treasure.name + " is found by " + adventurer.getName() + ".");
                         break;
                     }
                 }

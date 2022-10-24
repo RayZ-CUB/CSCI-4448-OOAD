@@ -1,5 +1,0 @@
-Brawler enters room: 3-2-1
-Sneaker enters room: 1-0-1
-Orbiter3 enters room: 1-0-1
-Sneaker loses. Orbiter3 wins.
-Sneaker's new damage: 3

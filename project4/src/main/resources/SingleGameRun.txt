@@ -1,0 +1,114 @@
+RotLA Turn 0:
+
+0-1-1: Amber : - : -									
+1-0-0: - : - : Trap 									1-0-1: - : O : -									1-0-2: - : O : Sword 									
+1-1-0: - : - : -									1-1-1: - : - : Armor 									1-1-2: - : - : Sword 									
+1-2-0: - : - : -									1-2-1: - : - : -									1-2-2: - : - : -									
+2-0-0: - : - : Trap Potion 									2-0-1: - : - : -									2-0-2: - : - : Gem Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : -									
+2-2-0: - : S : -									2-2-1: - : - : Gem 									2-2-2: - : - : Armor 									
+3-0-0: - : - : -									3-0-1: - : - : -									3-0-2: - : - : Potion 									
+3-1-0: - : - : -									3-1-1: - : S : Trap Portal Portal 									3-1-2: - : S : Potion 									
+3-2-0: - : O : Potion Portal 									3-2-1: - : - : Trap Gem Armor 									3-2-2: - : S : -									
+4-0-0: - : - : -									4-0-1: - : - : -									4-0-2: - : BB : -									
+4-1-0: - : B : -									4-1-1: - : B : -									4-1-2: - : - : -									
+4-2-0: - : - : Sword 									4-2-1: - : - : -									4-2-2: - : O : Gem Sword Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 1
+
+Adventurer				Room				HP				Treasure
+Amber					1-0-1					10				
+
+Creatures				Room
+Blinker					1-2-2
+Blinker					4-0-1
+Blinker					3-2-2
+Blinker					4-1-1
+Orbiter					1-1-2
+Orbiter					4-1-2
+Orbiter					3-2-1
+Seeker					3-1-1
+Seeker					2-2-0
+Seeker					3-2-2
+Seeker					3-1-2
+
+
+RotLA Turn 1:
+
+0-1-1: - : - : -									
+1-0-0: - : - : Trap 									1-0-1: Amber : - : -									1-0-2: - : - : Sword 									
+1-1-0: - : - : -									1-1-1: - : - : Armor 									1-1-2: - : O : Sword 									
+1-2-0: - : - : -									1-2-1: - : - : -									1-2-2: - : B : -									
+2-0-0: - : - : Trap Potion 									2-0-1: - : - : -									2-0-2: - : - : Gem Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : -									
+2-2-0: - : S : -									2-2-1: - : - : Gem 									2-2-2: - : - : Armor 									
+3-0-0: - : - : -									3-0-1: - : - : -									3-0-2: - : - : Potion 									
+3-1-0: - : - : -									3-1-1: - : S : Trap Portal Portal 									3-1-2: - : S : Potion 									
+3-2-0: - : - : Potion Portal 									3-2-1: - : O : Trap Gem Armor 									3-2-2: - : BS : -									
+4-0-0: - : - : -									4-0-1: - : B : -									4-0-2: - : - : -									
+4-1-0: - : - : -									4-1-1: - : B : -									4-1-2: - : O : -									
+4-2-0: - : - : Sword 									4-2-1: - : - : -									4-2-2: - : - : Gem Sword Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 2
+
+Adventurer				Room				HP				Treasure
+Amber					1-1-1					10				Armor
+
+Creatures				Room
+Blinker					3-2-2
+Blinker					1-1-0
+Blinker					3-2-2
+Blinker					2-0-1
+Orbiter					1-2-2
+Orbiter					4-0-2
+Orbiter					3-2-2
+Seeker					3-1-1
+Seeker					2-2-0
+Seeker					3-2-2
+Seeker					3-1-2
+
+
+RotLA Turn 2:
+
+0-1-1: - : - : -									
+1-0-0: - : - : Trap 									1-0-1: - : - : -									1-0-2: - : - : Sword 									
+1-1-0: - : B : -									1-1-1: Amber : - : -									1-1-2: - : - : Sword 									
+1-2-0: - : - : -									1-2-1: - : - : -									1-2-2: - : O : -									
+2-0-0: - : - : Trap Potion 									2-0-1: - : B : -									2-0-2: - : - : Gem Armor 									
+2-1-0: - : - : -									2-1-1: - : - : -									2-1-2: - : - : -									
+2-2-0: - : S : -									2-2-1: - : - : Gem 									2-2-2: - : - : Armor 									
+3-0-0: - : - : -									3-0-1: - : - : -									3-0-2: - : - : Potion 									
+3-1-0: - : - : -									3-1-1: - : S : Trap Portal Portal 									3-1-2: - : S : Potion 									
+3-2-0: - : - : Potion Portal 									3-2-1: - : - : Trap Gem Armor 									3-2-2: - : BOBS : -									
+4-0-0: - : - : -									4-0-1: - : - : -									4-0-2: - : O : -									
+4-1-0: - : - : -									4-1-1: - : - : -									4-1-2: - : - : -									
+4-2-0: - : - : Sword 									4-2-1: - : - : -									4-2-2: - : - : Gem Sword Portal 									
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Tracker: Turn 3
+
+Adventurer				Room				HP				Treasure
+Amber					0-1-1					10				Armor
+
+Creatures				Room
+Blinker					4-2-1
+Blinker					2-2-1
+Blinker					1-2-0
+Blinker					1-2-1
+Orbiter					1-2-1
+Orbiter					4-0-1
+Orbiter					3-1-2
+Seeker					3-1-1
+Seeker					2-2-0
+Seeker					3-2-2
+Seeker					3-1-2
+
+

@@ -217,36 +217,6 @@ public class GameMap {
 
         output.append("\n");
 
-//        // Print out adventurers' information
-//        if (brawler != null) {
-//            output.append("Brawler - ").append(brawler.getTreasureCount()).append(" Treasure(s) - ").append(brawler.getDamage()).append(" Damage\n");
-//        } else {
-//            output.append("Brawler died. \n");
-//        }
-//
-//        if (sneaker != null) {
-//            output.append("Sneaker - ").append(sneaker.getTreasureCount()).append(" Treasure(s) - ").append(sneaker.getDamage()).append(" Damage\n");
-//        } else {
-//            output.append("Sneaker died. \n");
-//        }
-//
-//        if (runner != null) {
-//            output.append("Runner - ").append(runner.getTreasureCount()).append(" Treasure(s) - ").append(runner.getDamage()).append(" Damage\n");
-//        } else {
-//            output.append("Runner died. \n");
-//        }
-//
-//        if (thief != null) {
-//            output.append("Thief - ").append(thief.getTreasureCount()).append(" Treasure(s) - ").append(thief.getDamage()).append(" Damage\n\n");
-//        } else {
-//            output.append("Thief died. \n\n");
-//        }
-//
-//        // Print out creatures' count
-//        output.append("Orbiters - ").append(orbiterCount).append(" Remaining\n");
-//        output.append("Seekers - ").append(seekerCount).append(" Remaining\n");
-//        output.append("Blinkers - ").append(blinkerCount).append(" Remaining\n");
-
         return output.toString();
     }
 }

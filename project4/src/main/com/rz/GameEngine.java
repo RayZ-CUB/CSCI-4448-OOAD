@@ -10,11 +10,15 @@ import com.rz.command.SearchCommand;
 import com.rz.creature.*;
 import com.rz.map.GameMap;
 import com.rz.map.Room;
+import com.rz.observer.Logger;
+import com.rz.observer.Publisher;
+import com.rz.observer.Tracker;
 import com.rz.skill.celebration.*;
 import com.rz.skill.combat.Combat;
 import com.rz.treasure.*;
+import org.apache.commons.io.FileUtils;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class GameEngine {
@@ -23,10 +27,18 @@ public class GameEngine {
     private static Command moveCommand;
     private static Command combatCommand;
     private static Command searchCommand;
+    private static Tracker tracker;
+    private static Publisher publisher;
+    private static BufferedWriter writer;
     private static Scanner in = new Scanner(System.in);
     private static boolean flag = true;
 
     public static void main(String[] args) throws IOException {
+        // Clean logs
+        FileUtils.cleanDirectory(new File("project4/src/main/resources/singleGameRun/log"));
+        BufferedWriter singleRunWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("project4/src/main/resources/SingleGameRun.txt")));
+
+
         System.out.println("Welcome to RotLA by Rui Zhang.\n");
         System.out.println("--------------------------------------------------------\n");
 
@@ -45,20 +57,32 @@ public class GameEngine {
             case 4 -> adventurer = AdventurerFactory.getAdventurer(name, Constants.THIEF_NAME);
         }
 
+        tracker = Tracker.getInstance(singleRunWriter, adventurer);
         HashMap<String, Creature> creatures = initCreatures();
         HashMap<String, Treasure> treasures = initTreasures();
         initGameMap(adventurer, creatures, treasures);
 
-        System.out.println(gameMap);
-
         moveCommand = new MoveCommand(adventurer);
-        combatCommand = new CombatCommand(adventurer, in, gameMap);
-        searchCommand = new SearchCommand(adventurer, gameMap);
 
         while (flag) {
             try {
-                // Adventurer Movement
+                // Print game info
                 System.out.println(gameMap);
+                singleRunWriter.write(gameMap.toString());
+                singleRunWriter.newLine();
+                singleRunWriter.write("-----------------------------------------------------------------------------------------------------------------------------------\n\n");
+                int turnCount = gameMap.getTurnCount() + 1;
+                String fileName = "project4/src/main/resources/singleGameRun/log/Logger-" + turnCount + ".txt";
+                writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
+                publisher = new Publisher();
+                Logger logger = Logger.getInstance();
+                logger.setWriter(writer);
+                publisher.addObserver(logger);
+                publisher.addObserver(tracker);
+                combatCommand = new CombatCommand(adventurer, in, gameMap, publisher);
+                searchCommand = new SearchCommand(adventurer, gameMap, publisher);
+
+                // Adventurer Movement
                 moveAdventure();
 
                 if (adventurer instanceof Runner) {
@@ -93,18 +117,20 @@ public class GameEngine {
                 combatC();
 
                 gameMap.setTurnCount(gameMap.getTurnCount() + 1);
+                tracker.export();
                 checkIfAdventurersWin();
             } catch (RuntimeException re) {
-                if (re.getMessage().equals(Constants.INVALID_ROOM_NUMBER)) {
-                    System.out.println(re);
-                }
+                System.out.println(re);
             }
 
         }
-
+        singleRunWriter.close();
     }
 
     private static void moveAdventure() throws IOException {
+        if (gameMap.adventurer == null) {
+            return;
+        }
         System.out.println("Please enter the room you want to move to:");
         moveCommand.execute(in.nextLine());
         // Delete adventurer in original room
@@ -113,6 +139,7 @@ public class GameEngine {
         Room newRoom = gameMap.rooms.get(gameMap.adventurer.currentRoomNumber());
         newRoom.setAdventurer(adventurer);
         gameMap.adventurer.setRoom(newRoom);
+        publisher.publish(adventurer.getName() + " enters room: " + gameMap.adventurer.currentRoomNumber());
     }
 
     private static void moveCreatures() throws IOException {
@@ -129,7 +156,7 @@ public class GameEngine {
                 Room newRoom = gameMap.rooms.get(orbiter.currentRoomNumber());
                 orbiter.setRoom(newRoom);
                 newRoom.getCreatures().put(key, orbiter);
-//                publisher.publish(orbiter.fullName + orbiter.id + " enters room: " + orbiter.currentRoomNumber());
+                publisher.publish(orbiter.fullName + orbiter.id + " enters room: " + orbiter.currentRoomNumber());
             } else if (key.contains("B")) {
                 // Move blinkers
                 Creature creature = gameMap.creatures.get(key);
@@ -142,7 +169,7 @@ public class GameEngine {
                 Room newRoom = gameMap.rooms.get(blinker.currentRoomNumber());
                 blinker.setRoom(newRoom);
                 newRoom.getCreatures().put(key, blinker);
-//                publisher.publish(blinker.fullName + blinker.id + " enters room: " + blinker.currentRoomNumber());
+                publisher.publish(blinker.fullName + blinker.id + " enters room: " + blinker.currentRoomNumber());
             } else {
                 // Move seekers
                 Creature creature = gameMap.creatures.get(key);
@@ -155,7 +182,7 @@ public class GameEngine {
                 Room newRoom = gameMap.rooms.get(seeker.currentRoomNumber());
                 seeker.setRoom(newRoom);
                 newRoom.getCreatures().put(key, seeker);
-//                publisher.publish(seeker.fullName + seeker.id + " enters room: " + seeker.currentRoomNumber());
+                publisher.publish(seeker.fullName + seeker.id + " enters room: " + seeker.currentRoomNumber());
             }
         }
     }
@@ -219,26 +246,26 @@ public class GameEngine {
             builder.append(adventurer.getName()).append(" celebrates: ");
 
             if (combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 0) {
-//                publisher.publish(adventurer.fullName + " wins. " + creature.fullName + creature.id + " loses.");
+                publisher.publish(adventurer.getName() + " wins. " + creature.fullName + creature.id + " loses.");
                 currentRoom.getCreatures().remove(key);
                 iterator.remove();
                 updateCreatureCount(creature);
-//                publisher.publish(creature.fullName + creature.id + " is removed.");
+                publisher.publish(creature.fullName + creature.id + " is removed.");
                 if (combat instanceof Celebrate) {
                     builder.replace(builder.length() - 2, builder.length() - 1, ".");
                     System.out.println(builder);
-//                    publisher.publish(builder.toString());
+                    publisher.publish(builder.toString());
                 }
                 break;
             } else if (adventurer.combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 1) {
-//                publisher.publish(adventurer.fullName + " loses. " + creature.fullName + creature.id + " wins.");
+                publisher.publish(adventurer.getName() + " loses. " + creature.fullName + creature.id + " wins.");
                 adventurer.setHp(adventurer.getHp() - 1);
-//                publisher.publish(adventurer.fullName + "'s new damage: " + adventurer.getDamage());
+                publisher.publish(adventurer.getName() + "'s new HP: " + adventurer.getHp());
             }
 
             if (adventurer.getHp() <= 0) {
                 currentRoom.setAdventurer(null);
-//            publisher.publish(adventurer.fullName + " is removed.");
+                publisher.publish(adventurer.getName() + " is removed.");
             }
         }
     }
@@ -324,7 +351,7 @@ public class GameEngine {
         }
     }
 
-    private static void checkIfAdventurersWin() {
+    private static void checkIfAdventurersWin() throws IOException {
         if (!adventurer.currentRoomNumber().equals(Constants.ENTRANCE_ROOM)) {
             return;
         }
@@ -340,10 +367,11 @@ public class GameEngine {
             gameMap.winner = adventurer.getName();
             System.out.println("Winner is " + gameMap.winner);
             flag = false;
-        } else if (gameMap.adventurer == null) {
+        } else {
             gameMap.winner = Constants.CREATURE_WIN;
             System.out.println(gameMap.winner);
             flag = false;
         }
+        writer.close();
     }
 }

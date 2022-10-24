@@ -56,4 +56,28 @@ class AdventurerTest {
 
         assertEquals(Boolean.TRUE, adventurer.getTreasuresSearched()[0]);
     }
+
+    @Test
+    void portalMove_execute_randomCoordinate() {
+        int[] oldCoordinate = adventurer.getCoordinate().clone();
+        adventurer.portalMove();
+        int[] newCoordinate = adventurer.getCoordinate().clone();
+        boolean result =(oldCoordinate[0] != newCoordinate[0])
+                || (oldCoordinate[1] != newCoordinate[1])
+                || (oldCoordinate[2] != newCoordinate[2]);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void currentRoomNumber_validCoordinate_sameRoomNumber() {
+        int[] coordinate = adventurer.getCoordinate();
+        String currentRoomNumber = adventurer.currentRoomNumber();
+        String[] splitted = currentRoomNumber.split("-");
+
+        assertEquals(coordinate[0], Integer.valueOf(splitted[0]));
+        assertEquals(coordinate[1], Integer.valueOf(splitted[1]));
+        assertEquals(coordinate[2], Integer.valueOf(splitted[2]));
+
+    }
 }

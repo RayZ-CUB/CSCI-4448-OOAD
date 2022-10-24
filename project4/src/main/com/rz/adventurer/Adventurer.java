@@ -42,6 +42,10 @@ public class Adventurer {
         this.search = search;
     }
 
+    public String getType() {
+        return type;
+    }
+
     public int getHp() {
         return hp;
     }

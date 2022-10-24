@@ -6,6 +6,7 @@ import com.rz.creature.Creature;
 import com.rz.creature.Orbiter;
 import com.rz.map.GameMap;
 import com.rz.map.Room;
+import com.rz.observer.Publisher;
 import com.rz.skill.celebration.*;
 import com.rz.skill.combat.Combat;
 import com.rz.skill.combat.StealthCombat;
@@ -17,11 +18,13 @@ public class CombatCommand implements Command {
     private Adventurer adventurer;
     private Scanner in;
     private GameMap gameMap;
+    private Publisher publisher;
 
-    public CombatCommand(Adventurer adventurer, Scanner in, GameMap gameMap) {
+    public CombatCommand(Adventurer adventurer, Scanner in, GameMap gameMap, Publisher publisher) {
         this.adventurer = adventurer;
         this.in = in;
         this.gameMap = gameMap;
+        this.publisher = publisher;
     }
 
     @Override
@@ -78,23 +81,23 @@ public class CombatCommand implements Command {
                 builder.append(adventurer.getName()).append(" celebrates: ");
 
                 if (combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 0) {
-//                    publisher.publish(adventurer.fullName + " wins. " + creature.fullName + creature.id + " loses.");
+                    publisher.publish(adventurer.getName() + " wins. " + creature.fullName + creature.id + " loses.");
                     iterator.remove();
                     gameMap.creatures.remove(key);
                     updateCreatureCount(creature);
-//                    publisher.publish(creature.fullName + creature.id + " is removed.");
+                    publisher.publish(creature.fullName + creature.id + " is removed.");
                     if (combat instanceof Celebrate) {
                         builder.replace(builder.length()-2, builder.length()-1, ".");
                         System.out.println(builder);
-//                        publisher.publish(builder.toString());
+                        publisher.publish(builder.toString());
                     }
                 } else if (adventurer.combat.combat(adventurer.armor, adventurer.gem, adventurer.sword, builder) == 1) {
-//                    publisher.publish(adventurer.fullName + " loses. " + creature.fullName + creature.id + " wins.");
+                    publisher.publish(adventurer.getName() + " loses. " + creature.fullName + creature.id + " wins.");
                     if (random.nextBoolean() && adventurer.combat instanceof StealthCombat) {
                         return;
                     }
                     adventurer.setHp(adventurer.getHp() - 1);
-//                    publisher.publish(adventurer.fullName + "'s new damage: " + adventurer.getDamage());
+                    publisher.publish(adventurer.getName() + "'s new hp: " + adventurer.getHp());
                 }
             }
         }
@@ -118,7 +121,7 @@ public class CombatCommand implements Command {
     private void checkAdventurersDamage(Adventurer adventurer, Room currentRoom) throws IOException {
         if (adventurer.getHp() <= 0) {
             currentRoom.setAdventurer(null);
-//            publisher.publish(adventurer.fullName + " is removed.");
+            publisher.publish(adventurer.getName() + " is removed.");
             gameMap.adventurer = null;
         }
     }

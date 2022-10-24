@@ -1,18 +1,21 @@
-Brawler enters room: 1-1-0
-Runner enters room: 2-0-1
-Sneaker enters room: 1-2-1
+Brawler enters room: 1-0-1
+Runner enters room: 2-2-1
+Sneaker enters room: 1-1-2
 Thief enters room: 1-1-2
-Runner wins. Orbiter3 loses.
-Orbiter3 is removed.
-Runner celebrates: shout, dance, dance, jump. 
-Portal is found by Thief.
-Runner enters room: 2-0-2
-Blinker2 enters room: 3-1-2
-Blinker3 enters room: 4-1-1
-Orbiter1 enters room: 2-0-2
-Orbiter2 enters room: 3-0-2
-Seeker0 enters room: 3-1-1
-Blinker0 enters room: 2-2-0
-Seeker1 enters room: 3-1-1
-Blinker1 enters room: 1-2-0
-Seeker2 enters room: 3-0-2
+Brawler wins. Blinker1 loses.
+Blinker1 is removed.
+Brawler celebrates: dance, jump. 
+Runner enters room: 2-1-1
+Runner loses. Blinker3 wins.
+Runner's new damage: 1
+Blinker2 enters room: 2-1-1
+Seeker3 enters room: 4-1-0
+Orbiter0 enters room: 1-2-1
+Blinker3 enters room: 2-1-1
+Orbiter1 enters room: 2-1-2
+Orbiter2 enters room: 1-1-2
+Orbiter3 enters room: 3-0-1
+Seeker0 enters room: 1-1-2
+Blinker0 enters room: 2-2-2
+Seeker1 enters room: 4-0-2
+Seeker2 enters room: 1-0-1

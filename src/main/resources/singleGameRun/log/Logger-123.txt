@@ -1,5 +1,0 @@
-Brawler enters room: 3-0-2
-Sneaker enters room: 1-0-2
-Thief enters room: 2-1-2
-Orbiter3 enters room: 1-0-0
-Seeker2 enters room: 2-1-2

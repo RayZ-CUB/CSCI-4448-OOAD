@@ -1,21 +1,15 @@
-Brawler enters room: 3-1-1
-Runner enters room: 2-0-1
-Sneaker enters room: 2-1-0
-Thief enters room: 4-2-2
-Thief loses. Blinker2 wins.
-Thief's new damage: 1
-Runner enters room: 2-0-0
-Blinker2 enters room: 4-2-2
-Orbiter1 enters room: 2-0-0
-Orbiter2 enters room: 3-1-0
-Seeker0 enters room: 4-2-2
-Blinker0 enters room: 2-1-2
-Seeker1 enters room: 4-2-2
-Blinker1 enters room: 2-2-1
-Seeker2 enters room: 3-0-2
-Thief wins. Blinker2 loses.
-Blinker2 is removed.
-Thief celebrates: shout, shout, dance, dance, jump, jump, spin, spin. 
-Runner wins. Orbiter1 loses.
-Orbiter1 is removed.
-Runner celebrates: shout, jump, jump, spin. 
+Brawler enters room: 2-1-2
+Runner enters room: 2-2-1
+Sneaker enters room: 1-2-2
+Thief enters room: 1-2-2
+Runner enters room: 2-2-0
+Seeker3 enters room: 4-1-0
+Orbiter0 enters room: 1-0-0
+Blinker3 enters room: 1-1-1
+Orbiter1 enters room: 2-2-0
+Orbiter2 enters room: 1-0-0
+Orbiter3 enters room: 3-2-0
+Seeker0 enters room: 1-2-2
+Blinker0 enters room: 3-1-0
+Seeker1 enters room: 4-0-2
+Seeker2 enters room: 2-1-2
